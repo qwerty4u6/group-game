@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://bt5pb1e8nqbra"]
+
+[ext_resource type="Texture2D" uid="uid://ctb4fwpskl5aj" path="res://resources/placeholder.png.png" id="1_cuj8g"]
+
+[node name="Main" type="Node"]
+
+[node name="Placeholder_png" type="Sprite2D" parent="."]
+position = Vector2(546, 338)
+texture = ExtResource("1_cuj8g")
