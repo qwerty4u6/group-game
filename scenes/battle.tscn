@@ -8,7 +8,34 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ActionPanel" type="Panel" parent="."]
+[node name="CharContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 128.0
+grow_horizontal = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="XBox" type="HBoxContainer" parent="CharContainer"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Panel" type="Panel" parent="CharContainer/XBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Panel2" type="Panel" parent="CharContainer/XBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Panel3" type="Panel" parent="CharContainer/XBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ActContainer" type="MarginContainer" parent="."]
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
@@ -17,22 +44,10 @@ anchor_bottom = 1.0
 offset_top = -240.0
 grow_horizontal = 2
 grow_vertical = 0
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_bottom = 101.0
-grow_horizontal = 2
-
-[node name="Panel" type="Panel" parent="HBoxContainer"]
+[node name="Panel" type="Panel" parent="ActContainer"]
 layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="Panel2" type="Panel" parent="HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="Panel3" type="Panel" parent="HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
