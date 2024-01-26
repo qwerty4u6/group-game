@@ -8,46 +8,61 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="CharContainer" type="MarginContainer" parent="."]
+[node name="PlayerBox" type="MarginContainer" parent="."]
 layout_mode = 1
-anchors_preset = 10
+anchors_preset = 15
 anchor_right = 1.0
-offset_bottom = 128.0
+anchor_bottom = 1.0
+offset_right = -1004.0
 grow_horizontal = 2
+grow_vertical = 2
 theme_override_constants/margin_left = 16
 theme_override_constants/margin_top = 16
 theme_override_constants/margin_right = 16
 theme_override_constants/margin_bottom = 16
 
-[node name="XBox" type="HBoxContainer" parent="CharContainer"]
+[node name="VBox" type="VBoxContainer" parent="PlayerBox"]
 layout_mode = 2
 theme_override_constants/separation = 16
 
-[node name="Panel" type="Panel" parent="CharContainer/XBox"]
+[node name="Panel" type="Panel" parent="PlayerBox/VBox"]
 layout_mode = 2
-size_flags_horizontal = 3
+size_flags_vertical = 3
 
-[node name="Panel2" type="Panel" parent="CharContainer/XBox"]
+[node name="Panel2" type="Panel" parent="PlayerBox/VBox"]
 layout_mode = 2
-size_flags_horizontal = 3
+size_flags_vertical = 3
 
-[node name="Panel3" type="Panel" parent="CharContainer/XBox"]
+[node name="Panel3" type="Panel" parent="PlayerBox/VBox"]
 layout_mode = 2
-size_flags_horizontal = 3
+size_flags_vertical = 3
 
-[node name="ActContainer" type="MarginContainer" parent="."]
+[node name="EnemyBox" type="MarginContainer" parent="."]
 layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
+anchors_preset = 11
+anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -240.0
-grow_horizontal = 2
-grow_vertical = 0
+offset_left = -196.0
+grow_horizontal = 0
+grow_vertical = 2
 theme_override_constants/margin_left = 16
 theme_override_constants/margin_top = 16
 theme_override_constants/margin_right = 16
 theme_override_constants/margin_bottom = 16
 
-[node name="Panel" type="Panel" parent="ActContainer"]
+[node name="VBox" type="VBoxContainer" parent="EnemyBox"]
 layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Panel" type="Panel" parent="EnemyBox/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Panel2" type="Panel" parent="EnemyBox/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Panel3" type="Panel" parent="EnemyBox/VBox"]
+layout_mode = 2
+size_flags_vertical = 3

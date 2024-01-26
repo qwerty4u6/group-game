@@ -1,5 +1,5 @@
-MarginContainer
 Panel
-HBoxContainer
 VBoxContainer
+HBoxContainer
+MarginContainer
 Node
