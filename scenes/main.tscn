@@ -1,11 +1,13 @@
 [gd_scene load_steps=3 format=3 uid="uid://bt5pb1e8nqbra"]
 
-[ext_resource type="Texture2D" uid="uid://ctb4fwpskl5aj" path="res://resources/sprites/placeholder.png.png" id="1_cuj8g"]
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_iythu"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_lcsbh"]
+load_path = "res://.godot/imported/placeholder.png.png-3f167ca8e13bd95c4aa87caad99edec9.ctex"
 
 [node name="Main" type="Node"]
 script = ExtResource("1_iythu")
 
 [node name="Placeholder_png" type="Sprite2D" parent="."]
 position = Vector2(546, 338)
-texture = ExtResource("1_cuj8g")
+texture = SubResource("CompressedTexture2D_lcsbh")

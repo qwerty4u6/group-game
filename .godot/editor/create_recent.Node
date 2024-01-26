@@ -1,5 +1,10 @@
+TextureRect
+Label
+ProgressBar
+MarginContainer
 Panel
+GridContainer
+PanelContainer
 VBoxContainer
 HBoxContainer
-MarginContainer
 Node
