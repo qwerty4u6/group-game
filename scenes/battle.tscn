@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dqhi4pqqgstwj"]
 
 [ext_resource type="Script" path="res://scenes/battle.gd" id="1_oa8rw"]
-[ext_resource type="PackedScene" uid="uid://ckgui2apijnac" path="res://scenes/char_stat_display.tscn" id="2_pxm7b"]
+[ext_resource type="PackedScene" path="res://scenes/char_stat_display.tscn" id="2_pxm7b"]
 
 [node name="Battle" type="Control"]
 layout_mode = 3
