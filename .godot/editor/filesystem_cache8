@@ -1,12 +1,14 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1706306592
+::res://::1706650965
+char_stat_display.tscn::PackedScene::5488346115320497758::1706651650::0::1::::<><>::uid://cc11lnvwh7ek2::::res://resources/fonts/manaspace.ttf<>uid://dadylq3c81588::::res://resources/sprites/placeholder.png
 ::res://resources/::1706132164
 ::res://resources/fonts/::1706132164
 manaspace.ttf::FontFile::4968491878067343983::1706132164::1706132164::1::::<><>::
 yoster island.ttf::FontFile::5499388701580082665::1706132164::1706132164::1::::<><>::
 ::res://resources/sprites/::1706306592
 placeholder.png::CompressedTexture2D::7166932919664985115::1706306585::1706306592::1::::<><>::
-::res://scenes/::1706306391
-battle.tscn::PackedScene::8297272530834451249::1706306391::0::1::::<><>::
+::res://scenes/::1706651478
+battle.tscn::PackedScene::8297272530834451249::1706651707::0::1::::<><>::res://scenes/battle.gd<>uid://ckgui2apijnac::::res://char_stat_display.tscn
 main.gd::GDScript::-1::1706133494::0::1::::<>Node<>::
-main.tscn::PackedScene::3782853959426604854::1706306391::0::1::::<><>::uid://ctb4fwpskl5aj::::res://resources/sprites/placeholder.png.png<>res://scenes/main.gd
+main.tscn::PackedScene::3782853959426604854::1706651338::0::1::::<><>::res://scenes/main.gd
+battle.gd::GDScript::-1::1706651707::0::1::::<>Control<>::

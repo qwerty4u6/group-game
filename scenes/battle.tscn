@@ -1,29 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://dqhi4pqqgstwj"]
+[gd_scene load_steps=3 format=3 uid="uid://dqhi4pqqgstwj"]
 
-[ext_resource type="FontFile" uid="uid://cc11lnvwh7ek2" path="res://resources/fonts/manaspace.ttf" id="1_tvxy8"]
-[ext_resource type="Texture2D" uid="uid://dadylq3c81588" path="res://resources/sprites/placeholder.png" id="2_1cn38"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wnmkl"]
-bg_color = Color(0.388235, 0.027451, 0.027451, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ydy53"]
-bg_color = Color(0.901961, 0.0823529, 0.0823529, 1)
-border_width_left = 4
-border_width_top = 4
-border_width_right = 4
-border_width_bottom = 4
-border_color = Color(0.388235, 0.027451, 0.027451, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jh8mn"]
-bg_color = Color(0.0784314, 0.309804, 0.34902, 0.996078)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x88kr"]
-bg_color = Color(0.0823529, 0.796078, 0.921569, 0.996078)
-border_width_left = 3
-border_width_top = 3
-border_width_right = 3
-border_width_bottom = 3
-border_color = Color(0.0784314, 0.309804, 0.34902, 0.996078)
+[ext_resource type="Script" path="res://scenes/battle.gd" id="1_oa8rw"]
+[ext_resource type="PackedScene" uid="uid://ckgui2apijnac" path="res://scenes/char_stat_display.tscn" id="2_pxm7b"]
 
 [node name="Battle" type="Control"]
 layout_mode = 3
@@ -32,72 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_oa8rw")
 
-[node name="CharStatDisplay" type="Panel" parent="."]
+[node name="CharStatDisplay" parent="." instance=ExtResource("2_pxm7b")]
 layout_mode = 0
-offset_right = 192.0
-offset_bottom = 144.0
-
-[node name="HealthBar" type="ProgressBar" parent="CharStatDisplay"]
-layout_mode = 0
-offset_left = 6.0
-offset_top = 82.0
-offset_right = 186.0
-offset_bottom = 108.0
-theme_override_styles/background = SubResource("StyleBoxFlat_wnmkl")
-theme_override_styles/fill = SubResource("StyleBoxFlat_ydy53")
-value = 50.0
-show_percentage = false
-
-[node name="Label" type="Label" parent="CharStatDisplay/HealthBar"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = 6.0
-offset_bottom = -2.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 6
-theme_override_fonts/font = ExtResource("1_tvxy8")
-text = "50
-"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="ManaBar" type="ProgressBar" parent="CharStatDisplay"]
-layout_mode = 0
-offset_left = 6.0
-offset_top = 114.0
-offset_right = 186.0
-offset_bottom = 138.0
-theme_override_styles/background = SubResource("StyleBoxFlat_jh8mn")
-theme_override_styles/fill = SubResource("StyleBoxFlat_x88kr")
-value = 50.0
-show_percentage = false
-
-[node name="Label" type="Label" parent="CharStatDisplay/ManaBar"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = 6.0
-offset_bottom = -2.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 6
-theme_override_fonts/font = ExtResource("1_tvxy8")
-text = "50
-"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="TextureRect" type="TextureRect" parent="CharStatDisplay"]
-layout_mode = 0
-offset_left = 6.0
-offset_top = 6.0
-offset_right = 46.0
-offset_bottom = 46.0
-texture = ExtResource("2_1cn38")

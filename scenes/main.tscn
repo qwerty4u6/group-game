@@ -3,7 +3,6 @@
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_iythu"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_lcsbh"]
-load_path = "res://.godot/imported/placeholder.png.png-3f167ca8e13bd95c4aa87caad99edec9.ctex"
 
 [node name="Main" type="Node"]
 script = ExtResource("1_iythu")

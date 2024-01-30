@@ -1,2 +1,4 @@
-res://scenes/battle.tscn
 res://scenes/main.tscn
+res://scenes/battle.tscn
+res://scenes/battle.gd
+res://scenes/char_stat_display.tscn
