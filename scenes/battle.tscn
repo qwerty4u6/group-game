@@ -1,7 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://dqhi4pqqgstwj"]
+[gd_scene load_steps=2 format=3 uid="uid://dqhi4pqqgstwj"]
 
 [ext_resource type="Script" path="res://scenes/battle.gd" id="1_oa8rw"]
-[ext_resource type="PackedScene" path="res://scenes/char_stat_display.tscn" id="2_pxm7b"]
 
 [node name="Battle" type="Control"]
 layout_mode = 3
@@ -11,6 +10,3 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_oa8rw")
-
-[node name="CharStatDisplay" parent="." instance=ExtResource("2_pxm7b")]
-layout_mode = 0
