@@ -1,5 +1,5 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1706652661
+::res://::1706736918
 ::res://resources/::1706652654
 ::res://resources/fonts/::1706132164
 manaspace.ttf::FontFile::4968491878067343983::1706132164::1706132164::1::::<><>::
@@ -8,9 +8,10 @@ yoster island.ttf::FontFile::5499388701580082665::1706132164::1706132164::1::::<
 ninja idle.png::CompressedTexture2D::8322442739118336006::1706652501::1706652547::1::::<><>::
 ninja running.png::CompressedTexture2D::1302148561565387651::1706652644::1706652661::1::::<><>::
 placeholder.png::CompressedTexture2D::7166932919664985115::1706306585::1706306592::1::::<><>::
-::res://scenes/::1706652501
-battle.gd::GDScript::-1::1706652016::0::1::::<>Control<>::
-battle.tscn::PackedScene::8297272530834451249::1706652501::0::1::::<><>::res://scenes/battle.gd<>res://scenes/char_stat_display.tscn
-char_stat_display.tscn::PackedScene::5488346115320497758::1706652062::0::1::::<><>::uid://cc11lnvwh7ek2::::res://resources/fonts/manaspace.ttf<>uid://dadylq3c81588::::res://resources/sprites/placeholder.png
+::res://scenes/::1706653804
+battle.gd::GDScript::-1::1706653617::0::1::::<>Control<>::
+battle.tscn::PackedScene::8297272530834451249::1706653617::0::1::::<><>::res://scenes/battle.gd
+char_stat_display.gd::GDScript::-1::1706653804::0::1::::<>Panel<>::
+char_stat_display.tscn::PackedScene::5488346115320497758::1706653804::0::1::::<><>::res://scenes/char_stat_display.gd<>uid://cc11lnvwh7ek2::::res://resources/fonts/manaspace.ttf<>uid://dadylq3c81588::::res://resources/sprites/placeholder.png
 main.gd::GDScript::-1::1706133494::0::1::::<>Node<>::
-main.tscn::PackedScene::3782853959426604854::1706651901::0::1::::<><>::res://scenes/main.gd
+main.tscn::PackedScene::3782853959426604854::1706653617::0::1::::<><>::res://scenes/main.gd

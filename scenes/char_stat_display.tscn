@@ -1,8 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://ckgui2apijnac"]
+[gd_scene load_steps=9 format=3 uid="uid://ckgui2apijnac"]
 
 [ext_resource type="Script" path="res://scenes/char_stat_display.gd" id="1_1g6ot"]
 [ext_resource type="FontFile" uid="uid://cc11lnvwh7ek2" path="res://resources/fonts/manaspace.ttf" id="1_ro625"]
 [ext_resource type="Texture2D" uid="uid://dadylq3c81588" path="res://resources/sprites/placeholder.png" id="2_jmd4n"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lcy4j"]
+bg_color = Color(0.101961, 0.101961, 0.101961, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wnmkl"]
 bg_color = Color(0.388235, 0.027451, 0.027451, 1)
@@ -29,6 +32,7 @@ border_color = Color(0.0784314, 0.309804, 0.34902, 0.996078)
 [node name="CharStatDisplay" type="Panel"]
 offset_right = 192.0
 offset_bottom = 114.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_lcy4j")
 script = ExtResource("1_1g6ot")
 
 [node name="NameLabel" type="Label" parent="."]
