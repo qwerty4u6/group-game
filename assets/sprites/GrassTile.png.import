@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dqtpoe5bkwovu"
-path="res://.godot/imported/ninja idle.png-edb9505e395b413b0404968bb1253665.ctex"
+uid="uid://7xi6qcwrx8jn"
+path="res://.godot/imported/GrassTile.png-6d8555d4ca81f628f38c614e5b4497a8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/sprites/ninja idle.png"
-dest_files=["res://.godot/imported/ninja idle.png-edb9505e395b413b0404968bb1253665.ctex"]
+source_file="res://assets/sprites/GrassTile.png"
+dest_files=["res://.godot/imported/GrassTile.png-6d8555d4ca81f628f38c614e5b4497a8.ctex"]
 
 [params]
 

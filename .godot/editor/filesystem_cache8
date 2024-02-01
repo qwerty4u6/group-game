@@ -1,17 +1,26 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1706736918
-::res://resources/::1706652654
-::res://resources/fonts/::1706132164
-manaspace.ttf::FontFile::4968491878067343983::1706132164::1706132164::1::::<><>::
-yoster island.ttf::FontFile::5499388701580082665::1706132164::1706132164::1::::<><>::
-::res://resources/sprites/::1706652661
-ninja idle.png::CompressedTexture2D::8322442739118336006::1706652501::1706652547::1::::<><>::
-ninja running.png::CompressedTexture2D::1302148561565387651::1706652644::1706652661::1::::<><>::
-placeholder.png::CompressedTexture2D::7166932919664985115::1706306585::1706306592::1::::<><>::
-::res://scenes/::1706653804
-battle.gd::GDScript::-1::1706653617::0::1::::<>Control<>::
-battle.tscn::PackedScene::8297272530834451249::1706653617::0::1::::<><>::res://scenes/battle.gd
-char_stat_display.gd::GDScript::-1::1706653804::0::1::::<>Panel<>::
-char_stat_display.tscn::PackedScene::5488346115320497758::1706653804::0::1::::<><>::res://scenes/char_stat_display.gd<>uid://cc11lnvwh7ek2::::res://resources/fonts/manaspace.ttf<>uid://dadylq3c81588::::res://resources/sprites/placeholder.png
-main.gd::GDScript::-1::1706133494::0::1::::<>Node<>::
-main.tscn::PackedScene::3782853959426604854::1706653617::0::1::::<><>::res://scenes/main.gd
+::res://::1706819324
+::res://assets/::1706818380
+::res://assets/fonts/::1706818645
+manaspace.ttf::FontFile::4968491878067343983::1706127245::1706818645::1::::<><>::
+yoster island.ttf::FontFile::5499388701580082665::1706127245::1706818645::1::::<><>::
+::res://assets/sprites/::1706819324
+GrassTile.png::CompressedTexture2D::2294065624800045259::1706818380::1706818645::1::::<><>::
+ninja idle.png::CompressedTexture2D::8322442739118336006::1706818380::1706818645::1::::<><>::
+ninja running.png::CompressedTexture2D::1302148561565387651::1706818380::1706818645::1::::<><>::
+placeholder 1.png::CompressedTexture2D::7166932919664985115::1706818380::1706819324::1::::<><>::
+placeholder 2.png::CompressedTexture2D::9089048311419631137::1706819296::1706819311::1::::<><>::
+placeholder 3.png::CompressedTexture2D::802454232395054955::1706819302::1706819317::1::::<><>::
+::res://resources/::1706819055
+base_enemy.gd::GDScript::-1::1706819055::0::1::::<>Resource<>::
+base_player.gd::GDScript::-1::1706819051::0::1::::<>Resource<>::
+::res://resources/enemies/::1706818977
+::res://resources/player characters/::1706818992
+::res://scenes/::1706819324
+battle.gd::GDScript::-1::1706818380::0::1::::<>Control<>::
+battle.tscn::PackedScene::8297272530834451249::1706818380::0::1::::<><>::res://scenes/battle.gd
+char_stat_display.gd::GDScript::-1::1706818380::0::1::::<>Panel<>::
+char_stat_display.tscn::PackedScene::5488346115320497758::1706819324::0::1::::<><>::res://scenes/char_stat_display.gd<>uid://cc11lnvwh7ek2::::res://assets/fonts/manaspace.ttf<>uid://dadylq3c81588::::res://assets/sprites/placeholder 1.png
+main.gd::GDScript::-1::1706818380::0::1::::<>Node<>::
+main.tscn::PackedScene::3782853959426604854::1706819055::0::1::::<><>::res://scenes/main.gd<>uid://dqtpoe5bkwovu::::res://assets/sprites/ninja idle.png
+::res://scenes/objects/::1706127394

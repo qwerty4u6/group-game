@@ -1,0 +1,14 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://c8ls3v3g46swi"]
+
+[ext_resource type="Script" path="res://resources/base_player.gd" id="1_oqi5b"]
+[ext_resource type="Texture2D" uid="uid://loyklney77i2" path="res://assets/sprites/placeholder 3.png" id="2_ngprg"]
+
+[resource]
+script = ExtResource("1_oqi5b")
+name = "ninja"
+texture = ExtResource("2_ngprg")
+level = 8
+max_hp = 18
+hp = 18
+max_mana = 12
+mana = 12

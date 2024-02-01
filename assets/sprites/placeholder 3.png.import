@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ss1gxhx2pbqx"
-path="res://.godot/imported/ninja running.png-a7fa6ec17378065b4322c83ca14c0140.ctex"
+uid="uid://loyklney77i2"
+path="res://.godot/imported/placeholder 3.png-55a525a2074ed841f63726dbd6e79272.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/sprites/ninja running.png"
-dest_files=["res://.godot/imported/ninja running.png-a7fa6ec17378065b4322c83ca14c0140.ctex"]
+source_file="res://assets/sprites/placeholder 3.png"
+dest_files=["res://.godot/imported/placeholder 3.png-55a525a2074ed841f63726dbd6e79272.ctex"]
 
 [params]
 

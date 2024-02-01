@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://ckl7emqmyj0q4"
-path="res://.godot/imported/yoster island.ttf-c53bd4e056094eb407b74a3d398510d0.fontdata"
+uid="uid://cc11lnvwh7ek2"
+path="res://.godot/imported/manaspace.ttf-ef31b3756cd0fd90aac708cc6eef669c.fontdata"
 
 [deps]
 
-source_file="res://resources/fonts/yoster island.ttf"
-dest_files=["res://.godot/imported/yoster island.ttf-c53bd4e056094eb407b74a3d398510d0.fontdata"]
+source_file="res://assets/fonts/manaspace.ttf"
+dest_files=["res://.godot/imported/manaspace.ttf-ef31b3756cd0fd90aac708cc6eef669c.fontdata"]
 
 [params]
 

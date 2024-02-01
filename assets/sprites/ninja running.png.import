@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://7xi6qcwrx8jn"
-path="res://.godot/imported/GrassTile.png-c33a6c29926fc68b662c0549130a2ea3.ctex"
+uid="uid://ss1gxhx2pbqx"
+path="res://.godot/imported/ninja running.png-6922d32269d8406758252b4d9e3f8320.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/sprites/GrassTile.png"
-dest_files=["res://.godot/imported/GrassTile.png-c33a6c29926fc68b662c0549130a2ea3.ctex"]
+source_file="res://assets/sprites/ninja running.png"
+dest_files=["res://.godot/imported/ninja running.png-6922d32269d8406758252b4d9e3f8320.ctex"]
 
 [params]
 
