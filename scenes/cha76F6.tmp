@@ -1,0 +1,135 @@
+[gd_scene load_steps=9 format=3 uid="uid://ckgui2apijnac"]
+
+[ext_resource type="Script" path="res://scenes/char_stat_display.gd" id="1_1g6ot"]
+[ext_resource type="FontFile" uid="uid://cc11lnvwh7ek2" path="res://assets/fonts/manaspace.ttf" id="2_hwgik"]
+[ext_resource type="Texture2D" uid="uid://dadylq3c81588" path="res://assets/sprites/placeholder 1.png" id="3_ponwi"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lcy4j"]
+bg_color = Color(0.101961, 0.101961, 0.101961, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wnmkl"]
+bg_color = Color(0.388235, 0.027451, 0.027451, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ydy53"]
+bg_color = Color(0.901961, 0.0823529, 0.0823529, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.388235, 0.027451, 0.027451, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jh8mn"]
+bg_color = Color(0.0784314, 0.309804, 0.34902, 0.996078)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x88kr"]
+bg_color = Color(0.0823529, 0.796078, 0.921569, 0.996078)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.0784314, 0.309804, 0.34902, 0.996078)
+
+[node name="CharStatDisplay" type="Panel"]
+offset_right = 192.0
+offset_bottom = 114.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_lcy4j")
+script = ExtResource("1_1g6ot")
+
+[node name="NameLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 52.0
+offset_top = 10.0
+offset_right = -6.0
+offset_bottom = -88.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("2_hwgik")
+text = "characternam"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LevelLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 52.0
+offset_top = 30.0
+offset_right = -6.0
+offset_bottom = -68.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("2_hwgik")
+text = "lvl. 50"
+vertical_alignment = 1
+
+[node name="HealthBar" type="ProgressBar" parent="."]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 52.0
+offset_right = 186.0
+offset_bottom = 78.0
+theme_override_styles/background = SubResource("StyleBoxFlat_wnmkl")
+theme_override_styles/fill = SubResource("StyleBoxFlat_ydy53")
+value = 50.0
+show_percentage = false
+
+[node name="Label" type="Label" parent="HealthBar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 6.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("2_hwgik")
+text = "50
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ManaBar" type="ProgressBar" parent="."]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 84.0
+offset_right = 186.0
+offset_bottom = 108.0
+theme_override_styles/background = SubResource("StyleBoxFlat_jh8mn")
+theme_override_styles/fill = SubResource("StyleBoxFlat_x88kr")
+value = 50.0
+show_percentage = false
+
+[node name="Label" type="Label" parent="ManaBar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 6.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("2_hwgik")
+text = "50
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 6.0
+offset_right = 46.0
+offset_bottom = 46.0
+texture = ExtResource("3_ponwi")

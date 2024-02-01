@@ -1,0 +1,14 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://ue2y8g8e2hk0"]
+
+[ext_resource type="Script" path="res://resources/base_player.gd" id="1_y8am8"]
+[ext_resource type="Texture2D" uid="uid://d2q2kehi0vemb" path="res://assets/sprites/placeholder 2.png" id="2_g5072"]
+
+[resource]
+script = ExtResource("1_y8am8")
+name = "ninjas friend"
+texture = ExtResource("2_g5072")
+level = 8
+max_hp = 18
+hp = 18
+max_mana = 16
+mana = 16

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://cu0i25htpip2x"]
+
+[ext_resource type="Script" path="res://resources/base_player.gd" id="1_fx0q6"]
+[ext_resource type="Texture2D" uid="uid://loyklney77i2" path="res://assets/sprites/placeholder 3.png" id="2_3st47"]
+
+[resource]
+script = ExtResource("1_fx0q6")
+name = "other friend"
+texture = ExtResource("2_3st47")
+level = 8
+max_hp = 33
+hp = 33
+max_mana = 12
+mana = 12
