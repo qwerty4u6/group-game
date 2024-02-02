@@ -1,6 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://dqhi4pqqgstwj"]
+[gd_scene load_steps=4 format=3 uid="uid://dqhi4pqqgstwj"]
 
 [ext_resource type="Script" path="res://scenes/battle.gd" id="1_oa8rw"]
+[ext_resource type="StyleBox" uid="uid://df80uuyvx30ud" path="res://scenes/standard_panel.tres" id="2_oyk0a"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7vbk5"]
+bg_color = Color(0.101961, 0.101961, 0.101961, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.901961, 0.901961, 0.901961, 1)
 
 [node name="Battle" type="Control"]
 layout_mode = 3
@@ -10,3 +19,19 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_oa8rw")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 164.0
+offset_top = 586.0
+offset_right = 1012.0
+offset_bottom = 794.0
+theme_override_styles/panel = ExtResource("2_oyk0a")
+
+[node name="Panel" type="Panel" parent="Panel"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 6.0
+offset_right = 842.0
+offset_bottom = 202.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_7vbk5")
