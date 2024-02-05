@@ -1,78 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://bt5pb1e8nqbra"]
+[gd_scene load_steps=3 format=3 uid="uid://bt5pb1e8nqbra"]
 
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_iythu"]
-[ext_resource type="Texture2D" uid="uid://dqtpoe5bkwovu" path="res://assets/sprites/ninja idle.png" id="3_dotkp"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_k6eqq"]
-atlas = ExtResource("3_dotkp")
-region = Rect2(0, 0, 16, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_5qr63"]
-atlas = ExtResource("3_dotkp")
-region = Rect2(16, 0, 16, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_s1l2c"]
-atlas = ExtResource("3_dotkp")
-region = Rect2(32, 0, 16, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_brhhp"]
-atlas = ExtResource("3_dotkp")
-region = Rect2(32, 24, 16, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_g8p2o"]
-atlas = ExtResource("3_dotkp")
-region = Rect2(0, 24, 16, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_x71rm"]
-atlas = ExtResource("3_dotkp")
-region = Rect2(16, 24, 16, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ghlcd"]
-atlas = ExtResource("3_dotkp")
-region = Rect2(0, 48, 16, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_6dlw8"]
-atlas = ExtResource("3_dotkp")
-region = Rect2(16, 48, 16, 24)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_mxhlr"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_k6eqq")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_5qr63")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_s1l2c")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_brhhp")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_g8p2o")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_x71rm")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ghlcd")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_6dlw8")
-}],
-"loop": true,
-"name": &"idle",
-"speed": 8.0
-}]
+[ext_resource type="PackedScene" uid="uid://ccsfmhbk5ft4g" path="res://scenes/player.tscn" id="2_xxvx8"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_iythu")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(469, 339)
-scale = Vector2(4, 4)
-sprite_frames = SubResource("SpriteFrames_mxhlr")
-animation = &"idle"
-frame_progress = 0.167376
+[node name="Player" parent="." instance=ExtResource("2_xxvx8")]

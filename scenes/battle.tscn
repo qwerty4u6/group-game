@@ -1,17 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://dqhi4pqqgstwj"]
+[gd_scene load_steps=4 format=3 uid="uid://dqhi4pqqgstwj"]
 
 [ext_resource type="Script" path="res://scenes/battle.gd" id="1_oa8rw"]
 [ext_resource type="Texture2D" uid="uid://lj6u44u54at8" path="res://assets/sprites/battle bg 1.png" id="2_4dond"]
-[ext_resource type="StyleBox" uid="uid://df80uuyvx30ud" path="res://scenes/standard_panel.tres" id="2_oyk0a"]
-[ext_resource type="FontFile" uid="uid://cc11lnvwh7ek2" path="res://assets/fonts/manaspace.ttf" id="3_lhcfr"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7vbk5"]
-bg_color = Color(0.101961, 0.101961, 0.101961, 0)
-border_width_left = 3
-border_width_top = 3
-border_width_right = 3
-border_width_bottom = 3
-border_color = Color(0.901961, 0.901961, 0.901961, 1)
+[ext_resource type="PackedScene" uid="uid://c8jgkyckpjvms" path="res://scenes/action_box.tscn" id="3_1ejno"]
 
 [node name="Battle" type="Control"]
 layout_mode = 3
@@ -31,50 +22,9 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_4dond")
 
-[node name="TextBox" type="Panel" parent="."]
+[node name="ActionBox" parent="." instance=ExtResource("3_1ejno")]
 layout_mode = 0
 offset_left = 6.0
 offset_top = 6.0
 offset_right = 1194.0
 offset_bottom = 190.0
-theme_override_styles/panel = ExtResource("2_oyk0a")
-
-[node name="MarginContainer" type="MarginContainer" parent="TextBox"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 6
-theme_override_constants/margin_top = 6
-theme_override_constants/margin_right = 6
-theme_override_constants/margin_bottom = 6
-
-[node name="Panel" type="Panel" parent="TextBox/MarginContainer"]
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_7vbk5")
-
-[node name="MarginContainer" type="MarginContainer" parent="TextBox/MarginContainer/Panel"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 30
-theme_override_constants/margin_top = 30
-theme_override_constants/margin_right = 30
-theme_override_constants/margin_bottom = 30
-
-[node name="Label" type="Label" parent="TextBox/MarginContainer/Panel/MarginContainer"]
-layout_mode = 2
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 6
-theme_override_fonts/font = ExtResource("3_lhcfr")
-theme_override_font_sizes/font_size = 30
-text = "enemy name attacked!
-hello
-hello
-hello"
-autowrap_mode = 1
