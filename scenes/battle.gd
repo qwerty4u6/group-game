@@ -12,14 +12,14 @@ func _ready():
 		load("res://resources/player characters/ninja3.tres")
 	]
 	var i = 0
-	var offset = (806 - team_resources.size() * 120) / 2
+	var offset = (806 - team_resources.size() * 138) / 2
 	for member in team_resources.size():
 		var disp = char_stat_display_scene.instantiate()
 		members.push_back(disp)
 		add_child(disp)
 		disp.init(team_resources[i])
 		
-		disp.position = Vector2(6, offset + i * 120)
+		disp.position = Vector2(6, offset + i * 138)
 		i += 1
 
 func _input(event):
