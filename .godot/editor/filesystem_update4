@@ -1,7 +1,7 @@
+res://scenes/battle.tscn
+res://scenes/action_box.tscn
 res://scenes/main.tscn
 res://scenes/char_stat_display.tscn
-res://resources/base_enemy.gd
-res://resources/base_player.gd
-res://scenes/battle.tscn
-res://scenes/main.gd
-res://resources/player characters/ninja.tres
+res://scenes/player.tscn
+res://scenes/action_box.gd
+res://scenes/battle.gd

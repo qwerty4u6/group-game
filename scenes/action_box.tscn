@@ -1,8 +1,45 @@
-[gd_scene load_steps=5 format=3 uid="uid://c8jgkyckpjvms"]
+[gd_scene load_steps=8 format=3 uid="uid://c8jgkyckpjvms"]
 
 [ext_resource type="StyleBox" uid="uid://df80uuyvx30ud" path="res://scenes/standard_panel.tres" id="1_wco1j"]
 [ext_resource type="FontFile" uid="uid://cc11lnvwh7ek2" path="res://assets/fonts/manaspace.ttf" id="2_8ropt"]
 [ext_resource type="Script" path="res://scenes/action_box.gd" id="2_k6yx4"]
+
+[sub_resource type="Animation" id="Animation_1hdsq"]
+resource_name = "next arrow"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("NextLabel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_10mip"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("NextLabel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ij702"]
+_data = {
+"RESET": SubResource("Animation_10mip"),
+"next arrow": SubResource("Animation_1hdsq")
+}
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7vbk5"]
 bg_color = Color(0.101961, 0.101961, 0.101961, 0)
@@ -18,6 +55,12 @@ offset_bottom = 184.0
 theme_override_styles/panel = ExtResource("1_wco1j")
 script = ExtResource("2_k6yx4")
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../MarginContainer/TextBox")
+libraries = {
+"": SubResource("AnimationLibrary_ij702")
+}
+
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
@@ -30,28 +73,28 @@ theme_override_constants/margin_top = 6
 theme_override_constants/margin_right = 6
 theme_override_constants/margin_bottom = 6
 
-[node name="Panel" type="Panel" parent="MarginContainer"]
+[node name="TextBox" type="Panel" parent="MarginContainer"]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_7vbk5")
 
-[node name="NextLabel" type="Label" parent="MarginContainer/Panel"]
+[node name="NextLabel" type="Label" parent="MarginContainer/TextBox"]
 custom_minimum_size = Vector2(10, 10)
 layout_mode = 2
-offset_left = 1134.0
-offset_top = 129.5
-offset_right = 1166.0
-offset_bottom = 161.5
+offset_left = 1125.0
+offset_top = 88.0
+offset_right = 1173.0
+offset_bottom = 203.0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 6
 theme_override_fonts/font = ExtResource("2_8ropt")
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 56
 text = ">
 "
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Panel"]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/TextBox"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -63,15 +106,21 @@ theme_override_constants/margin_top = 30
 theme_override_constants/margin_right = 50
 theme_override_constants/margin_bottom = 30
 
-[node name="Label" type="Label" parent="MarginContainer/Panel/MarginContainer"]
+[node name="Label" type="Label" parent="MarginContainer/TextBox/MarginContainer"]
 custom_minimum_size = Vector2(10, 10)
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 6
 theme_override_fonts/font = ExtResource("2_8ropt")
 theme_override_font_sizes/font_size = 30
-text = "enemy name attacked!
-hello
-hello
-hello"
+text = "enemy name attacked!"
 autowrap_mode = 1
+
+[node name="Timer" type="Timer" parent="MarginContainer/TextBox/MarginContainer/Label"]
+wait_time = 0.05
+
+[node name="ActionBox" type="Panel" parent="MarginContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_7vbk5")
+
+[connection signal="timeout" from="MarginContainer/TextBox/MarginContainer/Label/Timer" to="." method="_on_timer_timeout"]

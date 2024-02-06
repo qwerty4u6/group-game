@@ -1,26 +1,33 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1706819324
-::res://assets/::1706818380
-::res://assets/fonts/::1706818645
-manaspace.ttf::FontFile::4968491878067343983::1706127245::1706818645::1::::<><>::
-yoster island.ttf::FontFile::5499388701580082665::1706127245::1706818645::1::::<><>::
-::res://assets/sprites/::1706819324
-GrassTile.png::CompressedTexture2D::2294065624800045259::1706818380::1706818645::1::::<><>::
-ninja idle.png::CompressedTexture2D::8322442739118336006::1706818380::1706818645::1::::<><>::
-ninja running.png::CompressedTexture2D::1302148561565387651::1706818380::1706818645::1::::<><>::
-placeholder 1.png::CompressedTexture2D::7166932919664985115::1706818380::1706819324::1::::<><>::
-placeholder 2.png::CompressedTexture2D::9089048311419631137::1706819296::1706819311::1::::<><>::
-placeholder 3.png::CompressedTexture2D::802454232395054955::1706819302::1706819317::1::::<><>::
-::res://resources/::1706819055
-base_enemy.gd::GDScript::-1::1706819055::0::1::::<>Resource<>::
-base_player.gd::GDScript::-1::1706819051::0::1::::<>Resource<>::
-::res://resources/enemies/::1706818977
-::res://resources/player characters/::1706818992
-::res://scenes/::1706819324
-battle.gd::GDScript::-1::1706818380::0::1::::<>Control<>::
-battle.tscn::PackedScene::8297272530834451249::1706818380::0::1::::<><>::res://scenes/battle.gd
-char_stat_display.gd::GDScript::-1::1706818380::0::1::::<>Panel<>::
-char_stat_display.tscn::PackedScene::5488346115320497758::1706819324::0::1::::<><>::res://scenes/char_stat_display.gd<>uid://cc11lnvwh7ek2::::res://assets/fonts/manaspace.ttf<>uid://dadylq3c81588::::res://assets/sprites/placeholder 1.png
-main.gd::GDScript::-1::1706818380::0::1::::<>Node<>::
-main.tscn::PackedScene::3782853959426604854::1706819055::0::1::::<><>::res://scenes/main.gd<>uid://dqtpoe5bkwovu::::res://assets/sprites/ninja idle.png
-::res://scenes/objects/::1706127394
+::res://::1707256202
+::res://assets/::1707255842
+::res://assets/fonts/::1706823369
+manaspace.ttf::FontFile::4968491878067343983::1706823369::1706823369::1::::<><>::
+yoster island.ttf::FontFile::5499388701580082665::1706823369::1706823369::1::::<><>::
+::res://assets/sprites/::1707256202
+battle bg 1.png::CompressedTexture2D::792576191385173807::1707169604::1707172281::1::::<><>::
+ninja idle.png::CompressedTexture2D::8322442739118336006::1706823369::1706823369::1::::<><>::
+ninja running.png::CompressedTexture2D::1302148561565387651::1706823369::1706823369::1::::<><>::
+placeholder 1.png::CompressedTexture2D::7166932919664985115::1706823369::1706823369::1::::<><>::
+placeholder 2.png::CompressedTexture2D::2648346029284691027::1707256188::1707256197::1::::<><>::
+placeholder 3.png::CompressedTexture2D::1485829510648260494::1707256188::1707256202::1::::<><>::
+tiles.png::CompressedTexture2D::1120902557779561390::1707255825::1707255850::1::::<><>::
+::res://resources/::1707170597
+base_enemy.gd::GDScript::-1::1706823369::0::1::::<>Resource<>::
+base_player.gd::GDScript::-1::1707170597::0::1::::<>Resource<>::
+::res://resources/player characters/::1706823621
+ninja2.tres::Resource::1413718345680464065::1706823621::0::1::::<><>::res://resources/base_player.gd<>uid://d2q2kehi0vemb::::res://assets/sprites/placeholder 2.png
+ninja3.tres::Resource::6228763223773694137::1706823621::0::1::::<><>::res://resources/base_player.gd<>uid://loyklney77i2::::res://assets/sprites/placeholder 3.png
+ninja.tres::Resource::7112925417392544708::1706823589::0::1::::<><>::res://resources/base_player.gd<>uid://dadylq3c81588::::res://assets/sprites/placeholder 1.png
+::res://scenes/::1707256074
+action_box.gd::GDScript::-1::1707170387::0::1::::<>Panel<>::
+action_box.tscn::PackedScene::7108036031248246518::1707256074::0::1::::<><>::uid://df80uuyvx30ud::::res://scenes/standard_panel.tres<>uid://cc11lnvwh7ek2::::res://assets/fonts/manaspace.ttf<>res://scenes/action_box.gd
+battle.gd::GDScript::-1::1707169604::0::1::::<>Control<>::
+battle.tscn::PackedScene::8297272530834451249::1707256073::0::1::::<><>::res://scenes/battle.gd<>uid://lj6u44u54at8::::res://assets/sprites/battle bg 1.png<>uid://c8jgkyckpjvms::::res://scenes/action_box.tscn
+char_stat_display.gd::GDScript::-1::1706826588::0::1::::<>Panel<>::
+char_stat_display.tscn::PackedScene::5488346115320497758::1707256073::0::1::::<><>::res://scenes/char_stat_display.gd<>uid://df80uuyvx30ud::::res://scenes/standard_panel.tres<>uid://cc11lnvwh7ek2::::res://assets/fonts/manaspace.ttf<>uid://dadylq3c81588::::res://assets/sprites/placeholder 1.png
+main.gd::GDScript::-1::1707172223::0::1::::<>Node<>::
+main.tscn::PackedScene::3782853959426604854::1707256073::0::1::::<><>::res://scenes/main.gd<>uid://ccsfmhbk5ft4g::::res://scenes/player.tscn
+player.gd::GDScript::-1::1707172175::0::1::::<>Area2D<>::
+player.tscn::PackedScene::4950703238428953140::1707256074::0::1::::<><>::uid://dqtpoe5bkwovu::::res://assets/sprites/ninja idle.png<>res://scenes/player.gd<>uid://ss1gxhx2pbqx::::res://assets/sprites/ninja running.png
+standard_panel.tres::StyleBoxFlat::7579885464379015807::1707169604::0::1::::<><>::
