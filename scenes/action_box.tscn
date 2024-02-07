@@ -123,4 +123,8 @@ wait_time = 0.05
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_7vbk5")
 
+[node name="EmptyBox" type="Panel" parent="MarginContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_7vbk5")
+
 [connection signal="timeout" from="MarginContainer/TextBox/MarginContainer/Label/Timer" to="." method="_on_timer_timeout"]

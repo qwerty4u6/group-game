@@ -1,0 +1,12 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://cfsux1omat0yn"]
+
+[ext_resource type="Script" path="res://resources/base_enemy.gd" id="1_aeo0a"]
+[ext_resource type="Texture2D" uid="uid://bdy44wh6xar84" path="res://assets/sprites/placeholder 2.png" id="2_01fgq"]
+
+[resource]
+script = ExtResource("1_aeo0a")
+name = "fsdbbd"
+texture = ExtResource("2_01fgq")
+level = 12
+max_hp = 30
+hp = 35

@@ -5,3 +5,5 @@ extends Resource
 @export var level: int = 10
 @export var max_hp: int = 25
 @export var hp: int = 25
+@export var max_mana: int = 25
+@export var mana: int = 25
