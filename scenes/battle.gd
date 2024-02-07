@@ -5,6 +5,8 @@ var members = []
 
 @onready var char_stat_display_scene = preload("res://scenes/char_stat_display.tscn")
 
+signal textbox_closed
+
 func _ready():
 	team_resources = [
 		load("res://resources/player characters/ninja.tres"),
@@ -24,4 +26,8 @@ func _ready():
 
 func _input(event):
 	if event.is_action_pressed("move_up"):
-		$ActionBox.show_text("hello")
+		$ActionBox.show_text("helgssghdghdhdsghlo")
+		await $ActionBox.textbox_closed
+		$ActionBox.show_text("works i think")
+		await $ActionBox.textbox_closed
+		$ActionBox.show_text("yipeeee")

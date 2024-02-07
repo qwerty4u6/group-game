@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scenes/battle.gd" id="1_oa8rw"]
 [ext_resource type="Texture2D" uid="uid://lj6u44u54at8" path="res://assets/sprites/battle bg 1.png" id="2_4dond"]
-[ext_resource type="PackedScene" uid="uid://c8jgkyckpjvms" path="res://scenes/action_box.tscn" id="3_1ejno"]
+[ext_resource type="PackedScene" uid="uid://hdpf0cdpojrb" path="res://scenes/action_box.tscn" id="3_1ejno"]
 
 [node name="Battle" type="Control"]
 layout_mode = 3
