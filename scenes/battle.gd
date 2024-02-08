@@ -1,4 +1,4 @@
-extends Control
+extends Control # 390, 270
 
 var team_resources
 var members = []
