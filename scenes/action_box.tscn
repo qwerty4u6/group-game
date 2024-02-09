@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://hdpf0cdpojrb"]
+[gd_scene load_steps=12 format=3 uid="uid://hdpf0cdpojrb"]
 
-[ext_resource type="StyleBox" uid="uid://df80uuyvx30ud" path="res://scenes/standard_panel.tres" id="1_wco1j"]
+[ext_resource type="StyleBox" uid="uid://df80uuyvx30ud" path="res://resources/ui/standard_panel.tres" id="1_hr8em"]
 [ext_resource type="FontFile" uid="uid://cc11lnvwh7ek2" path="res://assets/fonts/manaspace.ttf" id="2_8ropt"]
 [ext_resource type="Script" path="res://scenes/action_box.gd" id="2_k6yx4"]
+[ext_resource type="StyleBox" uid="uid://cn8okr5ek2bjv" path="res://resources/ui/clear_panel.tres" id="4_768yw"]
 [ext_resource type="Texture2D" uid="uid://dadylq3c81588" path="res://assets/sprites/placeholder 1.png" id="4_jxhro"]
 [ext_resource type="Texture2D" uid="uid://vf0notos07xy" path="res://assets/sprites/placeholder 3.png" id="5_tm4qg"]
 [ext_resource type="Texture2D" uid="uid://bdy44wh6xar84" path="res://assets/sprites/placeholder 2.png" id="6_1cy2g"]
@@ -55,7 +56,7 @@ border_color = Color(0.901961, 0.901961, 0.901961, 1)
 [node name="ActionBox" type="Panel"]
 offset_right = 1188.0
 offset_bottom = 184.0
-theme_override_styles/panel = ExtResource("1_wco1j")
+theme_override_styles/panel = ExtResource("1_hr8em")
 script = ExtResource("2_k6yx4")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -127,54 +128,6 @@ wait_time = 0.05
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_7vbk5")
 
-[node name="TextureButton" type="TextureButton" parent="MarginContainer/ActionBox"]
-visible = false
-layout_mode = 0
-offset_left = 443.0
-offset_top = 9.0
-offset_right = 581.0
-offset_bottom = 83.0
-texture_normal = ExtResource("4_jxhro")
-texture_pressed = ExtResource("5_tm4qg")
-texture_hover = ExtResource("6_1cy2g")
-stretch_mode = 0
-
-[node name="TextureButton2" type="TextureButton" parent="MarginContainer/ActionBox"]
-visible = false
-layout_mode = 0
-offset_left = 443.0
-offset_top = 89.0
-offset_right = 581.0
-offset_bottom = 163.0
-texture_normal = ExtResource("4_jxhro")
-texture_pressed = ExtResource("5_tm4qg")
-texture_hover = ExtResource("6_1cy2g")
-stretch_mode = 0
-
-[node name="TextureButton3" type="TextureButton" parent="MarginContainer/ActionBox"]
-visible = false
-layout_mode = 0
-offset_left = 587.0
-offset_top = 9.0
-offset_right = 725.0
-offset_bottom = 83.0
-texture_normal = ExtResource("4_jxhro")
-texture_pressed = ExtResource("5_tm4qg")
-texture_hover = ExtResource("6_1cy2g")
-stretch_mode = 0
-
-[node name="TextureButton4" type="TextureButton" parent="MarginContainer/ActionBox"]
-visible = false
-layout_mode = 0
-offset_left = 587.0
-offset_top = 89.0
-offset_right = 725.0
-offset_bottom = 163.0
-texture_normal = ExtResource("4_jxhro")
-texture_pressed = ExtResource("5_tm4qg")
-texture_hover = ExtResource("6_1cy2g")
-stretch_mode = 0
-
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/ActionBox"]
 layout_mode = 1
 anchors_preset = 15
@@ -187,13 +140,196 @@ theme_override_constants/margin_top = 9
 theme_override_constants/margin_right = 48
 theme_override_constants/margin_bottom = 9
 
-[node name="Panel" type="Panel" parent="MarginContainer/ActionBox/MarginContainer"]
+[node name="MainContainer" type="Panel" parent="MarginContainer/ActionBox/MarginContainer"]
 layout_mode = 2
+theme_override_styles/panel = ExtResource("4_768yw")
 
-[node name="Panel" type="Panel" parent="MarginContainer/ActionBox/MarginContainer/Panel"]
+[node name="SkillsContainer" type="Panel" parent="MarginContainer/ActionBox/MarginContainer/MainContainer"]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 390.0
+offset_bottom = 154.0
+theme_override_styles/panel = ExtResource("4_768yw")
+
+[node name="1" type="TextureButton" parent="MarginContainer/ActionBox/MarginContainer/MainContainer/SkillsContainer"]
+layout_mode = 0
+offset_right = 192.0
+offset_bottom = 74.0
+texture_normal = ExtResource("4_jxhro")
+texture_pressed = ExtResource("5_tm4qg")
+texture_hover = ExtResource("6_1cy2g")
+stretch_mode = 0
+
+[node name="2" type="TextureButton" parent="MarginContainer/ActionBox/MarginContainer/MainContainer/SkillsContainer"]
+layout_mode = 0
+offset_left = 198.0
+offset_right = 390.0
+offset_bottom = 74.0
+texture_normal = ExtResource("4_jxhro")
+texture_pressed = ExtResource("5_tm4qg")
+texture_hover = ExtResource("6_1cy2g")
+stretch_mode = 0
+
+[node name="3" type="TextureButton" parent="MarginContainer/ActionBox/MarginContainer/MainContainer/SkillsContainer"]
+layout_mode = 0
+offset_top = 80.0
+offset_right = 192.0
+offset_bottom = 154.0
+texture_normal = ExtResource("4_jxhro")
+texture_pressed = ExtResource("5_tm4qg")
+texture_hover = ExtResource("6_1cy2g")
+stretch_mode = 0
+
+[node name="4" type="TextureButton" parent="MarginContainer/ActionBox/MarginContainer/MainContainer/SkillsContainer"]
+layout_mode = 0
+offset_left = 198.0
+offset_top = 80.0
+offset_right = 390.0
+offset_bottom = 154.0
+texture_normal = ExtResource("4_jxhro")
+texture_pressed = ExtResource("5_tm4qg")
+texture_hover = ExtResource("6_1cy2g")
+stretch_mode = 0
+
+[node name="MiscContainer" type="Panel" parent="MarginContainer/ActionBox/MarginContainer/MainContainer"]
+layout_mode = 0
+offset_left = 408.0
+offset_right = 672.0
+offset_bottom = 154.0
+theme_override_styles/panel = ExtResource("4_768yw")
+
+[node name="Defend" type="TextureButton" parent="MarginContainer/ActionBox/MarginContainer/MainContainer/MiscContainer"]
+layout_mode = 0
+offset_top = 80.0
+offset_right = 129.0
+offset_bottom = 154.0
+texture_normal = ExtResource("4_jxhro")
+texture_pressed = ExtResource("5_tm4qg")
+texture_hover = ExtResource("6_1cy2g")
+stretch_mode = 0
+
+[node name="Run" type="TextureButton" parent="MarginContainer/ActionBox/MarginContainer/MainContainer/MiscContainer"]
+layout_mode = 0
+offset_left = 135.0
+offset_top = 80.0
+offset_right = 264.0
+offset_bottom = 154.0
+texture_normal = ExtResource("4_jxhro")
+texture_pressed = ExtResource("5_tm4qg")
+texture_hover = ExtResource("6_1cy2g")
+stretch_mode = 0
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/ActionBox/MarginContainer/MainContainer/MiscContainer"]
+layout_mode = 0
+offset_right = 74.0
+offset_bottom = 74.0
+texture = ExtResource("4_jxhro")
+
+[node name="NameLabel" type="Label" parent="MarginContainer/ActionBox/MarginContainer/MainContainer/MiscContainer"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 74.0
+offset_top = -1.0
+offset_bottom = -81.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("2_8ropt")
+theme_override_font_sizes/font_size = 20
+text = "characternam"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ItemsContainer" type="Panel" parent="MarginContainer/ActionBox/MarginContainer/MainContainer"]
+layout_mode = 0
+offset_left = 690.0
+offset_right = 1080.0
+offset_bottom = 154.0
+theme_override_styles/panel = ExtResource("4_768yw")
+
+[node name="1" type="TextureButton" parent="MarginContainer/ActionBox/MarginContainer/MainContainer/ItemsContainer"]
+layout_mode = 0
+offset_right = 192.0
+offset_bottom = 34.0
+texture_normal = ExtResource("4_jxhro")
+texture_pressed = ExtResource("5_tm4qg")
+texture_hover = ExtResource("6_1cy2g")
+stretch_mode = 0
+
+[node name="2" type="TextureButton" parent="MarginContainer/ActionBox/MarginContainer/MainContainer/ItemsContainer"]
+layout_mode = 0
+offset_left = 198.0
+offset_right = 390.0
+offset_bottom = 34.0
+texture_normal = ExtResource("4_jxhro")
+texture_pressed = ExtResource("5_tm4qg")
+texture_hover = ExtResource("6_1cy2g")
+stretch_mode = 0
+
+[node name="3" type="TextureButton" parent="MarginContainer/ActionBox/MarginContainer/MainContainer/ItemsContainer"]
+layout_mode = 0
+offset_top = 40.0
+offset_right = 192.0
+offset_bottom = 74.0
+texture_normal = ExtResource("4_jxhro")
+texture_pressed = ExtResource("5_tm4qg")
+texture_hover = ExtResource("6_1cy2g")
+stretch_mode = 0
+
+[node name="4" type="TextureButton" parent="MarginContainer/ActionBox/MarginContainer/MainContainer/ItemsContainer"]
+layout_mode = 0
+offset_left = 198.0
+offset_top = 40.0
+offset_right = 390.0
+offset_bottom = 74.0
+texture_normal = ExtResource("4_jxhro")
+texture_pressed = ExtResource("5_tm4qg")
+texture_hover = ExtResource("6_1cy2g")
+stretch_mode = 0
+
+[node name="5" type="TextureButton" parent="MarginContainer/ActionBox/MarginContainer/MainContainer/ItemsContainer"]
+layout_mode = 0
+offset_top = 80.0
+offset_right = 192.0
+offset_bottom = 114.0
+texture_normal = ExtResource("4_jxhro")
+texture_pressed = ExtResource("5_tm4qg")
+texture_hover = ExtResource("6_1cy2g")
+stretch_mode = 0
+
+[node name="6" type="TextureButton" parent="MarginContainer/ActionBox/MarginContainer/MainContainer/ItemsContainer"]
+layout_mode = 0
+offset_left = 198.0
+offset_top = 80.0
+offset_right = 390.0
+offset_bottom = 114.0
+texture_normal = ExtResource("4_jxhro")
+texture_pressed = ExtResource("5_tm4qg")
+texture_hover = ExtResource("6_1cy2g")
+stretch_mode = 0
+
+[node name="7" type="TextureButton" parent="MarginContainer/ActionBox/MarginContainer/MainContainer/ItemsContainer"]
+layout_mode = 0
+offset_top = 120.0
+offset_right = 192.0
+offset_bottom = 154.0
+texture_normal = ExtResource("4_jxhro")
+texture_pressed = ExtResource("5_tm4qg")
+texture_hover = ExtResource("6_1cy2g")
+stretch_mode = 0
+
+[node name="8" type="TextureButton" parent="MarginContainer/ActionBox/MarginContainer/MainContainer/ItemsContainer"]
+layout_mode = 0
+offset_left = 198.0
+offset_top = 120.0
+offset_right = 390.0
+offset_bottom = 154.0
+texture_normal = ExtResource("4_jxhro")
+texture_pressed = ExtResource("5_tm4qg")
+texture_hover = ExtResource("6_1cy2g")
+stretch_mode = 0
 
 [node name="EmptyBox" type="Panel" parent="MarginContainer"]
 visible = false
