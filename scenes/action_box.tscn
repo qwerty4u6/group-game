@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://hdpf0cdpojrb"]
+[gd_scene load_steps=13 format=3 uid="uid://hdpf0cdpojrb"]
 
 [ext_resource type="StyleBox" uid="uid://df80uuyvx30ud" path="res://resources/ui/standard_panel.tres" id="1_hr8em"]
 [ext_resource type="FontFile" uid="uid://cc11lnvwh7ek2" path="res://assets/fonts/manaspace.ttf" id="2_8ropt"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dadylq3c81588" path="res://assets/sprites/placeholder 1.png" id="4_jxhro"]
 [ext_resource type="Texture2D" uid="uid://vf0notos07xy" path="res://assets/sprites/placeholder 3.png" id="5_tm4qg"]
 [ext_resource type="Texture2D" uid="uid://bdy44wh6xar84" path="res://assets/sprites/placeholder 2.png" id="6_1cy2g"]
+[ext_resource type="Texture2D" uid="uid://ci20nsbghq2yj" path="res://assets/sprites/divider.png" id="8_kootn"]
 
 [sub_resource type="Animation" id="Animation_10mip"]
 length = 0.001
@@ -330,6 +331,20 @@ texture_normal = ExtResource("4_jxhro")
 texture_pressed = ExtResource("5_tm4qg")
 texture_hover = ExtResource("6_1cy2g")
 stretch_mode = 0
+
+[node name="Divider" type="TextureRect" parent="MarginContainer/ActionBox/MarginContainer/MainContainer"]
+layout_mode = 0
+offset_left = 396.0
+offset_right = 402.0
+offset_bottom = 154.0
+texture = ExtResource("8_kootn")
+
+[node name="Divider2" type="TextureRect" parent="MarginContainer/ActionBox/MarginContainer/MainContainer"]
+layout_mode = 0
+offset_left = 678.0
+offset_right = 684.0
+offset_bottom = 154.0
+texture = ExtResource("8_kootn")
 
 [node name="EmptyBox" type="Panel" parent="MarginContainer"]
 visible = false
