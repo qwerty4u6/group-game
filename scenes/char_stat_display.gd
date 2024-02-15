@@ -1,22 +1,16 @@
 extends Panel
 
 var res
+@onready var hp_bar = $HealthBar
+@onready var hp_label = hp_bar.get_node("Label")
+@onready var mana_bar = $ManaBar
+@onready var mana_label = mana_bar.get_node("Label")
+@onready var mouse_area = $"/root/Battle/MouseArea"
 
-var hp_bar
-var hp_label
-var mana_bar
-var mana_label
+signal mouse_exit
 
 func _ready():
-	hp_bar = $HealthBar
-	hp_label = hp_bar.get_node("Label")
-	mana_bar = $ManaBar
-	mana_label = mana_bar.get_node("Label")
-	$AnimationPlayer.play("selection")
-
-func _input(event):
-	if event is InputEventMouseMotion:
-		print(event)
+	$SelectLabel.hide()
 
 func init(member):
 	res = member
@@ -41,3 +35,14 @@ func set_max_mana(mana):
 func set_mana(mana):
 	mana_bar.value = mana
 	mana_label.text = str(mana)
+
+func _on_area_2d_area_entered(area):
+	if area == mouse_area:
+		$AnimationPlayer.play("selection")
+		$SelectLabel.show()
+		await mouse_exit
+		$SelectLabel.hide()
+
+func _on_area_2d_area_exited(area):
+	if area == mouse_area:
+		emit_signal("mouse_exit")
