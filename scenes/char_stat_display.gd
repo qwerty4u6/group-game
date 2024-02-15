@@ -12,6 +12,11 @@ func _ready():
 	hp_label = hp_bar.get_node("Label")
 	mana_bar = $ManaBar
 	mana_label = mana_bar.get_node("Label")
+	$AnimationPlayer.play("selection")
+
+func _input(event):
+	if event is InputEventMouseMotion:
+		print(event)
 
 func init(member):
 	res = member

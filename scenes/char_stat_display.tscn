@@ -1,9 +1,46 @@
-[gd_scene load_steps=10 format=3 uid="uid://ckgui2apijnac"]
+[gd_scene load_steps=14 format=3 uid="uid://ckgui2apijnac"]
 
 [ext_resource type="Script" path="res://scenes/char_stat_display.gd" id="1_1g6ot"]
 [ext_resource type="StyleBox" uid="uid://df80uuyvx30ud" path="res://resources/ui/standard_panel.tres" id="1_12g0m"]
 [ext_resource type="FontFile" uid="uid://cc11lnvwh7ek2" path="res://assets/fonts/manaspace.ttf" id="2_hwgik"]
 [ext_resource type="Texture2D" uid="uid://dadylq3c81588" path="res://assets/sprites/placeholder 1.png" id="3_ponwi"]
+
+[sub_resource type="Animation" id="Animation_rhfc5"]
+resource_name = "selection"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SelectLabel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(125, 0), Vector2(141, 0), Vector2(125, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_8bx4t"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SelectLabel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(125, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kuj6w"]
+_data = {
+"RESET": SubResource("Animation_8bx4t"),
+"selection": SubResource("Animation_rhfc5")
+}
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_63oj4"]
 bg_color = Color(0.101961, 0.101961, 0.101961, 0)
@@ -35,11 +72,19 @@ border_width_right = 3
 border_width_bottom = 3
 border_color = Color(0.0784314, 0.309804, 0.34902, 0.996078)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p7nxx"]
+size = Vector2(210, 132)
+
 [node name="CharStatDisplay" type="Panel"]
 offset_right = 210.0
 offset_bottom = 132.0
 theme_override_styles/panel = ExtResource("1_12g0m")
 script = ExtResource("1_1g6ot")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_kuj6w")
+}
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -155,3 +200,26 @@ offset_top = 15.0
 offset_right = 55.0
 offset_bottom = 55.0
 texture = ExtResource("3_ponwi")
+
+[node name="SelectLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 125.0
+offset_right = 125.001
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("2_hwgik")
+theme_override_font_sizes/font_size = 50
+text = "<"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(105, 66)
+shape = SubResource("RectangleShape2D_p7nxx")
