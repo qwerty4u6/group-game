@@ -11,6 +11,7 @@ signal mouse_exit
 
 func _ready():
 	$SelectLabel.hide()
+	$SelectLabel.size = Vector2(210, 132) # why does it keep resizing should i have to do this
 
 func init(member):
 	res = member
@@ -38,11 +39,17 @@ func set_mana(mana):
 
 func _on_area_2d_area_entered(area):
 	if area == mouse_area:
-		$AnimationPlayer.play("selection")
-		$SelectLabel.show()
+		start_hover()
 		await mouse_exit
-		$SelectLabel.hide()
+		stop_hover()
 
 func _on_area_2d_area_exited(area):
 	if area == mouse_area:
 		emit_signal("mouse_exit")
+
+func start_hover():
+	$AnimationPlayer.play("selection")
+	$SelectLabel.show()
+
+func stop_hover():
+	$SelectLabel.hide()

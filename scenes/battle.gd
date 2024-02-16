@@ -1,17 +1,22 @@
-extends Control # 390, 270
+extends Control
 
-var team_resources
 var members = []
 
 @onready var char_stat_display_scene = preload("res://scenes/char_stat_display.tscn")
+@onready var battle_character_scene = preload("res://scenes/battle_character.tscn")
 
 signal textbox_closed
 
 func _ready():
-	team_resources = [
+	var team_resources = [
 		load("res://resources/player characters/ninja.tres"),
 		load("res://resources/player characters/ninja2.tres"),
 		load("res://resources/player characters/ninja3.tres")
+	]
+	var team_member_positions = [
+		Vector2(308, 592),
+		Vector2(252, 660),
+		Vector2(340, 708),
 	]
 	var offset = (806 - team_resources.size() * 138) / 2
 	var i = 0
@@ -20,8 +25,13 @@ func _ready():
 		members.push_back(disp)
 		add_child(disp)
 		disp.init(team_resources[i])
-		
 		disp.position = Vector2(6, offset + i * 138)
+		
+		var char = battle_character_scene.instantiate() 
+		add_child(char)
+		char.init(disp)
+		char.position = team_member_positions[i]
+		
 		i += 1
 	
 	team_resources = [
@@ -29,14 +39,24 @@ func _ready():
 		load("res://resources/enemy characters/placeholder enemy.tres"),
 		load("res://resources/enemy characters/placeholder enemy.tres")
 	]
+	team_member_positions = [
+		Vector2(892, 592),
+		Vector2(948, 660),
+		Vector2(860, 708),
+	]
 	i = 0
 	for member in team_resources.size():
 		var disp = char_stat_display_scene.instantiate()
 		members.push_back(disp)
 		add_child(disp)
 		disp.init(team_resources[i])
-		
 		disp.position = Vector2(984, offset + i * 138)
+		
+		var char = battle_character_scene.instantiate() 
+		add_child(char)
+		char.init(disp)
+		char.position = team_member_positions[i]
+		
 		i += 1
 	
 	$ActionBox.to_action_box()

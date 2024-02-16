@@ -1,18 +1,12 @@
 extends Panel
 
-var text_box
-var action_box
-var empty_box
-var text_box_label
+@onready var text_box = get_node("MarginContainer/TextBox")
+@onready var action_box = get_node("MarginContainer/ActionBox")
+@onready var empty_box = get_node("MarginContainer/EmptyBox")
+@onready var text_box_label = text_box.get_node("MarginContainer/Label")
 
 signal text_done_displaying
 signal textbox_closed
-
-func _ready():
-	text_box = get_node("MarginContainer/TextBox")
-	action_box = get_node("MarginContainer/ActionBox")
-	empty_box = get_node("MarginContainer/EmptyBox")
-	text_box_label = text_box.get_node("MarginContainer/Label")
 
 func _input(event):
 	if Input.is_action_just_pressed("ui_accept") or Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
@@ -33,7 +27,7 @@ func to_action_box():
 
 func to_empty_box():
 	text_box.hide()
-	action_box.hite()
+	action_box.hide()
 	empty_box.show()
 
 func show_text(text):
