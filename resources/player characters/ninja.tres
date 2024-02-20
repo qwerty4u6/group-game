@@ -7,8 +7,29 @@
 script = ExtResource("1_oqi5b")
 name = "ninja"
 texture = ExtResource("2_vv4sw")
-level = 8
-max_hp = 18
-hp = 18
-max_mana = 12
-mana = 12
+level = 1
+xp_until_next = 5.0
+max_hp = 12
+hp = 12
+max_mana = 25
+mana = 25
+damage = 3
+base_hp = 12
+base_mana = 25
+level_curve = {
+"a": 2.6,
+"b": 5
+}
+skills = [{
+"name": "Throwing Stars",
+"unlocked_at": 1
+}, {
+"name": "Attack 2",
+"unlocked_at": 3
+}, {
+"name": "Blah bla",
+"unlocked_at": 7
+}, {
+"name": "dgddf",
+"unlocked_at": 12
+}]
