@@ -38,3 +38,7 @@ script = ExtResource("4_e058j")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MouseArea"]
 shape = SubResource("RectangleShape2D_b1e75")
+
+[node name="Team" type="Node" parent="."]
+
+[node name="Enemies" type="Node" parent="."]

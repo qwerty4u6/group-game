@@ -18,12 +18,4 @@ extends Resource
 	"b": 5
 }
 
-@export var skills: Array = [
-#	{
-#		"name": "Throwing Stars",
-#		"unlocked_at": 1,
-#		"target": "enemy",
-#		"applies": ["damage", 0, 1],   # type, strength, length/amt
-#		"message": "%d threw Throwing Stars!"
-#	}
-]
+@export var skills: Array = []

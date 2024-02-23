@@ -8,3 +8,4 @@ extends Resource
 @export var hp: int = 25
 @export var max_mana: int = 25
 @export var mana: int = 25
+@export var damage: int = 2

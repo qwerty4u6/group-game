@@ -1,5 +1,6 @@
 extends Panel
 
+@onready var battle = get_parent()
 @onready var text_box = get_node("MarginContainer/TextBox")
 @onready var action_box = get_node("MarginContainer/ActionBox")
 @onready var empty_box = get_node("MarginContainer/EmptyBox")
@@ -20,10 +21,14 @@ func to_textbox():
 	action_box.hide()
 	empty_box.hide()
 
-func to_action_box():
+func to_action_box(character = null):
 	text_box.hide()
 	action_box.show()
 	empty_box.hide()
+	
+	if character != null:
+		action_box.get_node("MarginContainer/MainContainer/MiscContainer/NameLabel").text = character.name_text
+		action_box.get_node("MarginContainer/MainContainer/MiscContainer/TextureRect").texture = character.texture
 
 func to_empty_box():
 	text_box.hide()
@@ -48,5 +53,4 @@ func _on_timer_timeout():
 		emit_signal("text_done_displaying")
 
 func _on__pressed():
-	var test = 100
-	print("haiii health is %d" % [test])
+	print(battle)
