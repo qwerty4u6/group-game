@@ -21,15 +21,9 @@ level_curve = {
 "b": 5
 }
 skills = [{
+"applies": ["damage", -1, 2],
+"message": "%d threw Throwing Stars!",
 "name": "Throwing Stars",
+"target": "enemy",
 "unlocked_at": 1
-}, {
-"name": "Attack 2",
-"unlocked_at": 3
-}, {
-"name": "Blah bla",
-"unlocked_at": 7
-}, {
-"name": "dgddf",
-"unlocked_at": 12
 }]

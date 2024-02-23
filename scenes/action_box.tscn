@@ -352,3 +352,4 @@ layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_7vbk5")
 
 [connection signal="timeout" from="MarginContainer/TextBox/MarginContainer/Label/Timer" to="." method="_on_timer_timeout"]
+[connection signal="pressed" from="MarginContainer/ActionBox/MarginContainer/MainContainer/SkillsContainer/1" to="." method="_on__pressed"]

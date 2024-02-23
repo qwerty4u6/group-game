@@ -19,25 +19,11 @@ extends Resource
 }
 
 @export var skills: Array = [
-	{
-		"name": "Throwing Stars",
-		"unlocked_at": 1,
-		"target": "enemy",
-		"applies": ["damage", 0, 1]   #  strength, amt of attacks
-	}, {
-		"name": "Attack 2",
-		"unlocked_at": 3,
-		"target": "self",
-		"applies": ["heal", 0, 1]
-	}, {
-		"name": "Blah bla",
-		"unlocked_at": 7,
-		"target": "ally",
-		"applies": ["status", "strength", 1]
-	}, {
-		"name": "dgddf",
-		"unlocked_at": 12,
-		"target": "enemy",
-		"applies": ["splash", -1, 1]
-	}
+#	{
+#		"name": "Throwing Stars",
+#		"unlocked_at": 1,
+#		"target": "enemy",
+#		"applies": ["damage", 0, 1],   # type, strength, length/amt
+#		"message": "%d threw Throwing Stars!"
+#	}
 ]

@@ -46,3 +46,7 @@ func _on_timer_timeout():
 	text_box_label.visible_characters += 1
 	if text_box_label.visible_characters == text_box_label.text.length() + 1:
 		emit_signal("text_done_displaying")
+
+func _on__pressed():
+	var test = 100
+	print("haiii health is %d" % [test])
