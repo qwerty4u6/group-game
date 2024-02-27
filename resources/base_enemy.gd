@@ -9,3 +9,6 @@ extends Resource
 @export var max_mana: int = 25
 @export var mana: int = 25
 @export var damage: int = 2
+
+@export var skills: Array = []
+@export var skill_order: Array = []

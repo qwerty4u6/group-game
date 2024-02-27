@@ -7,6 +7,8 @@ extends Panel
 @onready var empty_box = get_node("MarginContainer/EmptyBox")
 @onready var text_box_label = text_box.get_node("MarginContainer/Label")
 
+var selected_skill = 0
+
 signal text_done_displaying
 signal textbox_closed
 
@@ -66,20 +68,25 @@ func _on_timer_timeout():
 		emit_signal("text_done_displaying")
 
 func _on_skill_1_pressed():
-	do_skill(1)
+	prepare_skill(1)
 
 func _on_skill_2_pressed():
-	do_skill(2)
+	prepare_skill(2)
 
 func _on_skill_3_pressed():
-	do_skill(3)
+	prepare_skill(3)
 
 func _on_skill_4_pressed():
-	do_skill(4)
+	prepare_skill(4)
 
 func _on_back_pressed():
 	to_action_box()
+	battle.selecting = false
 
-func do_skill(i):
+func prepare_skill(i):
 	to_back_box()
-	print(i)
+	battle.selecting = true
+	selected_skill = i
+
+func do_skill(target, skill, char = battle.current_character):
+	pass

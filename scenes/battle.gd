@@ -21,6 +21,8 @@ var enemies = []
 var characters = []
 var current_turn = -1
 var current_character = null
+var selecting = false
+var selected_display = null
 
 signal textbox_closed
 

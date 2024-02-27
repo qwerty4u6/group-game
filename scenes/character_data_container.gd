@@ -9,7 +9,9 @@ extends Node
 @export var mana: int = 25
 @export var damage: int = 3
 
-@export var type = "Enemy"
+@export var type: String = "Enemy"
+
+@export var skills: Array = []
 
 func init(res):
 	name_text = res.name
@@ -20,3 +22,5 @@ func init(res):
 	max_mana = res.max_mana
 	mana = res.mana
 	damage = res.damage
+	
+	skills = res.skills

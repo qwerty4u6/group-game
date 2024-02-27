@@ -13,9 +13,17 @@ max_hp = 14
 hp = 14
 max_mana = 30
 mana = 30
+damage = 3
 base_hp = 14
 base_mana = 30
 level_curve = {
 "a": 2.6,
 "b": 5
 }
+skills = [{
+"applies": ["damage", -1, 2],
+"message": "%d threw Throwing Stars!",
+"name": "Idk magic thigny",
+"target": "enemy",
+"unlocked_at": 1
+}]

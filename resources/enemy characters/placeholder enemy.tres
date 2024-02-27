@@ -10,3 +10,14 @@ texture = ExtResource("2_01fgq")
 level = 12
 max_hp = 30
 hp = 35
+max_mana = 25
+mana = 25
+damage = 2
+skills = [{
+"applies": ["damage", -1, 2],
+"message": "%d threw Throwing Stars!",
+"name": "jkgdjg",
+"target": "enemy",
+"unlocked_at": 1
+}]
+skill_order = [0]
