@@ -7,10 +7,11 @@ extends Panel
 @onready var empty_box = get_node("MarginContainer/EmptyBox")
 @onready var text_box_label = text_box.get_node("MarginContainer/Label")
 
-var selected_skill = 0
+var target = null
 
 signal text_done_displaying
 signal textbox_closed
+signal selected
 
 func _input(event):
 	if Input.is_action_just_pressed("ui_accept") or Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
@@ -86,7 +87,9 @@ func _on_back_pressed():
 func prepare_skill(i):
 	to_back_box()
 	battle.selecting = true
-	selected_skill = i
-
-func do_skill(target, skill, char = battle.current_character):
-	pass
+	var character = battle.current_character
+	var skill = character.skills[i - 1]
+	await selected
+	battle.selecting = false
+	var disp = battle.selected_display()
+	print(skill.message % [character.name_text, target.name])  # i hatetetetnehg bghgidit godot

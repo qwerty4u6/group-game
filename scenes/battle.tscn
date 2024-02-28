@@ -33,7 +33,7 @@ offset_top = 6.0
 offset_right = 1194.0
 offset_bottom = 190.0
 
-[node name="MouseArea" type="Area2D" parent="."]
+[node name="MouseArea" type="Area2D" parent="." groups=["mouse_area"]]
 script = ExtResource("4_e058j")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MouseArea"]

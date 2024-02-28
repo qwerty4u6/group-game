@@ -6,9 +6,11 @@ var res
 @onready var hp_label = hp_bar.get_node("Label")
 @onready var mana_bar = $ManaBar
 @onready var mana_label = mana_bar.get_node("Label")
-@onready var mouse_area = $"/root/Battle/MouseArea"
+
+var hovering = false
 
 signal mouse_exit
+signal selected
 
 func _ready():
 	$SelectLabel.hide()
@@ -42,20 +44,21 @@ func set_mana(mana):
 	mana_label.text = str(mana)
 
 func _on_area_2d_area_entered(area):
-	if area == mouse_area:
+	if area.is_in_group("mouse_area"):
+		hovering = true
 		start_hover()
-		battle.selected_display = res
-		await mouse_exit
-		stop_hover()
-		battle.selected_display = null
 
 func _on_area_2d_area_exited(area):
-	if area == mouse_area:
-		emit_signal("mouse_exit")
+	if area.is_in_group("mouse_area"):
+		hovering = false
+		stop_hover()
 
 func _input(event):
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
-		print("dgkjdgj") #!!!!!!!!!!!!!!!!!
+		if battle.selecting && battle.selected_display() == self:
+			var action_box = battle.get_node("ActionBox")
+			action_box.target = self
+			action_box.emit_signal("selected")
 
 func start_hover():
 	if battle.selecting == false:

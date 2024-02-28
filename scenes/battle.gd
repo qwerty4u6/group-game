@@ -22,7 +22,6 @@ var characters = []
 var current_turn = -1
 var current_character = null
 var selecting = false
-var selected_display = null
 
 signal textbox_closed
 
@@ -97,3 +96,9 @@ func next_turn():
 	current_turn += 1
 	current_character = characters[current_turn % 6]
 	$ActionBox.to_action_box(current_character)
+
+func selected_display():
+	for disp in members:
+		if disp.hovering == true:
+			return disp
+	return null
