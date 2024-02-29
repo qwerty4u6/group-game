@@ -22,7 +22,7 @@ level_curve = {
 }
 skills = [{
 "applies": ["damage", -1, 2],
-"message": "%d threw Throwing Stars!",
+"message": "%s threw Throwing Stars at %s!",
 "name": "Katana Slash",
 "target": "enemy",
 "unlocked_at": 1
