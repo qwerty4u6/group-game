@@ -92,4 +92,7 @@ func prepare_skill(i):
 	await selected
 	battle.selecting = false
 	var disp = battle.selected_display()
-	print(skill.message % [character.name_text, target.name])  # i hatetetetnehg bghgidit godot
+	
+	show_text(skill.message % [character.name_text, target.res.name])
+	await textbox_closed
+	battle.next_turn()

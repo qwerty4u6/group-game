@@ -1,0 +1,391 @@
+[gd_scene load_steps=13 format=3 uid="uid://hdpf0cdpojrb"]
+
+[ext_resource type="StyleBox" uid="uid://df80uuyvx30ud" path="res://resources/ui/standard_panel.tres" id="1_hr8em"]
+[ext_resource type="FontFile" uid="uid://cc11lnvwh7ek2" path="res://assets/fonts/manaspace.ttf" id="2_8ropt"]
+[ext_resource type="Script" path="res://scenes/action_box.gd" id="2_k6yx4"]
+[ext_resource type="StyleBox" uid="uid://cn8okr5ek2bjv" path="res://resources/ui/clear_panel.tres" id="4_768yw"]
+[ext_resource type="Texture2D" uid="uid://dadylq3c81588" path="res://assets/sprites/placeholder 1.png" id="4_jxhro"]
+[ext_resource type="Texture2D" uid="uid://vf0notos07xy" path="res://assets/sprites/placeholder 3.png" id="5_tm4qg"]
+[ext_resource type="Texture2D" uid="uid://bdy44wh6xar84" path="res://assets/sprites/placeholder 2.png" id="6_1cy2g"]
+[ext_resource type="Texture2D" uid="uid://ci20nsbghq2yj" path="res://assets/sprites/divider.png" id="8_kootn"]
+
+[sub_resource type="Animation" id="Animation_10mip"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("NextLabel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_1hdsq"]
+resource_name = "next arrow"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("NextLabel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ij702"]
+_data = {
+"RESET": SubResource("Animation_10mip"),
+"next arrow": SubResource("Animation_1hdsq")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7vbk5"]
+bg_color = Color(0.101961, 0.101961, 0.101961, 0)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.901961, 0.901961, 0.901961, 1)
+
+[node name="ActionBox" type="Panel"]
+offset_right = 1188.0
+offset_bottom = 184.0
+theme_override_styles/panel = ExtResource("1_hr8em")
+script = ExtResource("2_k6yx4")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../MarginContainer/TextBox")
+libraries = {
+"": SubResource("AnimationLibrary_ij702")
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 6
+theme_override_constants/margin_bottom = 6
+
+[node name="TextBox" type="Panel" parent="MarginContainer"]
+visible = false
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_7vbk5")
+
+[node name="NextLabel" type="Label" parent="MarginContainer/TextBox"]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+offset_left = 1125.0
+offset_top = 88.0
+offset_right = 1173.0
+offset_bottom = 203.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("2_8ropt")
+theme_override_font_sizes/font_size = 56
+text = ">
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/TextBox"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 48
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 48
+theme_override_constants/margin_bottom = 30
+
+[node name="Label" type="Label" parent="MarginContainer/TextBox/MarginContainer"]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("2_8ropt")
+theme_override_font_sizes/font_size = 30
+text = "enemy name attacked!"
+autowrap_mode = 1
+
+[node name="Timer" type="Timer" parent="MarginContainer/TextBox/MarginContainer/Label"]
+wait_time = 0.05
+
+[node name="ActionBox" type="Panel" parent="MarginContainer"]
+visible = false
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_7vbk5")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/ActionBox"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 48
+theme_override_constants/margin_top = 9
+theme_override_constants/margin_right = 48
+theme_override_constants/margin_bottom = 9
+
+[node name="MainContainer" type="Panel" parent="MarginContainer/ActionBox/MarginContainer"]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("4_768yw")
+
+[node name="SkillsContainer" type="Panel" parent="MarginContainer/ActionBox/MarginContainer/MainContainer"]
+layout_mode = 0
+offset_right = 390.0
+offset_bottom = 154.0
+theme_override_styles/panel = ExtResource("4_768yw")
+
+[node name="Skill1" type="TextureButton" parent="MarginContainer/ActionBox/MarginContainer/MainContainer/SkillsContainer"]
+layout_mode = 0
+offset_right = 192.0
+offset_bottom = 74.0
+texture_normal = ExtResource("4_jxhro")
+texture_pressed = ExtResource("5_tm4qg")
+texture_hover = ExtResource("6_1cy2g")
+stretch_mode = 0
+
+[node name="Skill2" type="TextureButton" parent="MarginContainer/ActionBox/MarginContainer/MainContainer/SkillsContainer"]
+layout_mode = 0
+offset_left = 198.0
+offset_right = 390.0
+offset_bottom = 74.0
+texture_normal = ExtResource("4_jxhro")
+texture_pressed = ExtResource("5_tm4qg")
+texture_hover = ExtResource("6_1cy2g")
+stretch_mode = 0
+
+[node name="Skill3" type="TextureButton" parent="MarginContainer/ActionBox/MarginContainer/MainContainer/SkillsContainer"]
+layout_mode = 0
+offset_top = 80.0
+offset_right = 192.0
+offset_bottom = 154.0
+texture_normal = ExtResource("4_jxhro")
+texture_pressed = ExtResource("5_tm4qg")
+texture_hover = ExtResource("6_1cy2g")
+stretch_mode = 0
+
+[node name="Skill4" type="TextureButton" parent="MarginContainer/ActionBox/MarginContainer/MainContainer/SkillsContainer"]
+layout_mode = 0
+offset_left = 198.0
+offset_top = 80.0
+offset_right = 390.0
+offset_bottom = 154.0
+texture_normal = ExtResource("4_jxhro")
+texture_pressed = ExtResource("5_tm4qg")
+texture_hover = ExtResource("6_1cy2g")
+stretch_mode = 0
+
+[node name="MiscContainer" type="Panel" parent="MarginContainer/ActionBox/MarginContainer/MainContainer"]
+layout_mode = 0
+offset_left = 408.0
+offset_right = 672.0
+offset_bottom = 154.0
+theme_override_styles/panel = ExtResource("4_768yw")
+
+[node name="Defend" type="TextureButton" parent="MarginContainer/ActionBox/MarginContainer/MainContainer/MiscContainer"]
+layout_mode = 0
+offset_top = 80.0
+offset_right = 129.0
+offset_bottom = 154.0
+texture_normal = ExtResource("4_jxhro")
+texture_pressed = ExtResource("5_tm4qg")
+texture_hover = ExtResource("6_1cy2g")
+stretch_mode = 0
+
+[node name="Run" type="TextureButton" parent="MarginContainer/ActionBox/MarginContainer/MainContainer/MiscContainer"]
+layout_mode = 0
+offset_left = 135.0
+offset_top = 80.0
+offset_right = 264.0
+offset_bottom = 154.0
+texture_normal = ExtResource("4_jxhro")
+texture_pressed = ExtResource("5_tm4qg")
+texture_hover = ExtResource("6_1cy2g")
+stretch_mode = 0
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/ActionBox/MarginContainer/MainContainer/MiscContainer"]
+layout_mode = 0
+offset_right = 74.0
+offset_bottom = 74.0
+texture = ExtResource("4_jxhro")
+
+[node name="NameLabel" type="Label" parent="MarginContainer/ActionBox/MarginContainer/MainContainer/MiscContainer"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 74.0
+offset_top = -1.0
+offset_bottom = -81.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("2_8ropt")
+theme_override_font_sizes/font_size = 20
+text = "characternam"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ItemsContainer" type="Panel" parent="MarginContainer/ActionBox/MarginContainer/MainContainer"]
+layout_mode = 0
+offset_left = 690.0
+offset_right = 1080.0
+offset_bottom = 154.0
+theme_override_styles/panel = ExtResource("4_768yw")
+
+[node name="Item1" type="TextureButton" parent="MarginContainer/ActionBox/MarginContainer/MainContainer/ItemsContainer"]
+layout_mode = 0
+offset_right = 192.0
+offset_bottom = 34.0
+texture_normal = ExtResource("4_jxhro")
+texture_pressed = ExtResource("5_tm4qg")
+texture_hover = ExtResource("6_1cy2g")
+stretch_mode = 0
+
+[node name="Item2" type="TextureButton" parent="MarginContainer/ActionBox/MarginContainer/MainContainer/ItemsContainer"]
+layout_mode = 0
+offset_left = 198.0
+offset_right = 390.0
+offset_bottom = 34.0
+texture_normal = ExtResource("4_jxhro")
+texture_pressed = ExtResource("5_tm4qg")
+texture_hover = ExtResource("6_1cy2g")
+stretch_mode = 0
+
+[node name="Item3" type="TextureButton" parent="MarginContainer/ActionBox/MarginContainer/MainContainer/ItemsContainer"]
+layout_mode = 0
+offset_top = 40.0
+offset_right = 192.0
+offset_bottom = 74.0
+texture_normal = ExtResource("4_jxhro")
+texture_pressed = ExtResource("5_tm4qg")
+texture_hover = ExtResource("6_1cy2g")
+stretch_mode = 0
+
+[node name="Item4" type="TextureButton" parent="MarginContainer/ActionBox/MarginContainer/MainContainer/ItemsContainer"]
+layout_mode = 0
+offset_left = 198.0
+offset_top = 40.0
+offset_right = 390.0
+offset_bottom = 74.0
+texture_normal = ExtResource("4_jxhro")
+texture_pressed = ExtResource("5_tm4qg")
+texture_hover = ExtResource("6_1cy2g")
+stretch_mode = 0
+
+[node name="Item5" type="TextureButton" parent="MarginContainer/ActionBox/MarginContainer/MainContainer/ItemsContainer"]
+layout_mode = 0
+offset_top = 80.0
+offset_right = 192.0
+offset_bottom = 114.0
+texture_normal = ExtResource("4_jxhro")
+texture_pressed = ExtResource("5_tm4qg")
+texture_hover = ExtResource("6_1cy2g")
+stretch_mode = 0
+
+[node name="Item6" type="TextureButton" parent="MarginContainer/ActionBox/MarginContainer/MainContainer/ItemsContainer"]
+layout_mode = 0
+offset_left = 198.0
+offset_top = 80.0
+offset_right = 390.0
+offset_bottom = 114.0
+texture_normal = ExtResource("4_jxhro")
+texture_pressed = ExtResource("5_tm4qg")
+texture_hover = ExtResource("6_1cy2g")
+stretch_mode = 0
+
+[node name="Item7" type="TextureButton" parent="MarginContainer/ActionBox/MarginContainer/MainContainer/ItemsContainer"]
+layout_mode = 0
+offset_top = 120.0
+offset_right = 192.0
+offset_bottom = 154.0
+texture_normal = ExtResource("4_jxhro")
+texture_pressed = ExtResource("5_tm4qg")
+texture_hover = ExtResource("6_1cy2g")
+stretch_mode = 0
+
+[node name="Item8" type="TextureButton" parent="MarginContainer/ActionBox/MarginContainer/MainContainer/ItemsContainer"]
+layout_mode = 0
+offset_left = 198.0
+offset_top = 120.0
+offset_right = 390.0
+offset_bottom = 154.0
+texture_normal = ExtResource("4_jxhro")
+texture_pressed = ExtResource("5_tm4qg")
+texture_hover = ExtResource("6_1cy2g")
+stretch_mode = 0
+
+[node name="Divider" type="TextureRect" parent="MarginContainer/ActionBox/MarginContainer/MainContainer"]
+layout_mode = 0
+offset_left = 396.0
+offset_right = 402.0
+offset_bottom = 154.0
+texture = ExtResource("8_kootn")
+
+[node name="Divider2" type="TextureRect" parent="MarginContainer/ActionBox/MarginContainer/MainContainer"]
+layout_mode = 0
+offset_left = 678.0
+offset_right = 684.0
+offset_bottom = 154.0
+texture = ExtResource("8_kootn")
+
+[node name="BackBox" type="Panel" parent="MarginContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_7vbk5")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/BackBox"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 48
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 48
+theme_override_constants/margin_bottom = 30
+
+[node name="MainContainer" type="Panel" parent="MarginContainer/BackBox/MarginContainer"]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("4_768yw")
+
+[node name="Back" type="TextureButton" parent="MarginContainer/BackBox/MarginContainer/MainContainer"]
+layout_mode = 2
+offset_left = 466.0
+offset_top = 19.0
+offset_right = 614.0
+offset_bottom = 93.0
+texture_normal = ExtResource("4_jxhro")
+texture_pressed = ExtResource("5_tm4qg")
+texture_hover = ExtResource("6_1cy2g")
+stretch_mode = 0
+
+[node name="EmptyBox" type="Panel" parent="MarginContainer"]
+visible = false
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_7vbk5")
+
+[connection signal="timeout" from="MarginContainer/TextBox/MarginContainer/Label/Timer" to="." method="_on_timer_timeout"]
+[connection signal="pressed" from="MarginContainer/ActionBox/MarginContainer/MainContainer/SkillsContainer/Skill1" to="." method="_on_skill_1_pressed"]
+[connection signal="pressed" from="MarginContainer/ActionBox/MarginContainer/MainContainer/SkillsContainer/Skill2" to="." method="_on_skill_2_pressed"]
+[connection signal="pressed" from="MarginContainer/ActionBox/MarginContainer/MainContainer/SkillsContainer/Skill3" to="." method="_on_skill_3_pressed"]
+[connection signal="pressed" from="MarginContainer/ActionBox/MarginContainer/MainContainer/SkillsContainer/Skill4" to="." method="_on_skill_4_pressed"]
+[connection signal="pressed" from="MarginContainer/BackBox/MarginContainer/MainContainer/Back" to="." method="_on_back_pressed"]

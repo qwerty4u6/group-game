@@ -68,7 +68,7 @@ func _ready():
 		var disp = char_stat_display_scene.instantiate()
 		members.push_back(disp)
 		add_child(disp)
-		disp.init(enemy_resources[i])
+		disp.init(enemy_resources[i])                             #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 		disp.position = Vector2(984, offset + i * 138)
 		
 		var char = battle_character_scene.instantiate() 
