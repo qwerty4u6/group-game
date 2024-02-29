@@ -20,14 +20,13 @@ func _ready():
 
 func init(member):
 	res = member
-	get_node("NameLabel").text = res.name
+	get_node("NameLabel").text = res.name_text
 	get_node("LevelLabel").text = "lvl. " + str(res.level)
 	get_node("TextureRect").texture = res.texture
 	set_max_hp(res.max_hp)
 	set_hp(res.hp)
 	set_max_mana(res.max_mana)
 	set_mana(res.mana)
-	print(res)
 
 func set_max_hp(hp):
 	hp_bar.max_value = hp

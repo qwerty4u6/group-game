@@ -1,9 +1,17 @@
 extends Control
 
+const team_member_positions = [
+	Vector2(308, 592),
+	Vector2(252, 660),
+	Vector2(340, 708),
+	Vector2(892, 592),
+	Vector2(948, 660),
+	Vector2(860, 708),
+]
+
 var members = []
 
 @onready var data_container = preload("res://scenes/character_data_container.tscn")
-
 @onready var char_stat_display_scene = preload("res://scenes/char_stat_display.tscn")
 @onready var battle_character_scene = preload("res://scenes/battle_character.tscn")
 
@@ -17,6 +25,7 @@ var members = []
 	load("res://resources/enemy characters/placeholder enemy.tres"),
 	load("res://resources/enemy characters/placeholder enemy.tres")
 ]
+var team = []
 var enemies = []
 var characters = []
 var current_turn = -1
@@ -26,71 +35,53 @@ var selecting = false
 signal textbox_closed
 
 func _ready():
-	for member in team_resources:
+	for member in team_resources:                #   add character data to team and enemies nodes
 		var new = data_container.instantiate()
 		new.init(member)
 		$Team.add_child(new)
 		characters.push_back(new)
+	team = $Team.get_children()
+	
 	for member in enemy_resources:
 		var new = data_container.instantiate()
 		new.init(member)
 		$Enemies.add_child(new)
 		characters.push_back(new)
+	enemies = $Enemies.get_children()
 	
-	var team_member_positions = [
-		Vector2(308, 592),
-		Vector2(252, 660),
-		Vector2(340, 708),
-	]
-	var offset = (806 - team_resources.size() * 138) / 2
-	var i = 0
-	for member in team_resources.size():
+	
+	var offset = (806 - team.size() * 138) / 2
+	for i in team.size():
 		var disp = char_stat_display_scene.instantiate()
 		members.push_back(disp)
 		add_child(disp)
-		disp.init(team_resources[i])
+		disp.init(team[i])
 		disp.position = Vector2(6, offset + i * 138)
 		
 		var char = battle_character_scene.instantiate() 
 		add_child(char)
 		char.init(disp)
 		char.position = team_member_positions[i]
-		
-		i += 1
 	
-	team_member_positions = [
-		Vector2(892, 592),
-		Vector2(948, 660),
-		Vector2(860, 708),
-	]
-	i = 0
-	for member in enemy_resources.size():
+	offset = (806 - enemies.size() * 138) / 2
+	for i in enemies.size():
 		var disp = char_stat_display_scene.instantiate()
 		members.push_back(disp)
 		add_child(disp)
-		disp.init(enemy_resources[i])                             #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+		disp.init(enemies[i])
 		disp.position = Vector2(984, offset + i * 138)
 		
 		var char = battle_character_scene.instantiate() 
 		add_child(char)
 		char.init(disp)
-		char.position = team_member_positions[i]
-		
-		i += 1
+		char.position = team_member_positions[i + 3]
 	
 	$ActionBox.show_text("blabla appeared text")
 	await $ActionBox.textbox_closed
 	next_turn()
 
 func _input(event):
-	if event.is_action_pressed("move_up"):
-		$ActionBox.show_text("helgssghdghdhdsghlo")
-		await $ActionBox.textbox_closed
-		$ActionBox.show_text("works i think")
-		await $ActionBox.textbox_closed
-		$ActionBox.show_text("yipeeee")
-	if event.is_action_pressed("move_down"):
-		next_turn()
+	pass
 
 func next_turn():
 	current_turn += 1

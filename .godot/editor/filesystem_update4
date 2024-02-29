@@ -1,7 +1,10 @@
+res://scenes/main.tscn
 res://scenes/battle.tscn
 res://scenes/action_box.tscn
-res://scenes/main.tscn
 res://scenes/char_stat_display.tscn
 res://scenes/player.tscn
-res://scenes/action_box.gd
+res://scenes/battle_character.tscn
+res://scenes/character_data_container.tscn
 res://scenes/battle.gd
+res://scenes/char_stat_display.gd
+res://scenes/action_box.gd

@@ -93,6 +93,6 @@ func prepare_skill(i):
 	battle.selecting = false
 	var disp = battle.selected_display()
 	
-	show_text(skill.message % [character.name_text, target.res.name])
+	show_text(skill.message % [character.name_text, target.res.name_text])
 	await textbox_closed
 	battle.next_turn()
