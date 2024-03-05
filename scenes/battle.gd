@@ -85,6 +85,9 @@ func _input(event):
 
 func next_turn():
 	current_turn += 1
+	print(current_turn)
+	if current_turn >= team.size():
+		current_turn = 0
 	current_character = characters[current_turn % 6]
 	$ActionBox.to_action_box(current_character)
 

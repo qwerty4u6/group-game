@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://ckgui2apijnac"]
+[gd_scene load_steps=15 format=3 uid="uid://ckgui2apijnac"]
 
 [ext_resource type="Script" path="res://scenes/char_stat_display.gd" id="1_1g6ot"]
 [ext_resource type="StyleBox" uid="uid://df80uuyvx30ud" path="res://resources/ui/standard_panel.tres" id="1_12g0m"]
@@ -66,14 +66,6 @@ _data = {
 "selection": SubResource("Animation_rhfc5")
 }
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_63oj4"]
-bg_color = Color(0.101961, 0.101961, 0.101961, 0)
-border_width_left = 3
-border_width_top = 3
-border_width_right = 3
-border_width_bottom = 3
-border_color = Color(0.901961, 0.901961, 0.901961, 1)
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wnmkl"]
 bg_color = Color(0.388235, 0.027451, 0.027451, 1)
 
@@ -96,6 +88,22 @@ border_width_right = 3
 border_width_bottom = 3
 border_color = Color(0.0784314, 0.309804, 0.34902, 0.996078)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_63oj4"]
+bg_color = Color(0.101961, 0.101961, 0.101961, 0)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.901961, 0.901961, 0.901961, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tinjq"]
+bg_color = Color(0, 0, 0, 0.709804)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.901961, 0.901961, 0.901961, 0)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p7nxx"]
 size = Vector2(210, 132)
 
@@ -109,22 +117,6 @@ script = ExtResource("1_1g6ot")
 libraries = {
 "": SubResource("AnimationLibrary_kuj6w")
 }
-
-[node name="MarginContainer" type="MarginContainer" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 6
-theme_override_constants/margin_top = 6
-theme_override_constants/margin_right = 6
-theme_override_constants/margin_bottom = 6
-
-[node name="Border" type="Panel" parent="MarginContainer"]
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_63oj4")
 
 [node name="NameLabel" type="Label" parent="."]
 layout_mode = 1
@@ -225,14 +217,51 @@ offset_right = 55.0
 offset_bottom = 55.0
 texture = ExtResource("3_ponwi")
 
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 6
+theme_override_constants/margin_bottom = 6
+
+[node name="Border" type="Panel" parent="MarginContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_63oj4")
+
+[node name="DeathThingy" type="Panel" parent="MarginContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_tinjq")
+
+[node name="Label" type="Label" parent="MarginContainer/DeathThingy"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 6.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("2_hwgik")
+text = "X
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="SelectLabel" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 125.0
-offset_right = 3275.0
-offset_bottom = 1980.0
+offset_right = 4745.0
+offset_bottom = 2904.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
@@ -249,8 +278,8 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -125.0
-offset_right = 3025.0
-offset_bottom = 1980.0
+offset_right = 4495.0
+offset_bottom = 2904.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
@@ -262,6 +291,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Area2D" type="Area2D" parent="."]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(105, 66)

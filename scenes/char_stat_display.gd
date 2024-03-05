@@ -6,6 +6,7 @@ var res
 @onready var hp_label = hp_bar.get_node("Label")
 @onready var mana_bar = $ManaBar
 @onready var mana_label = mana_bar.get_node("Label")
+@onready var death_thingy = get_node("MarginContainer/DeathThingy")
 
 var hovering = false
 
@@ -17,6 +18,7 @@ func _ready():
 	$SelectLabel.size = Vector2(210, 132) # why does it keep resizing should i have to do this
 	$SelectLabel2.hide()
 	$SelectLabel2.size = Vector2(210, 132)
+	death_thingy.hide()
 
 func init(member):
 	res = member
@@ -41,6 +43,21 @@ func set_max_mana(mana):
 func set_mana(mana):
 	mana_bar.value = mana
 	mana_label.text = str(mana)
+
+func damage(amt):
+	res.hp -= amt
+	set_hp(res.hp)
+	if res.hp <= 0:
+		kill()
+
+func kill():
+	set_hp(0)
+	set_mana(0)
+	death_thingy.show()
+	hp_label.text = ""
+	mana_label.text = ""
+	battle.characters.erase(res)
+	print(battle.characters)
 
 func _on_area_2d_area_entered(area):
 	if area.is_in_group("mouse_area"):

@@ -92,7 +92,12 @@ func prepare_skill(i):
 	await selected
 	battle.selecting = false
 	var disp = battle.selected_display()
+	disp.stop_hover()
 	
+	print(skill)
+	print(character.name_text, ", ", character.damage)
+	if skill.applies[0] == "damage":
+		disp.damage((character.damage + skill.applies[1]) * skill.applies[2])
 	show_text(skill.message % [character.name_text, target.res.name_text])
 	await textbox_closed
 	battle.next_turn()
