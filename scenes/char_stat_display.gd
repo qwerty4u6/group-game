@@ -9,6 +9,7 @@ var res
 @onready var death_thingy = get_node("MarginContainer/DeathThingy")
 
 var hovering = false
+var dead = false
 
 signal mouse_exit
 signal selected
@@ -51,13 +52,13 @@ func damage(amt):
 		kill()
 
 func kill():
+	dead = true
 	set_hp(0)
 	set_mana(0)
 	death_thingy.show()
 	hp_label.text = ""
 	mana_label.text = ""
 	battle.characters.erase(res)
-	print(battle.characters)
 
 func _on_area_2d_area_entered(area):
 	if area.is_in_group("mouse_area"):
@@ -71,17 +72,16 @@ func _on_area_2d_area_exited(area):
 
 func _input(event):
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
-		if battle.selecting && battle.selected_display() == self:
+		if battle.selecting && battle.selected_display() == self && battle.select_target == res.type && !dead:
 			var action_box = battle.get_node("ActionBox")
 			action_box.target = self
 			action_box.emit_signal("selected")
 
 func start_hover():
-	if battle.selecting == false:
-		return
-	$AnimationPlayer.play("selection")
-	$SelectLabel.show()
-	$SelectLabel2.show()
+	if battle.selecting && battle.select_target == res.type && !dead:
+		$AnimationPlayer.play("selection")
+		$SelectLabel.show()
+		$SelectLabel2.show()
 
 func stop_hover():
 	$SelectLabel.hide()

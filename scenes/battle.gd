@@ -31,12 +31,14 @@ var characters = []
 var current_turn = -1
 var current_character = null
 var selecting = false
+var select_target = null
 
 signal textbox_closed
 
 func _ready():
 	for member in team_resources:                #   add character data to team and enemies nodes
 		var new = data_container.instantiate()
+		new.type = "team"
 		new.init(member)
 		$Team.add_child(new)
 		characters.push_back(new)
@@ -44,6 +46,7 @@ func _ready():
 	
 	for member in enemy_resources:
 		var new = data_container.instantiate()
+		new.type = "enemy"
 		new.init(member)
 		$Enemies.add_child(new)
 		characters.push_back(new)

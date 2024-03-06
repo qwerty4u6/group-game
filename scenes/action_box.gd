@@ -89,6 +89,7 @@ func prepare_skill(i):
 	battle.selecting = true
 	var character = battle.current_character
 	var skill = character.skills[i - 1]
+	battle.select_target = skill.target
 	await selected
 	battle.selecting = false
 	var disp = battle.selected_display()
