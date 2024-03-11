@@ -62,12 +62,10 @@ func kill():
 
 func _on_area_2d_area_entered(area):
 	if area.is_in_group("mouse_area"):
-		hovering = true
 		start_hover()
 
 func _on_area_2d_area_exited(area):
 	if area.is_in_group("mouse_area"):
-		hovering = false
 		stop_hover()
 
 func _input(event):
@@ -78,11 +76,13 @@ func _input(event):
 			action_box.emit_signal("selected")
 
 func start_hover():
+	hovering = true
 	if battle.selecting && battle.select_target == res.type && !dead:
 		$AnimationPlayer.play("selection")
 		$SelectLabel.show()
 		$SelectLabel2.show()
 
 func stop_hover():
+	hovering = false
 	$SelectLabel.hide()
 	$SelectLabel2.hide()

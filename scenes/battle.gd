@@ -1,12 +1,12 @@
 extends Control
 
 const team_member_positions = [
-	Vector2(308, 592),
-	Vector2(252, 660),
-	Vector2(340, 708),
-	Vector2(892, 592),
-	Vector2(948, 660),
-	Vector2(860, 708),
+	Vector2(360, 592),
+	Vector2(300, 660),
+	Vector2(388, 708),
+	Vector2(840, 592),
+	Vector2(900, 660),
+	Vector2(812, 708),
 ]
 
 var members = []
@@ -78,6 +78,7 @@ func _ready():
 		add_child(char)
 		char.init(disp)
 		char.position = team_member_positions[i + 3]
+		char.get_node("AnimatedSprite2D").flip_h = true
 	
 	$ActionBox.show_text("blabla appeared text")
 	await $ActionBox.textbox_closed
