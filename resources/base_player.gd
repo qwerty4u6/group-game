@@ -2,6 +2,7 @@ extends Resource
 
 @export var name: String = "Player"
 @export var texture: Texture = null
+@export var sprite: String = "res://scenes/ninja_1_animation.tscn"
 
 @export var level: int = 1
 @export var xp_until_next: float = 5.0

@@ -26,7 +26,9 @@ var members = []
 	load("res://resources/enemy characters/placeholder enemy.tres")
 ]
 var team = []
+var team_sprites = []
 var enemies = []
+var enemy_sprites = []
 var characters = []
 var current_turn = -1
 var current_character = null
@@ -42,6 +44,7 @@ func _ready():
 		new.init(member)
 		$Team.add_child(new)
 		characters.push_back(new)
+		team_sprites.push_back(new.sprite)
 	team = $Team.get_children()
 	
 	for member in enemy_resources:
@@ -50,6 +53,7 @@ func _ready():
 		new.init(member)
 		$Enemies.add_child(new)
 		characters.push_back(new)
+		enemy_sprites.push_back(new.sprite)
 	enemies = $Enemies.get_children()
 	
 	
@@ -65,6 +69,9 @@ func _ready():
 		add_child(char)
 		char.init(disp)
 		char.position = team_member_positions[i]
+		var sprite = load(team_sprites[i]).instantiate()
+		char.add_child(sprite)
+		sprite.play("idle")
 	
 	offset = (806 - enemies.size() * 138) / 2
 	for i in enemies.size():
@@ -78,7 +85,10 @@ func _ready():
 		add_child(char)
 		char.init(disp)
 		char.position = team_member_positions[i + 3]
-		char.get_node("AnimatedSprite2D").flip_h = true
+		var sprite = load(enemy_sprites[i]).instantiate()
+		char.add_child(sprite)
+		sprite.play("idle")
+		sprite.flip_h = true
 	
 	$ActionBox.show_text("blabla appeared text")
 	await $ActionBox.textbox_closed
