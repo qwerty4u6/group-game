@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://co4vuaero1f1i"]
+
+[ext_resource type="Texture2D" uid="uid://dd5uvqfdvfipe" path="res://assets/sprites/fisherman idle.png" id="1_w2dss"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jkc4g"]
+atlas = ExtResource("1_w2dss")
+region = Rect2(0, 0, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j34j0"]
+atlas = ExtResource("1_w2dss")
+region = Rect2(16, 0, 16, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d83u4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jkc4g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j34j0")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 4.0
+}]
+
+[node name="Ninja2Animation" type="AnimatedSprite2D"]
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_d83u4")
+animation = &"idle"
+frame_progress = 0.902259

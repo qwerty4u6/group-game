@@ -16,14 +16,14 @@ var members = []
 @onready var battle_character_scene = preload("res://scenes/battle_character.tscn")
 
 @onready var team_resources = [
-	load("res://resources/player characters/ninja.tres"),
-	load("res://resources/player characters/ninja2.tres"),
-	load("res://resources/player characters/ninja3.tres")
+	load("res://resources/player characters/isana.tres"),
+	load("res://resources/player characters/kousuke.tres"),
+	load("res://resources/player characters/yuuna.tres")
 ]
 @onready var enemy_resources = [
-	load("res://resources/enemy characters/placeholder enemy.tres"),
-	load("res://resources/enemy characters/placeholder enemy.tres"),
-	load("res://resources/enemy characters/placeholder enemy.tres")
+	load("res://resources/enemy characters/fisherman.tres"),
+	load("res://resources/enemy characters/sushi chef.tres"),
+	load("res://resources/enemy characters/fisherman.tres")
 ]
 var team = []
 var team_sprites = []
@@ -53,7 +53,7 @@ func _ready():
 		new.init(member)
 		$Enemies.add_child(new)
 		characters.push_back(new)
-		enemy_sprites.push_back(new.sprite)
+		enemy_sprites.push_back([new.sprite, new.flip_h])
 	enemies = $Enemies.get_children()
 	
 	
@@ -85,10 +85,10 @@ func _ready():
 		add_child(char)
 		char.init(disp)
 		char.position = team_member_positions[i + 3]
-		var sprite = load(enemy_sprites[i]).instantiate()
+		var sprite = load(enemy_sprites[i][0]).instantiate()
 		char.add_child(sprite)
 		sprite.play("idle")
-		sprite.flip_h = true
+		sprite.flip_h = enemy_sprites[i][1]
 	
 	$ActionBox.show_text("blabla appeared text")
 	await $ActionBox.textbox_closed

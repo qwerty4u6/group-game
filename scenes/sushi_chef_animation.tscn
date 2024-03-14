@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://boktmbys67xi5"]
+
+[ext_resource type="Texture2D" uid="uid://bv2ef2hfk5i6p" path="res://assets/sprites/sushi chef idle.png" id="1_tt7y4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b44f0"]
+atlas = ExtResource("1_tt7y4")
+region = Rect2(0, 0, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s5d06"]
+atlas = ExtResource("1_tt7y4")
+region = Rect2(16, 0, 16, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o8u0s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b44f0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s5d06")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 4.0
+}]
+
+[node name="Ninja2Animation" type="AnimatedSprite2D"]
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_o8u0s")
+animation = &"idle"
+frame_progress = 0.904775

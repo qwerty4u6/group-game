@@ -3,6 +3,7 @@ extends Resource
 @export var name: String = "Enemy"
 @export var texture: Texture = null
 @export var sprite: String = "res://scenes/ninja_1_animation.tscn"
+@export var flip_h: bool = false
 
 @export var level: int = 1
 @export var max_hp: int = 25

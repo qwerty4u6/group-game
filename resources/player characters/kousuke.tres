@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("1_y8am8")
-name = "tank"
+name = "Kousuke"
 texture = ExtResource("2_g5072")
 sprite = "res://scenes/ninja_2_animation.tscn"
 level = 1

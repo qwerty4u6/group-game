@@ -1,0 +1,25 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://cfsux1omat0yn"]
+
+[ext_resource type="Script" path="res://resources/base_enemy.gd" id="1_x1c46"]
+[ext_resource type="Texture2D" uid="uid://bdy44wh6xar84" path="res://assets/sprites/placeholder 2.png" id="2_xv6lr"]
+
+[resource]
+script = ExtResource("1_x1c46")
+name = "Fisherman"
+texture = ExtResource("2_xv6lr")
+sprite = "res://scenes/fisherman_animation.tscn"
+flip_h = false
+level = 4
+max_hp = 12
+hp = 12
+max_mana = 25
+mana = 25
+damage = 2
+skills = [{
+"applies": ["damage", -1, 2],
+"message": "%d threw Throwing Stars!",
+"name": "jkgdjg",
+"target": "enemy",
+"unlocked_at": 1
+}]
+skill_order = [0]
