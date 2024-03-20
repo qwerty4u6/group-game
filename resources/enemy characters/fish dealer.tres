@@ -1,0 +1,25 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://uyo7ot6iqbnd"]
+
+[ext_resource type="Script" path="res://resources/base_enemy.gd" id="1_gs7mm"]
+[ext_resource type="Texture2D" uid="uid://bdy44wh6xar84" path="res://assets/sprites/placeholder 2.png" id="2_55xs2"]
+
+[resource]
+script = ExtResource("1_gs7mm")
+name = "Fisher Dealer"
+texture = ExtResource("2_55xs2")
+sprite = "res://scenes/fish_dealer_animation.tscn"
+flip_h = false
+level = 7
+max_hp = 12
+hp = 12
+max_mana = 25
+mana = 25
+damage = 2
+skills = [{
+"applies": ["damage", -1, 2],
+"message": "%d threw Throwing Stars!",
+"name": "jkgdjg",
+"target": "enemy",
+"unlocked_at": 1
+}]
+skill_order = [0]
