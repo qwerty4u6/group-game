@@ -21,7 +21,7 @@ var members = []
 	load("res://resources/player characters/yuuna.tres")
 ]
 @onready var enemy_resources = [
-	load("res://resources/enemy characters/fisherman.tres"),
+	load("res://resources/enemy characters/ninja.tres"),
 	load("res://resources/enemy characters/sushi chef.tres"),
 	load("res://resources/enemy characters/fisherman.tres")
 ]

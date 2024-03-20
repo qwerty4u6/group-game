@@ -1,0 +1,65 @@
+[gd_scene load_steps=10 format=3 uid="uid://di14p2k51vgsi"]
+
+[ext_resource type="Texture2D" uid="uid://b2x41ysetitn" path="res://assets/sprites/evil ninja idle.png" id="1_nqj6d"]
+[ext_resource type="Texture2D" uid="uid://ss1gxhx2pbqx" path="res://assets/sprites/ninja running.png" id="2_toite"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r3a4f"]
+atlas = ExtResource("1_nqj6d")
+region = Rect2(0, 0, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ixkxi"]
+atlas = ExtResource("1_nqj6d")
+region = Rect2(16, 0, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4gx0a"]
+atlas = ExtResource("2_toite")
+region = Rect2(0, 0, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eg5vf"]
+atlas = ExtResource("2_toite")
+region = Rect2(16, 0, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7c3a1"]
+atlas = ExtResource("2_toite")
+region = Rect2(0, 24, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bhtts"]
+atlas = ExtResource("2_toite")
+region = Rect2(16, 24, 16, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_n6ood"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r3a4f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ixkxi")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4gx0a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eg5vf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7c3a1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bhtts")
+}],
+"loop": true,
+"name": &"running",
+"speed": 8.0
+}]
+
+[node name="Ninja1Animation" type="AnimatedSprite2D"]
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_n6ood")
+animation = &"idle"
+frame_progress = 0.772884
