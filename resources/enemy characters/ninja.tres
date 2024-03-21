@@ -17,9 +17,9 @@ mana = 30
 damage = 2
 skills = [{
 "applies": ["damage", -1, 2],
-"message": "%d threw Throwing Stars!",
-"name": "jkgdjg",
-"target": "enemy",
+"message": "%s casted their fishing rod at %s!",
+"name": "Cast Rod",
+"target": "team",
 "unlocked_at": 1
 }]
 skill_order = [0]

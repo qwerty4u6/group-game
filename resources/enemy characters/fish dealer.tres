@@ -22,4 +22,10 @@ skills = [{
 "target": "enemy",
 "unlocked_at": 1
 }]
-skill_order = [0]
+skill_order = [{
+"applies": ["damage", -1, 2],
+"message": "%s casted their fishing rod at %s!",
+"name": "Cast Rod",
+"target": "team",
+"unlocked_at": 1
+}]

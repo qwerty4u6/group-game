@@ -8,6 +8,7 @@ script = ExtResource("1_oqi5b")
 name = "Isana"
 texture = ExtResource("2_vv4sw")
 sprite = "res://scenes/ninja_1_animation.tscn"
+flip_h = false
 level = 1
 xp_until_next = 5.0
 max_hp = 12

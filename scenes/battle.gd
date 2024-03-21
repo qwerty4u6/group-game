@@ -21,10 +21,9 @@ var members = []
 	load("res://resources/player characters/yuuna.tres")
 ]
 @onready var enemy_resources = [
-	load("res://resources/enemy characters/fish dealer.tres"),
-	load("res://resources/enemy characters/sushi chef.tres"),
-	load("res://resources/enemy characters/fisherman.tres")
-	#load("res://resources/enemy characters/ninja.tres"),
+	load("res://resources/enemy characters/fisherman.tres"),
+	load("res://resources/enemy characters/fisherman.tres"),
+	load("res://resources/enemy characters/fisherman.tres"),
 ]
 var team = []
 var team_sprites = []
@@ -39,7 +38,7 @@ var select_target = null
 signal textbox_closed
 
 func _ready():
-	for member in team_resources:                #   add character data to team and enemies nodes
+	for member in team_resources:
 		var new = data_container.instantiate()
 		new.type = "team"
 		new.init(member)
@@ -100,9 +99,19 @@ func _input(event):
 
 func next_turn():
 	current_turn += 1
-	print(current_turn)
 	if current_turn >= team.size():
+		for enemy in $Enemies.get_children():
+			if enemy.hp == 0:
+				continue
+			var skill = enemy.skills.pick_random()
+			print(skill)
+			var target = []
+			for char in team:
+				print(char.hp)
+		$ActionBox.show_text("hay")
+		await $ActionBox.textbox_closed
 		current_turn = 0
+	
 	current_character = characters[current_turn % 6]
 	$ActionBox.to_action_box(current_character)
 
