@@ -27,6 +27,7 @@ var members = []
 ]
 var team = []
 var team_sprites = []
+var team_stat_displays = []
 var enemies = []
 var enemy_sprites = []
 var characters = []
@@ -64,6 +65,7 @@ func _ready():
 		add_child(disp)
 		disp.init(team[i])
 		disp.position = Vector2(6, offset + i * 138)
+		team_stat_displays.push_front(disp)
 		
 		var char = battle_character_scene.instantiate() 
 		add_child(char)
@@ -105,9 +107,14 @@ func next_turn():
 				continue
 			var skill = enemy.skills.pick_random()
 			print(skill)
-			var target = []
-			for char in team:
-				print(char.hp)
+			var target = team_stat_displays.pick_random()
+			
+			print(target, ", ", target.res.name_text)
+			
+			if skill.applies[0] == "damage":
+				target.damage((enemy.damage + skill.applies[1]) * skill.applies[2])
+			$ActionBox.show_text(skill.message % [enemy.name_text, target.res.name_text])
+			await textbox_closed
 		$ActionBox.show_text("hay")
 		await $ActionBox.textbox_closed
 		current_turn = 0

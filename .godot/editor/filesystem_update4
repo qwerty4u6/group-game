@@ -6,6 +6,5 @@ res://scenes/char_stat_display.tscn
 res://scenes/player.tscn
 res://scenes/battle_character.tscn
 res://scenes/character_data_container.tscn
-res://scenes/battle_character.gd
-res://scenes/char_stat_display.gd
 res://scenes/battle.gd
+res://resources/player characters/isana.tres
