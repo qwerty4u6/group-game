@@ -30,6 +30,7 @@ var team_sprites = []
 var team_stat_displays = []
 var enemies = []
 var enemy_sprites = []
+var enemy_stat_displays = []
 var characters = []
 var current_turn = -1
 var current_character = null
@@ -37,6 +38,7 @@ var selecting = false
 var select_target = null
 
 signal textbox_closed
+signal done_with_enemy_turns
 
 func _ready():
 	for member in team_resources:
@@ -82,6 +84,7 @@ func _ready():
 		add_child(disp)
 		disp.init(enemies[i])
 		disp.position = Vector2(984, offset + i * 138)
+		enemy_stat_displays.push_front(disp)
 		
 		var char = battle_character_scene.instantiate() 
 		add_child(char)
@@ -99,24 +102,57 @@ func _ready():
 func _input(event):
 	pass
 
+func calc_skill_weights(skills, mana):
+	var possible_skills = []
+	for skill in skills:
+		if mana >= skill.mana_cost:
+			possible_skills.push_back(skill)
+	
+	var mana_costs = []
+	for skill in possible_skills:
+		mana_costs.push_back(ceil(sqrt(skill.mana_cost) + 0.001))
+	
+	var lcd = 1
+	for cost in mana_costs:
+		lcd *= cost
+	
+	var weight_values = []
+	for cost in mana_costs:
+		weight_values.push_back(lcd / cost)
+	
+	var skill_pool = []
+	for i in weight_values.size():
+		for a in weight_values[i]:
+			skill_pool.push_back(i)
+	
+	return skill_pool
+
+func enemy_turn(enemy):
+	var skill = enemy.skills.pick_random()
+	print(calc_skill_weights(enemy.skills, enemy.mana))
+	var target = ""
+	if skill.target == "team":
+		target = team_stat_displays.pick_random()
+	elif skill.target == "enemy":
+		target = enemy_stat_displays.pick_random()
+	
+	if skill.applies[0] == "damage":
+		target.damage((enemy.damage + skill.applies[1]) * skill.applies[2])
+	elif skill.applies[0] == "heal":
+		target.damage(-skill.applies[1])
+	
+	print()
+	
+	return skill.message % [enemy.name_text, target.res.name_text] #fix this
+
 func next_turn():
 	current_turn += 1
 	if current_turn >= team.size():
 		for enemy in $Enemies.get_children():
 			if enemy.hp == 0:
 				continue
-			var skill = enemy.skills.pick_random()
-			print(skill)
-			var target = team_stat_displays.pick_random()
-			
-			print(target, ", ", target.res.name_text)
-			
-			if skill.applies[0] == "damage":
-				target.damage((enemy.damage + skill.applies[1]) * skill.applies[2])
-			$ActionBox.show_text(skill.message % [enemy.name_text, target.res.name_text])
-			await textbox_closed
-		$ActionBox.show_text("hay")
-		await $ActionBox.textbox_closed
+			$ActionBox.show_text(enemy_turn(enemy))
+			await $ActionBox.textbox_closed
 		current_turn = 0
 	
 	current_character = characters[current_turn % 6]

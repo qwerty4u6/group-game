@@ -9,22 +9,24 @@ name = "Fisherman"
 texture = ExtResource("2_xv6lr")
 sprite = "res://scenes/fisherman_animation.tscn"
 flip_h = false
-level = 4
+level = 1
 max_hp = 12
 hp = 12
-max_mana = 25
-mana = 25
+max_mana = 10
+mana = 10
 damage = 2
 skills = [{
-"applies": ["damage", -1, 2],
+"applies": ["damage", 0, 1],
+"mana_cost": 0,
 "message": "%s casted their fishing rod at %s!",
 "name": "Cast Rod",
 "target": "team",
 "unlocked_at": 1
 }, {
-"applies": ["damage", -1, 2],
-"message": "%s used the sefvcond attack %s",
-"name": "yipeeee",
+"applies": ["damage", 2, 1],
+"mana_cost": 4,
+"message": "%s reeled their fishing rod at %s!",
+"name": "Reel Rod",
 "target": "team",
 "unlocked_at": 1
 }]

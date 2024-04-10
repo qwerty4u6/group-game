@@ -23,9 +23,10 @@ skills = [{
 "unlocked_at": 1
 }]
 skill_order = [{
-"applies": ["damage", -1, 2],
-"message": "%s casted their fishing rod at %s!",
-"name": "Cast Rod",
-"target": "team",
+"applies": ["damage", 3, 0],
+"message": "%s cooked sushi for %s!",
+"name": "Sushi Heal",
+"self_message": "%s cooked sushi for theirself!",
+"target": "enemy",
 "unlocked_at": 1
 }]

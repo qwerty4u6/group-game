@@ -1,10 +1,11 @@
-res://scenes/main.tscn
-res://resources/base_enemy.gd
 res://scenes/battle.tscn
+res://resources/base_enemy.gd
+res://scenes/battle.gd
+res://resources/enemy characters/sushi chef.tres
+res://resources/enemy characters/fisherman.tres
+res://scenes/main.tscn
 res://scenes/action_box.tscn
 res://scenes/char_stat_display.tscn
 res://scenes/player.tscn
 res://scenes/battle_character.tscn
 res://scenes/character_data_container.tscn
-res://scenes/battle.gd
-res://resources/player characters/isana.tres
