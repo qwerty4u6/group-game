@@ -1,0 +1,32 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://dk7dclhehingo"]
+
+[ext_resource type="Script" path="res://resources/base_enemy.gd" id="1_vb6ln"]
+[ext_resource type="Texture2D" uid="uid://vf0notos07xy" path="res://assets/sprites/placeholder 3.png" id="2_kardx"]
+
+[resource]
+script = ExtResource("1_vb6ln")
+name = "Sushi Chief"
+texture = ExtResource("2_kardx")
+sprite = "res://scenes/sushi_chief_animation.tscn"
+flip_h = false
+level = 4
+max_hp = 10
+hp = 10
+max_mana = 35
+mana = 35
+damage = 2
+skills = [{
+"applies": ["damage", -1, 2],
+"message": "%d threw Throwing Stars!",
+"name": "jkgdjg",
+"target": "enemy",
+"unlocked_at": 1
+}]
+skill_order = [{
+"applies": ["damage", 3, 0],
+"message": "%s cooked sushi for %s!",
+"name": "Sushi Heal",
+"self_message": "%s cooked sushi for theirself!",
+"target": "enemy",
+"unlocked_at": 1
+}]

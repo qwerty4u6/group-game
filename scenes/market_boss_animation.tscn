@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://ihgoe3kvxvjs"]
+
+[ext_resource type="Texture2D" uid="uid://dgape8c5ovq5x" path="res://assets/sprites/market boss idle.png" id="1_a5ef2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_recce"]
+atlas = ExtResource("1_a5ef2")
+region = Rect2(0, 0, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ex56q"]
+atlas = ExtResource("1_a5ef2")
+region = Rect2(16, 0, 16, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gidb1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_recce")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ex56q")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 4.0
+}]
+
+[node name="Ninja2Animation" type="AnimatedSprite2D"]
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_gidb1")
+animation = &"idle"
+frame_progress = 0.307294

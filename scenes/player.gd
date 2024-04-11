@@ -1,9 +1,11 @@
 extends Area2D
 
+var anim
+
 var velocity
 
 func _ready():
-	pass
+	anim = $Ninja1Animation
 
 func _process(delta):
 	velocity = Vector2.ZERO
@@ -16,3 +18,11 @@ func _process(delta):
 	if Input.is_action_pressed("move_right"):
 		velocity.x += 1
 	position += velocity.normalized() * 5
+	if velocity.x < 0:
+		anim.flip_h = true
+	if velocity.x > 0:
+		anim.flip_h = false
+	if velocity == Vector2.ZERO:
+		anim.play("idle")
+	else:
+		anim.play("running")
