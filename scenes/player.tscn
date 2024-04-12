@@ -1,14 +1,8 @@
-[gd_scene load_steps=20 format=3 uid="uid://ccsfmhbk5ft4g"]
+[gd_scene load_steps=18 format=3 uid="uid://ccsfmhbk5ft4g"]
 
 [ext_resource type="Texture2D" uid="uid://dqtpoe5bkwovu" path="res://assets/sprites/ninja idle.png" id="1_86a1g"]
 [ext_resource type="Script" path="res://scenes/player.gd" id="1_mk00p"]
 [ext_resource type="Texture2D" uid="uid://ss1gxhx2pbqx" path="res://assets/sprites/ninja running.png" id="2_2kfct"]
-[ext_resource type="Shader" path="res://scenes/player.gdshader" id="2_r5nr7"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_5vach"]
-shader = ExtResource("2_r5nr7")
-shader_parameter/line_color = Color(1, 1, 1, 1)
-shader_parameter/line_thickness = 1.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jtdmk"]
 atlas = ExtResource("1_86a1g")
@@ -114,7 +108,6 @@ size = Vector2(24, 52)
 script = ExtResource("1_mk00p")
 
 [node name="Ninja1Animation" type="AnimatedSprite2D" parent="."]
-material = SubResource("ShaderMaterial_5vach")
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_mxhlr")
 animation = &"idle"
