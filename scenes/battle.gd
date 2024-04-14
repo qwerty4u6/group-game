@@ -14,17 +14,12 @@ var members = []
 @onready var data_container = preload("res://scenes/character_data_container.tscn")
 @onready var char_stat_display_scene = preload("res://scenes/char_stat_display.tscn")
 @onready var battle_character_scene = preload("res://scenes/battle_character.tscn")
+@onready var resources = preload("res://resources/current_characters.tres")
+var team_resources = []
+var enemy_resources = []
 
-@onready var team_resources = [
-	load("res://resources/player characters/isana.tres"),
-	load("res://resources/player characters/kousuke.tres"),
-	load("res://resources/player characters/yuuna.tres")
-]
-@onready var enemy_resources = [
-	load("res://resources/enemy characters/fisherman.tres"),
-	load("res://resources/enemy characters/fisherman.tres"),
-	load("res://resources/enemy characters/fisherman.tres"),
-]
+@onready var anim_player = get_node("CanvasLayer/AnimationPlayer")
+
 var team = []
 var team_sprites = []
 var team_stat_displays = []
@@ -37,10 +32,17 @@ var current_character = null
 var selecting = false
 var select_target = null
 
+signal done_fading_in
+signal done_fading_out
 signal textbox_closed
 signal done_with_enemy_turns
 
 func _ready():
+	for member in resources.team:
+		team_resources.push_back(load(member))
+	for member in resources.enemies:
+		enemy_resources.push_back(load(member))
+	
 	for member in team_resources:
 		var new = data_container.instantiate()
 		new.type = "team"
@@ -95,12 +97,11 @@ func _ready():
 		sprite.play("idle")
 		sprite.flip_h = enemy_sprites[i][1]
 	
+	anim_player.play("fade_in")
+	await done_fading_in
 	$ActionBox.show_text("blabla appeared text")
 	await $ActionBox.textbox_closed
 	next_turn()
-
-func _input(event):
-	pass
 
 func calc_skill_weights(skills, mana):
 	var possible_skills = []

@@ -1,0 +1,120 @@
+[gd_scene load_steps=7 format=3 uid="uid://dgkjynt4eft8y"]
+
+[ext_resource type="Script" path="res://scenes/TextBox.gd" id="1_yol6u"]
+[ext_resource type="FontFile" uid="uid://cc11lnvwh7ek2" path="res://assets/fonts/manaspace.ttf" id="2_42tw7"]
+
+[sub_resource type="Animation" id="Animation_10mip"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("NextLabel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_1hdsq"]
+resource_name = "next arrow"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("NextLabel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ij702"]
+_data = {
+"RESET": SubResource("Animation_10mip"),
+"next arrow": SubResource("Animation_1hdsq")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8ykw5"]
+bg_color = Color(0.101961, 0.101961, 0.101961, 0)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.901961, 0.901961, 0.901961, 1)
+
+[node name="TextBox" type="Panel"]
+offset_right = 1188.0
+offset_bottom = 184.0
+script = ExtResource("1_yol6u")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../MarginContainer/TextBox")
+libraries = {
+"": SubResource("AnimationLibrary_ij702")
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 6
+theme_override_constants/margin_bottom = 6
+
+[node name="TextBox" type="Panel" parent="MarginContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_8ykw5")
+
+[node name="NextLabel" type="Label" parent="MarginContainer/TextBox"]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+offset_left = 1125.0
+offset_top = 88.0
+offset_right = 1173.0
+offset_bottom = 203.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("2_42tw7")
+theme_override_font_sizes/font_size = 56
+text = ">
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/TextBox"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 48
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 48
+theme_override_constants/margin_bottom = 30
+
+[node name="Label" type="Label" parent="MarginContainer/TextBox/MarginContainer"]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("2_42tw7")
+theme_override_font_sizes/font_size = 30
+text = "enemy name attacked!"
+autowrap_mode = 1
+
+[node name="Timer" type="Timer" parent="MarginContainer/TextBox/MarginContainer/Label"]
+wait_time = 0.05
+
+[connection signal="timeout" from="MarginContainer/TextBox/MarginContainer/Label/Timer" to="." method="_on_timer_timeout"]

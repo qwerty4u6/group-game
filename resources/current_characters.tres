@@ -1,0 +1,8 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://dmutkh3bj66i4"]
+
+[ext_resource type="Script" path="res://resources/current_characters.gd" id="1_nwhny"]
+
+[resource]
+script = ExtResource("1_nwhny")
+team = ["res://resources/player characters/isana.tres"]
+enemies = ["res://resources/enemy characters/fisherman.tres"]
