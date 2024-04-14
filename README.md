@@ -5,11 +5,11 @@ to do:
 - programming
   - [DONE] fix window resizing
   - [DONE] finishing overworld system
+  - [DONE] cutscene system
   - finishing battle system
     - finish misc battle buttons
     - items system
     - win/lose screens
-  - cutscene system
 
 - graphics
   - fish market background
