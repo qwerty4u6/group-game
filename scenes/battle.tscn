@@ -100,6 +100,7 @@ shape = SubResource("RectangleShape2D_b1e75")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+visible = false
 offset_right = 1200.0
 offset_bottom = 800.0
 color = Color(0, 0, 0, 1)
@@ -109,3 +110,5 @@ metadata/_edit_use_anchors_ = true
 libraries = {
 "": SubResource("AnimationLibrary_s15m1")
 }
+
+[connection signal="animation_finished" from="CanvasLayer/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

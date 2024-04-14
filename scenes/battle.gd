@@ -38,6 +38,9 @@ signal textbox_closed
 signal done_with_enemy_turns
 
 func _ready():
+	get_node("CanvasLayer/ColorRect").show()
+	$ActionBox.to_empty_box()
+	
 	for member in resources.team:
 		team_resources.push_back(load(member))
 	for member in resources.enemies:
@@ -99,7 +102,7 @@ func _ready():
 	
 	anim_player.play("fade_in")
 	await done_fading_in
-	$ActionBox.show_text("blabla appeared text")
+	$ActionBox.show_text(resources.appear_text)
 	await $ActionBox.textbox_closed
 	next_turn()
 
@@ -164,3 +167,10 @@ func selected_display():
 		if disp.hovering == true:
 			return disp
 	return null
+
+func _on_animation_player_animation_finished(anim_name):
+	if anim_name == "fade_in":
+		emit_signal("done_fading_in")
+	elif anim_name == "fade_out":
+		emit_signal("done_fading_out")
+

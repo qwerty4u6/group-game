@@ -19,11 +19,12 @@ func _ready():
 	await done_fading_in
 	$Player.can_walk = true
 
-func start_battle(players, enemies):
+func start_battle(players, enemies, appear_text):
 	anim_player.play("fade_out")
 	await done_fading_out
 	current_characters.team = players
 	current_characters.enemies = enemies
+	current_characters.appear_text = appear_text
 	get_tree().change_scene_to_file("res://scenes/battle.tscn")
 
 func _on_animation_player_animation_finished(anim_name):
