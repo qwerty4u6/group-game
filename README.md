@@ -4,12 +4,13 @@ to do:
 
 - programming
   - [DONE] fix window resizing
-  - finishing overworld system
+  - [DONE] finishing overworld system
+  - [DONE] cutscene system
   - finishing battle system
     - finish misc battle buttons
     - items system
     - win/lose screens
-  - cutscene system
+  - menu system in overworld
 
 - graphics
   - fish market background
