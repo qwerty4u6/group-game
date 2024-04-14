@@ -10,6 +10,7 @@ to do:
     - finish misc battle buttons
     - items system
     - win/lose screens
+  - menu system in overworld
 
 - graphics
   - fish market background
