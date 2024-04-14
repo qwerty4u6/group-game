@@ -1,6 +1,6 @@
 res://scenes/main.tscn
 res://resources/base_enemy.gd
-res://scenes/main.gd
+res://scenes/player.gdshader
 res://scenes/battle.tscn
 res://scenes/action_box.tscn
 res://scenes/char_stat_display.tscn
@@ -8,9 +8,3 @@ res://scenes/player.tscn
 res://scenes/battle_character.tscn
 res://scenes/character_data_container.tscn
 res://scenes/player.gd
-res://scenes/Camera2D.gd
-res://resources/enemy characters/sushi chief.tres
-res://scenes/market_boss_animation.tscn
-res://scenes/sushi_chief_animation.tscn
-res://resources/enemy characters/market boss.tres
-res://scenes/player.gdshader
