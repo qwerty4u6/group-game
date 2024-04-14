@@ -1,58 +1,58 @@
-[gd_scene load_steps=18 format=3 uid="uid://ccsfmhbk5ft4g"]
+[gd_scene load_steps=18 format=3 uid="uid://c6byfgo2n38cu"]
 
-[ext_resource type="Texture2D" uid="uid://dqtpoe5bkwovu" path="res://assets/sprites/ninja idle.png" id="1_86a1g"]
-[ext_resource type="Script" path="res://scenes/player.gd" id="1_mk00p"]
-[ext_resource type="Texture2D" uid="uid://ss1gxhx2pbqx" path="res://assets/sprites/ninja running.png" id="2_2kfct"]
+[ext_resource type="Script" path="res://scenes/player.gd" id="1_d82n1"]
+[ext_resource type="Texture2D" uid="uid://dqtpoe5bkwovu" path="res://assets/sprites/ninja idle.png" id="2_euu5s"]
+[ext_resource type="Texture2D" uid="uid://ss1gxhx2pbqx" path="res://assets/sprites/ninja running.png" id="3_pteh6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jtdmk"]
-atlas = ExtResource("1_86a1g")
+atlas = ExtResource("2_euu5s")
 region = Rect2(0, 0, 16, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yu0ml"]
-atlas = ExtResource("1_86a1g")
+atlas = ExtResource("2_euu5s")
 region = Rect2(16, 0, 16, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_f2nbo"]
-atlas = ExtResource("1_86a1g")
+atlas = ExtResource("2_euu5s")
 region = Rect2(32, 0, 16, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cvnn7"]
-atlas = ExtResource("1_86a1g")
+atlas = ExtResource("2_euu5s")
 region = Rect2(0, 24, 16, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xll50"]
-atlas = ExtResource("1_86a1g")
+atlas = ExtResource("2_euu5s")
 region = Rect2(16, 24, 16, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1845q"]
-atlas = ExtResource("1_86a1g")
+atlas = ExtResource("2_euu5s")
 region = Rect2(32, 24, 16, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_a86ul"]
-atlas = ExtResource("1_86a1g")
+atlas = ExtResource("2_euu5s")
 region = Rect2(0, 48, 16, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_po6bj"]
-atlas = ExtResource("1_86a1g")
+atlas = ExtResource("2_euu5s")
 region = Rect2(16, 48, 16, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4gx0a"]
-atlas = ExtResource("2_2kfct")
+atlas = ExtResource("3_pteh6")
 region = Rect2(0, 0, 16, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_eg5vf"]
-atlas = ExtResource("2_2kfct")
+atlas = ExtResource("3_pteh6")
 region = Rect2(16, 0, 16, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7c3a1"]
-atlas = ExtResource("2_2kfct")
+atlas = ExtResource("3_pteh6")
 region = Rect2(0, 24, 16, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bhtts"]
-atlas = ExtResource("2_2kfct")
+atlas = ExtResource("3_pteh6")
 region = Rect2(16, 24, 16, 24)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_mxhlr"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_o42m4"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -101,17 +101,17 @@ animations = [{
 "speed": 8.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_r1yws"]
-size = Vector2(24, 52)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uve0v"]
+size = Vector2(24, 20)
 
-[node name="Player" type="Area2D"]
-script = ExtResource("1_mk00p")
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_d82n1")
 
 [node name="Ninja1Animation" type="AnimatedSprite2D" parent="."]
 scale = Vector2(4, 4)
-sprite_frames = SubResource("SpriteFrames_mxhlr")
+sprite_frames = SubResource("SpriteFrames_o42m4")
 animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 22)
-shape = SubResource("RectangleShape2D_r1yws")
+position = Vector2(0, 38)
+shape = SubResource("RectangleShape2D_uve0v")

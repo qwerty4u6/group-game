@@ -1,13 +1,12 @@
-extends Area2D
+extends CharacterBody2D
 
 var anim
-
-var velocity
 
 func _ready():
 	anim = $Ninja1Animation
 
 func _process(delta):
+	#if not is_on_floor():
 	velocity = Vector2.ZERO
 	if Input.is_action_pressed("move_up"):
 		velocity.y -= 1
@@ -17,7 +16,8 @@ func _process(delta):
 		velocity.x -= 1
 	if Input.is_action_pressed("move_right"):
 		velocity.x += 1
-	position += velocity.normalized() * 300 * delta
+	velocity = velocity.normalized() * 300
+	move_and_slide()
 	
 	if velocity.x < 0:
 		anim.flip_h = true
