@@ -4,7 +4,7 @@ to do:
 
 - programming
   - [DONE] fix window resizing
-  - finishing overworld system
+  - [DONE] finishing overworld system
   - finishing battle system
     - finish misc battle buttons
     - items system
