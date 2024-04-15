@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://hdpf0cdpojrb"]
+[gd_scene load_steps=14 format=3 uid="uid://hdpf0cdpojrb"]
 
 [ext_resource type="StyleBox" uid="uid://df80uuyvx30ud" path="res://resources/ui/standard_panel.tres" id="1_hr8em"]
 [ext_resource type="FontFile" uid="uid://cc11lnvwh7ek2" path="res://assets/fonts/manaspace.ttf" id="2_8ropt"]
@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://dadylq3c81588" path="res://assets/sprites/placeholder 1.png" id="4_jxhro"]
 [ext_resource type="Texture2D" uid="uid://vf0notos07xy" path="res://assets/sprites/placeholder 3.png" id="5_tm4qg"]
 [ext_resource type="Texture2D" uid="uid://bdy44wh6xar84" path="res://assets/sprites/placeholder 2.png" id="6_1cy2g"]
-[ext_resource type="Texture2D" uid="uid://ofrggg61n4t4" path="res://assets/sprites/mana icon.png" id="8_aegjh"]
+[ext_resource type="PackedScene" uid="uid://ymqa76nr3jb" path="res://scenes/skill_button.tscn" id="6_sjoho"]
 [ext_resource type="Texture2D" uid="uid://ci20nsbghq2yj" path="res://assets/sprites/divider.png" id="8_kootn"]
 
 [sub_resource type="Animation" id="Animation_10mip"]
@@ -47,12 +47,6 @@ _data = {
 "RESET": SubResource("Animation_10mip"),
 "next arrow": SubResource("Animation_1hdsq")
 }
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_2t14k"]
-size = Vector2(192, 74)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_42h5r"]
-bg_color = Color(0.101961, 0.101961, 0.101961, 1)
 
 [node name="ActionBox" type="Panel"]
 offset_right = 1188.0
@@ -151,111 +145,16 @@ offset_right = 390.0
 offset_bottom = 154.0
 theme_override_styles/panel = ExtResource("4_768yw")
 
-[node name="Skill1" type="TextureButton" parent="MarginContainer/ActionBox/MarginContainer/MainContainer/SkillsContainer"]
-visible = false
-layout_mode = 0
-offset_right = 192.0
-offset_bottom = 74.0
-texture_normal = ExtResource("4_jxhro")
-texture_pressed = ExtResource("5_tm4qg")
-texture_hover = ExtResource("6_1cy2g")
-stretch_mode = 0
+[node name="Skill1" parent="MarginContainer/ActionBox/MarginContainer/MainContainer/SkillsContainer" instance=ExtResource("6_sjoho")]
 
-[node name="Skill2" type="TextureButton" parent="MarginContainer/ActionBox/MarginContainer/MainContainer/SkillsContainer"]
-layout_mode = 0
-offset_left = 198.0
-offset_right = 390.0
-offset_bottom = 74.0
-texture_normal = ExtResource("4_jxhro")
-texture_pressed = ExtResource("5_tm4qg")
-texture_hover = ExtResource("6_1cy2g")
-stretch_mode = 0
+[node name="Skill2" parent="MarginContainer/ActionBox/MarginContainer/MainContainer/SkillsContainer" instance=ExtResource("6_sjoho")]
+position = Vector2(208, 10)
 
-[node name="Skill3" type="TextureButton" parent="MarginContainer/ActionBox/MarginContainer/MainContainer/SkillsContainer"]
-layout_mode = 0
-offset_top = 80.0
-offset_right = 192.0
-offset_bottom = 154.0
-texture_normal = ExtResource("4_jxhro")
-texture_pressed = ExtResource("5_tm4qg")
-texture_hover = ExtResource("6_1cy2g")
-stretch_mode = 0
+[node name="Skill3" parent="MarginContainer/ActionBox/MarginContainer/MainContainer/SkillsContainer" instance=ExtResource("6_sjoho")]
+position = Vector2(10, 90)
 
-[node name="Skill4" type="TextureButton" parent="MarginContainer/ActionBox/MarginContainer/MainContainer/SkillsContainer"]
-layout_mode = 0
-offset_left = 198.0
-offset_top = 80.0
-offset_right = 390.0
-offset_bottom = 154.0
-texture_normal = ExtResource("4_jxhro")
-texture_pressed = ExtResource("5_tm4qg")
-texture_hover = ExtResource("6_1cy2g")
-stretch_mode = 0
-
-[node name="Area2D" type="Area2D" parent="MarginContainer/ActionBox/MarginContainer/MainContainer/SkillsContainer"]
-position = Vector2(10, 10)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="MarginContainer/ActionBox/MarginContainer/MainContainer/SkillsContainer/Area2D"]
-visible = false
-position = Vector2(86, 27)
-shape = SubResource("RectangleShape2D_2t14k")
-
-[node name="NameLabel" type="Label" parent="MarginContainer/ActionBox/MarginContainer/MainContainer/SkillsContainer/Area2D"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -10.0
-offset_top = -17.0
-offset_right = 182.0
-offset_bottom = 57.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 6
-theme_override_fonts/font = ExtResource("2_8ropt")
-theme_override_font_sizes/font_size = 20
-text = "skillname"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="CostLabel" type="Label" parent="MarginContainer/ActionBox/MarginContainer/MainContainer/SkillsContainer/Area2D"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 79.0
-offset_top = 35.0
-offset_right = 99.0
-offset_bottom = 55.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.0823529, 0.796078, 0.921569, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 6
-theme_override_fonts/font = ExtResource("2_8ropt")
-theme_override_font_sizes/font_size = 20
-text = "5"
-vertical_alignment = 1
-
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/ActionBox/MarginContainer/MainContainer/SkillsContainer/Area2D"]
-offset_left = 63.0
-offset_top = 35.0
-offset_right = 77.0
-offset_bottom = 49.0
-texture = ExtResource("8_aegjh")
-
-[node name="Panel" type="Panel" parent="MarginContainer/ActionBox/MarginContainer/MainContainer/SkillsContainer/Area2D"]
-offset_left = -10.0
-offset_top = -10.0
-offset_right = 182.0
-offset_bottom = 64.0
-theme_override_styles/panel = ExtResource("3_0e03r")
-
-[node name="Darken" type="Panel" parent="MarginContainer/ActionBox/MarginContainer/MainContainer/SkillsContainer/Area2D"]
-offset_left = -10.0
-offset_top = -10.0
-offset_right = 182.0
-offset_bottom = 64.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_42h5r")
+[node name="Skill4" parent="MarginContainer/ActionBox/MarginContainer/MainContainer/SkillsContainer" instance=ExtResource("6_sjoho")]
+position = Vector2(208, 90)
 
 [node name="MiscContainer" type="Panel" parent="MarginContainer/ActionBox/MarginContainer/MainContainer"]
 layout_mode = 0
@@ -450,8 +349,4 @@ layout_mode = 2
 theme_override_styles/panel = ExtResource("3_0e03r")
 
 [connection signal="timeout" from="MarginContainer/TextBox/MarginContainer/Label/Timer" to="." method="_on_timer_timeout"]
-[connection signal="pressed" from="MarginContainer/ActionBox/MarginContainer/MainContainer/SkillsContainer/Skill1" to="." method="_on_skill_1_pressed"]
-[connection signal="pressed" from="MarginContainer/ActionBox/MarginContainer/MainContainer/SkillsContainer/Skill2" to="." method="_on_skill_2_pressed"]
-[connection signal="pressed" from="MarginContainer/ActionBox/MarginContainer/MainContainer/SkillsContainer/Skill3" to="." method="_on_skill_3_pressed"]
-[connection signal="pressed" from="MarginContainer/ActionBox/MarginContainer/MainContainer/SkillsContainer/Skill4" to="." method="_on_skill_4_pressed"]
 [connection signal="pressed" from="MarginContainer/BackBox/MarginContainer/MainContainer/Back" to="." method="_on_back_pressed"]
