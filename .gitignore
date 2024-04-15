@@ -7,5 +7,34 @@ export_presets.cfg
 *.translation
 
 # Mono-specific ignores
-.mono/
-data_*/
+
+.godot/editor/action_box.tscn-editstate-2a297b1629ed51d0e1c6c839be4fddd8.cfg
+.godot/editor/action_box.tscn-folding-2a297b1629ed51d0e1c6c839be4fddd8.cfg
+.godot/editor/battle.tscn-editstate-d05c42cb8fa14c775531fe94d95302c2.cfg
+.godot/editor/battle_character.tscn-editstate-187ff635e4dcf55b709aca7dae6ad005.cfg
+.godot/editor/border_panel.tres-folding-260729462eebc2f4343d2b63fa1cd0b2.cfg
+.godot/editor/char_stat_display.tscn-editstate-963ddd58ec2b95e5020143b3c6ae3918.cfg
+.godot/editor/char_stat_display.tscn-folding-963ddd58ec2b95e5020143b3c6ae3918.cfg
+.godot/editor/character_data_container.tscn-editstate-37279b9eff4085c25e25521cbedf5f46.cfg
+.godot/editor/create_recent.Node
+.godot/editor/editor_layout.cfg
+.godot/editor/filesystem_cache8
+.godot/editor/filesystem_update4
+.godot/editor/main.tscn-editstate-3ad5c15c4f3250da0cc7c1af1770d85f.cfg
+.godot/editor/player.tscn-editstate-234fb6894ec6226e856ab7f825500d3d.cfg
+.godot/editor/player.tscn-folding-234fb6894ec6226e856ab7f825500d3d.cfg
+.godot/editor/project_metadata.cfg
+.godot/editor/recent_dirs
+.godot/editor/script_editor_cache.cfg
+.godot/imported/mana icon.png-b5fd109897047665ebe46ebc9a733aaa.ctex
+.godot/imported/mana icon.png-b5fd109897047665ebe46ebc9a733aaa.md5
+.godot/imported/New Piskel-1.png(8).png-040aa82473ce8b7c1deeb8e082d532bc.ctex
+.godot/imported/New Piskel-1.png(8).png-040aa82473ce8b7c1deeb8e082d532bc.md5
+.godot/imported/New Piskel-1.png(8).png-d85d45c84712368c6b7b6360d3e2c5fe.ctex
+.godot/imported/New Piskel-1.png(8).png-d85d45c84712368c6b7b6360d3e2c5fe.md5
+.godot/imported/New Piskel-1.png(9).png-df3fd856fa7adfd643965cbd10ae5c2b.ctex
+.godot/imported/New Piskel-1.png(9).png-df3fd856fa7adfd643965cbd10ae5c2b.md5
+.godot/shader_cache/SceneShaderGLES3/e680d042498f65ce3da825ed988cf5661d9738afcf4c5c7ef4002918df44610c/1d8c2052056880002b21f942081ab902b6599591.cache
+.godot/shader_cache/SceneShaderGLES3/e680d042498f65ce3da825ed988cf5661d9738afcf4c5c7ef4002918df44610c/6bb7c9a2fd1c4a8fa77cb96555b9b4a720209981.cache
+.godot/shader_cache/SceneShaderGLES3/e680d042498f65ce3da825ed988cf5661d9738afcf4c5c7ef4002918df44610c/759922d24d18f6e93947155d0345545f9941ad7c.cache
+.godot/uid_cache.bin
