@@ -24,8 +24,9 @@ level_curve = {
 }
 skills = [{
 "applies": ["damage", -1, 2],
+"mana_cost": 2,
 "message": "%s threw Throwing Stars at %s!",
-"name": "Throwing Stars",
+"name": "Throw Stars",
 "target": "enemy",
 "unlocked_at": 1
 }]

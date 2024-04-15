@@ -33,6 +33,14 @@ func to_action_box(character = null):
 	back_box.hide()
 	empty_box.hide()
 	
+	var skills = character.skills
+	var skill_buttons = action_box.get_node("MarginContainer/MainContainer/SkillsContainer").get_children()
+	for i in 4:
+		if i >= skills.size():
+			skill_buttons[i].init()
+		else:
+			skill_buttons[i].init(skills[i], character.mana)
+	
 	if character != null:
 		action_box.get_node("MarginContainer/MainContainer/MiscContainer/NameLabel").text = character.name_text
 		action_box.get_node("MarginContainer/MainContainer/MiscContainer/TextureRect").texture = character.texture

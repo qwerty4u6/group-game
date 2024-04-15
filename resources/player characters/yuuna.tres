@@ -8,6 +8,7 @@ script = ExtResource("1_fx0q6")
 name = "Yuuna"
 texture = ExtResource("2_3st47")
 sprite = "res://scenes/ninja_3_animation.tscn"
+flip_h = false
 level = 1
 xp_until_next = 5.0
 max_hp = 11
@@ -23,8 +24,9 @@ level_curve = {
 }
 skills = [{
 "applies": ["damage", -1, 2],
+"mana_cost": 0,
 "message": "%s threw Throwing Stars at %s!",
-"name": "Idk magic thigny",
+"name": "Throwing Stars",
 "target": "enemy",
 "unlocked_at": 1
 }]
