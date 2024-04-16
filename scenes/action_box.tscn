@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://dadylq3c81588" path="res://assets/sprites/placeholder 1.png" id="4_jxhro"]
 [ext_resource type="Texture2D" uid="uid://vf0notos07xy" path="res://assets/sprites/placeholder 3.png" id="5_tm4qg"]
 [ext_resource type="Texture2D" uid="uid://bdy44wh6xar84" path="res://assets/sprites/placeholder 2.png" id="6_1cy2g"]
-[ext_resource type="PackedScene" uid="uid://1b1fng55vgkr" path="res://scenes/skill_button.tscn" id="6_sjoho"]
+[ext_resource type="PackedScene" uid="uid://ymqa76nr3jb" path="res://scenes/skill_button.tscn" id="6_sjoho"]
 [ext_resource type="Texture2D" uid="uid://ci20nsbghq2yj" path="res://assets/sprites/divider.png" id="8_kootn"]
 
 [sub_resource type="Animation" id="Animation_10mip"]
