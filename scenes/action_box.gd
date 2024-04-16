@@ -9,6 +9,8 @@ extends Panel
 
 var target = null
 
+var button_hovered = null
+
 signal text_done_displaying
 signal textbox_closed
 signal selected
@@ -37,9 +39,9 @@ func to_action_box(character = null):
 	var skill_buttons = action_box.get_node("MarginContainer/MainContainer/SkillsContainer").get_children()
 	for i in 4:
 		if i >= skills.size():
-			skill_buttons[i].init()
+			skill_buttons[i].init(i)
 		else:
-			skill_buttons[i].init(skills[i], character.mana)
+			skill_buttons[i].init(i, skills[i], character.mana)
 	
 	if character != null:
 		action_box.get_node("MarginContainer/MainContainer/MiscContainer/NameLabel").text = character.name_text
@@ -100,6 +102,7 @@ func prepare_skill(i):
 	battle.select_target = skill.target
 	await selected
 	battle.selecting = false
+	print(battle.selected_display())
 	var disp = battle.selected_display()
 	disp.stop_hover()
 	

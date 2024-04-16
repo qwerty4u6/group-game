@@ -140,6 +140,7 @@ func enemy_turn(enemy):
 	elif skill.target == "enemy":
 		target = enemy_stat_displays.pick_random()
 	
+	enemy.take_mana(skill.mana_cost)
 	if skill.applies[0] == "damage":
 		target.damage((enemy.damage + skill.applies[1]) * skill.applies[2])
 	elif skill.applies[0] == "heal":

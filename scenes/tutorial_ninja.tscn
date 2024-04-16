@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://c30om8we4bfto"]
+
+[ext_resource type="Script" path="res://scenes/tutorial.gd" id="1_5nhry"]
+[ext_resource type="PackedScene" uid="uid://boktmbys67xi5" path="res://scenes/sushi_chef_animation.tscn" id="2_a28e7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_upftp"]
+size = Vector2(64, 96)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4jny4"]
+size = Vector2(72, 96)
+
+[node name="Tutorial" type="StaticBody2D"]
+script = ExtResource("1_5nhry")
+
+[node name="Ninja2Animation" parent="." instance=ExtResource("2_a28e7")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_upftp")
+
+[node name="Interactable" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable"]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_4jny4")
+
+[connection signal="body_entered" from="Interactable" to="." method="_on_interactable_body_entered"]

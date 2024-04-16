@@ -6,3 +6,4 @@
 script = ExtResource("1_nwhny")
 team = ["res://resources/player characters/isana.tres"]
 enemies = ["res://resources/enemy characters/fisherman.tres"]
+appear_text = "placeholder"

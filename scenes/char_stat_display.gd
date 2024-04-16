@@ -51,6 +51,12 @@ func damage(amt):
 	if res.hp <= 0:
 		kill()
 
+func take_mana(amt):
+	res.mana -= amt
+	set_mana(res.mana)
+	if res.mana <= 0:
+		set_mana(0)
+
 func kill():
 	dead = true
 	set_hp(0)

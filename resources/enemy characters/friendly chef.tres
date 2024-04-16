@@ -1,0 +1,47 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://dpekb7sebx4vv"]
+
+[ext_resource type="Script" path="res://resources/base_enemy.gd" id="1_hyvm6"]
+[ext_resource type="Texture2D" uid="uid://vf0notos07xy" path="res://assets/sprites/placeholder 3.png" id="2_febhc"]
+
+[resource]
+script = ExtResource("1_hyvm6")
+name = "Sushi Chef"
+texture = ExtResource("2_febhc")
+sprite = "res://scenes/sushi_chef_animation.tscn"
+flip_h = false
+level = 5
+max_hp = 25
+hp = 25
+max_mana = 5
+mana = 5
+damage = 3
+skills = [{
+"applies": ["damage", 0, 1],
+"mana_cost": 0,
+"message": "%s threw sushi at %s!",
+"name": "sushi throw",
+"target": "team",
+"unlocked_at": 1
+}, {
+"applies": ["damage", 2, 1],
+"mana_cost": 1,
+"message": "%s threw flaming sushi at %s!",
+"name": "flaming sushi",
+"target": "team",
+"unlocked_at": 1
+}]
+skill_order = [{
+"applies": ["damage", 0, 1],
+"mana_cost": 0,
+"message": "%s threw sushi at %s!",
+"name": "sushi throw",
+"target": "team",
+"unlocked_at": 1
+}, {
+"applies": ["damage", 2, 1],
+"mana_cost": 1,
+"message": "%s threw flaming sushi at %s!",
+"name": "flaming sushi",
+"target": "team",
+"unlocked_at": 1
+}]
