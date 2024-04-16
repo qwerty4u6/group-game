@@ -22,6 +22,8 @@ func _input(event):
 			action_box.show()
 			emit_signal("textbox_closed")
 			text_box_label.visible_characters = 0
+	elif Input.is_action_just_pressed("move_up"):
+		print(battle.selected_display())
 
 func to_textbox():
 	text_box.show()
@@ -78,23 +80,11 @@ func _on_timer_timeout():
 	if text_box_label.visible_characters == text_box_label.text.length() + 1:
 		emit_signal("text_done_displaying")
 
-func _on_skill_1_pressed():
-	prepare_skill(1)
-
-func _on_skill_2_pressed():
-	prepare_skill(2)
-
-func _on_skill_3_pressed():
-	prepare_skill(3)
-
-func _on_skill_4_pressed():
-	prepare_skill(4)
-
 func _on_back_pressed():
 	to_action_box()
 	battle.selecting = false
 
-func prepare_skill(i):
+func prepare_skill(i, selected_disp):
 	to_back_box()
 	battle.selecting = true
 	var character = battle.current_character
@@ -102,12 +92,12 @@ func prepare_skill(i):
 	battle.select_target = skill.target
 	await selected
 	battle.selecting = false
-	print(battle.selected_display())
 	var disp = battle.selected_display()
-	disp.stop_hover()
+	#disp.stop_hover()
+	print(selected_disp)
 	
-	if skill.applies[0] == "damage":
-		disp.damage((character.damage + skill.applies[1]) * skill.applies[2])
-	show_text(skill.message % [character.name_text, target.res.name_text])
-	await textbox_closed
-	battle.next_turn()
+	#if skill.applies[0] == "damage":
+	#	disp.damage((character.damage + skill.applies[1]) * skill.applies[2])
+	#show_text(skill.message % [character.name_text, target.res.name_text])
+	#await textbox_closed
+	#battle.next_turn()

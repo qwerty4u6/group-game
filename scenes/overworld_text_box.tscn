@@ -112,7 +112,7 @@ theme_override_constants/outline_size = 6
 theme_override_fonts/font = ExtResource("2_42tw7")
 theme_override_font_sizes/font_size = 30
 text = "enemy name attacked!"
-autowrap_mode = 1
+autowrap_mode = 2
 
 [node name="Timer" type="Timer" parent="MarginContainer/TextBox/MarginContainer/Label"]
 wait_time = 0.05

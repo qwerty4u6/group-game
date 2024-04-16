@@ -21,7 +21,7 @@ func _input(event):
 		var overlapping = get_overlapping_areas()
 		for area in overlapping:
 			if area.is_in_group("mouse_area"):
-				action_box.prepare_skill(slot)
+				action_box.prepare_skill(slot, action_box.get_parent().selected_display())
 
 func darken():
 	$Darken.show()

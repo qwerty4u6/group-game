@@ -1,5 +1,7 @@
 extends Node
 
+var disp
+
 @export var name_text: String = "Player"
 @export var texture: Texture = null
 @export var sprite: String = "res://scenes/ninja_1_animation.tscn"
@@ -30,3 +32,6 @@ func init(res):
 	damage = res.damage
 	
 	skills = res.skills
+
+func set_disp(stat_disp):
+	disp = stat_disp

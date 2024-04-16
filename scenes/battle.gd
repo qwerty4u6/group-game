@@ -64,7 +64,6 @@ func _ready():
 		enemy_sprites.push_back([new.sprite, new.flip_h])
 	enemies = $Enemies.get_children()
 	
-	
 	var offset = (806 - team.size() * 138) / 2
 	for i in team.size():
 		var disp = char_stat_display_scene.instantiate()
@@ -90,6 +89,7 @@ func _ready():
 		disp.init(enemies[i])
 		disp.position = Vector2(984, offset + i * 138)
 		enemy_stat_displays.push_front(disp)
+		$Enemies.get_children()[i].set_disp(disp)
 		
 		var char = battle_character_scene.instantiate() 
 		add_child(char)
@@ -140,7 +140,7 @@ func enemy_turn(enemy):
 	elif skill.target == "enemy":
 		target = enemy_stat_displays.pick_random()
 	
-	enemy.take_mana(skill.mana_cost)
+	enemy.disp.take_mana(skill.mana_cost)
 	if skill.applies[0] == "damage":
 		target.damage((enemy.damage + skill.applies[1]) * skill.applies[2])
 	elif skill.applies[0] == "heal":
