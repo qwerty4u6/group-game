@@ -30,3 +30,11 @@ func darken():
 func lighten():
 	$Darken.hide()
 	can_select = true
+
+func _on_area_entered(area):
+	if area.is_in_group("mouse_area") && can_select:
+		$NameLabel.text = skill.name + " <"
+
+func _on_area_exited(area):
+	if area.is_in_group("mouse_area"):
+		$NameLabel.text = skill.name

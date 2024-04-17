@@ -24,6 +24,8 @@ func _input(event):
 			text_box_label.visible_characters = 0
 	elif Input.is_action_just_pressed("move_up"):
 		print(battle.selected_display())
+	elif Input.is_action_just_pressed("move_down"):
+		get_tree().change_scene_to_file("res://scenes/battle.tscn")
 
 func to_textbox():
 	text_box.show()
@@ -88,16 +90,15 @@ func prepare_skill(i, selected_disp):
 	to_back_box()
 	battle.selecting = true
 	var character = battle.current_character
-	var skill = character.skills[i - 1]
+	var skill = character.skills[i]
 	battle.select_target = skill.target
 	await selected
 	battle.selecting = false
 	var disp = battle.selected_display()
-	#disp.stop_hover()
-	print(selected_disp)
+	disp.stop_hover()
 	
-	#if skill.applies[0] == "damage":
-	#	disp.damage((character.damage + skill.applies[1]) * skill.applies[2])
-	#show_text(skill.message % [character.name_text, target.res.name_text])
-	#await textbox_closed
-	#battle.next_turn()
+	if skill.applies[0] == "damage":
+		disp.damage((character.damage + skill.applies[1]) * skill.applies[2])
+	show_text(skill.message % [character.name_text, target.res.name_text])
+	await textbox_closed
+	battle.next_turn()

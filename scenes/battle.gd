@@ -165,7 +165,7 @@ func next_turn():
 
 func selected_display():
 	for disp in members:
-		if disp.hovering == true:
+		if disp.is_hovering():
 			return disp
 	return null
 

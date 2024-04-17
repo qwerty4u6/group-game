@@ -7,7 +7,7 @@
 [ext_resource type="Script" path="res://scenes/Camera2D.gd" id="4_u1n5e"]
 [ext_resource type="Texture2D" uid="uid://culd1qaprkg8g" path="res://assets/sprites/market tiles.png" id="5_w34ht"]
 [ext_resource type="PackedScene" uid="uid://dgkjynt4eft8y" path="res://scenes/overworld_text_box.tscn" id="6_cyeg4"]
-[ext_resource type="PackedScene" path="res://scenes/tutorial_ninja.tscn" id="8_1567k"]
+[ext_resource type="PackedScene" uid="uid://c30om8we4bfto" path="res://scenes/tutorial_ninja.tscn" id="8_1567k"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_otqh7"]
 texture = ExtResource("3_4337b")

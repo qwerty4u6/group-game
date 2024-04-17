@@ -81,6 +81,13 @@ func _input(event):
 			action_box.target = self
 			action_box.emit_signal("selected")
 
+func is_hovering():
+	var areas = $Area2D.get_overlapping_areas()
+	for area in areas:
+		if area.is_in_group("mouse_area"):
+			return true
+	return false
+
 func start_hover():
 	hovering = true
 	if battle.selecting && battle.select_target == res.type && !dead:

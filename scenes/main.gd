@@ -18,6 +18,10 @@ func _ready():
 	anim_player.play("fade_in")
 	await done_fading_in
 	$Player.can_walk = true
+	
+	start_battle(team, [
+		"res://resources/enemy characters/friendly chef.tres"
+	], "The sushi chef attacks!")
 
 func start_battle(players, enemies, appear_text):
 	anim_player.play("fade_out")

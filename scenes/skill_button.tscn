@@ -3,8 +3,8 @@
 [ext_resource type="FontFile" uid="uid://cc11lnvwh7ek2" path="res://assets/fonts/manaspace.ttf" id="1_j3sp6"]
 [ext_resource type="Script" path="res://scenes/skill_button.gd" id="1_u6rad"]
 [ext_resource type="Texture2D" uid="uid://ofrggg61n4t4" path="res://assets/sprites/mana icon.png" id="2_gfnn2"]
-[ext_resource type="StyleBox" uid="uid://dqveho1iwy0vh" path="res://resources/ui/border_panel.tres" id="3_2i0t0"]
-[ext_resource type="StyleBox" uid="uid://djdh88btgr4u1" path="res://resources/ui/darkened_panel.tres" id="4_7piuy"]
+[ext_resource type="StyleBox" path="res://resources/ui/border_panel.tres" id="3_2i0t0"]
+[ext_resource type="StyleBox" path="res://resources/ui/darkened_panel.tres" id="4_7piuy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2t14k"]
 size = Vector2(192, 74)
