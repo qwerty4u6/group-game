@@ -72,6 +72,7 @@ func _ready():
 		disp.init(team[i])
 		disp.position = Vector2(6, offset + i * 138)
 		team_stat_displays.push_front(disp)
+		$Team.get_children()[i].set_disp(disp)
 		
 		var char = battle_character_scene.instantiate() 
 		add_child(char)
@@ -159,6 +160,8 @@ func next_turn():
 			$ActionBox.show_text(enemy_turn(enemy))
 			await $ActionBox.textbox_closed
 		current_turn = 0
+		for character in characters:
+			character.disp.take_mana(-1)
 	
 	current_character = characters[current_turn % 6]
 	$ActionBox.to_action_box(current_character)

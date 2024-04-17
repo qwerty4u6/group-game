@@ -6,6 +6,7 @@ extends Panel
 @onready var back_box = get_node("MarginContainer/BackBox")
 @onready var empty_box = get_node("MarginContainer/EmptyBox")
 @onready var text_box_label = text_box.get_node("MarginContainer/Label")
+@onready var skill_buttons = action_box.get_node("MarginContainer/MainContainer/SkillsContainer").get_children()
 
 var target = null
 
@@ -32,6 +33,9 @@ func to_textbox():
 	action_box.hide()
 	back_box.hide()
 	empty_box.hide()
+	
+	for button in skill_buttons:
+		button.clickable = false
 
 func to_action_box(character = null):
 	text_box.hide()
@@ -39,8 +43,10 @@ func to_action_box(character = null):
 	back_box.hide()
 	empty_box.hide()
 	
+	for button in skill_buttons:
+		button.clickable = true
+	
 	var skills = character.skills
-	var skill_buttons = action_box.get_node("MarginContainer/MainContainer/SkillsContainer").get_children()
 	for i in 4:
 		if i >= skills.size():
 			skill_buttons[i].init(i)
@@ -56,12 +62,18 @@ func to_back_box():
 	action_box.hide()
 	back_box.show()
 	empty_box.hide()
+	
+	for button in skill_buttons:
+		button.clickable = false
 
 func to_empty_box():
 	text_box.hide()
 	action_box.hide()
 	back_box.hide()
 	empty_box.show()
+	
+	for button in skill_buttons:
+		button.clickable = false
 
 func show_text(text):
 	to_textbox()
@@ -86,17 +98,24 @@ func _on_back_pressed():
 	to_action_box()
 	battle.selecting = false
 
-func prepare_skill(i, selected_disp):
+func prepare_skill(i):
+	var disp = battle.selected_display()
+	var character = battle.current_character
+	if character.skills.size() <= i:
+		return
+	var skill = character.skills[i]
+	if character.mana < skill.mana_cost:
+		return
+	
 	to_back_box()
 	battle.selecting = true
-	var character = battle.current_character
-	var skill = character.skills[i]
 	battle.select_target = skill.target
 	await selected
 	battle.selecting = false
-	var disp = battle.selected_display()
+	disp = battle.selected_display()
 	disp.stop_hover()
 	
+	battle.current_character.disp.take_mana(skill.mana_cost)
 	if skill.applies[0] == "damage":
 		disp.damage((character.damage + skill.applies[1]) * skill.applies[2])
 	show_text(skill.message % [character.name_text, target.res.name_text])
