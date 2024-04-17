@@ -133,8 +133,7 @@ func calc_skill_weights(skills, mana):
 	return skill_pool
 
 func enemy_turn(enemy):
-	var skill = enemy.skills.pick_random()
-	print(calc_skill_weights(enemy.skills, enemy.mana))
+	var skill = enemy.skills[calc_skill_weights(enemy.skills, enemy.mana).pick_random()]
 	var target = ""
 	if skill.target == "team":
 		target = team_stat_displays.pick_random()
@@ -146,8 +145,6 @@ func enemy_turn(enemy):
 		target.damage((enemy.damage + skill.applies[1]) * skill.applies[2])
 	elif skill.applies[0] == "heal":
 		target.damage(-skill.applies[1])
-	
-	print()
 	
 	return skill.message % [enemy.name_text, target.res.name_text] #fix this
 
