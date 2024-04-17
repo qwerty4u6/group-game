@@ -13,8 +13,8 @@ level = 1
 xp_until_next = 5.0
 max_hp = 12
 hp = 12
-max_mana = 25
-mana = 25
+max_mana = 5
+mana = 5
 damage = 3
 base_hp = 12
 base_mana = 25
@@ -31,7 +31,7 @@ skills = [{
 "unlocked_at": 1
 }, {
 "applies": ["damage", 2, 1],
-"mana_cost": 2,
+"mana_cost": 3,
 "message": "%s slashed his sword at %s!",
 "name": "Slash",
 "target": "enemy",

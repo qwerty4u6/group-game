@@ -24,7 +24,7 @@ skills = [{
 "unlocked_at": 1
 }, {
 "applies": ["damage", 2, 1],
-"mana_cost": 1,
+"mana_cost": 2,
 "message": "%s threw flaming sushi at %s!",
 "name": "flaming sushi",
 "target": "team",
