@@ -31,6 +31,7 @@ var current_turn = -1
 var current_character = null
 var selecting = false
 var select_target = null
+var state = "battle"
 
 signal done_fading_in
 signal done_fading_out
@@ -151,6 +152,14 @@ func enemy_turn(enemy):
 func next_turn():
 	current_turn += 1
 	if current_turn >= team.size():
+		var enem_amt = 0
+		for character in characters:
+			if enemies.has(character):
+				enem_amt += 1
+		if enem_amt == 0:
+			win()
+			return
+		
 		for enemy in $Enemies.get_children():
 			if enemy.hp == 0:
 				continue
@@ -159,9 +168,25 @@ func next_turn():
 		current_turn = 0
 		for character in characters:
 			character.disp.take_mana(-1)
+		
+		var team_amt = 0
+		for character in characters:
+			if team.has(character):
+				team_amt += 1
+		if team_amt == 0:
+			lose()
+			return
 	
 	current_character = characters[current_turn % 6]
 	$ActionBox.to_action_box(current_character)
+
+func lose():
+	$ActionBox.show_text("Your party is too weak to continue...")
+	await $ActionBox.textbox_closed
+
+func win():
+	$ActionBox.show_text("You win!")
+	await $ActionBox.textbox_closed
 
 func selected_display():
 	for disp in members:
