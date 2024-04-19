@@ -2,15 +2,17 @@
 
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_iythu"]
 [ext_resource type="Texture2D" uid="uid://dkkf42kp0nsu7" path="res://assets/sprites/tiles.png" id="2_m6nrn"]
-[ext_resource type="Texture2D" uid="uid://b52qkdqle82x" path="res://assets/sprites/house exterior tiles.png" id="3_4337b"]
 [ext_resource type="PackedScene" uid="uid://c6byfgo2n38cu" path="res://scenes/player.tscn" id="4_i4ckd"]
 [ext_resource type="Script" path="res://scenes/Camera2D.gd" id="4_u1n5e"]
 [ext_resource type="Texture2D" uid="uid://culd1qaprkg8g" path="res://assets/sprites/market tiles.png" id="5_w34ht"]
 [ext_resource type="PackedScene" uid="uid://dgkjynt4eft8y" path="res://scenes/overworld_text_box.tscn" id="6_cyeg4"]
 [ext_resource type="PackedScene" uid="uid://c30om8we4bfto" path="res://scenes/tutorial_ninja.tscn" id="8_1567k"]
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_041sg"]
+load_path = "res://.godot/imported/house exterior tiles.png-e79e1d88f92befa00fab4a538fa4b38f.ctex"
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_otqh7"]
-texture = ExtResource("3_4337b")
+texture = SubResource("CompressedTexture2D_041sg")
 texture_region_size = Vector2i(8, 8)
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -156,6 +158,18 @@ texture_region_size = Vector2i(8, 8)
 4:7/0 = 0
 4:7/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 4:7/0/physics_layer_0/angular_velocity = 0.0
+7:7/0 = 0
+7:7/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+7:7/0/physics_layer_0/angular_velocity = 0.0
+5:0/0 = 0
+5:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+5:0/0/physics_layer_0/angular_velocity = 0.0
+6:0/0 = 0
+6:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+6:0/0/physics_layer_0/angular_velocity = 0.0
+7:0/0 = 0
+7:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+7:0/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sr4fd"]
 texture = ExtResource("2_m6nrn")
