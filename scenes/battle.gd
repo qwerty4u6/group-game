@@ -187,6 +187,8 @@ func lose():
 func win():
 	$ActionBox.show_text("You win!")
 	await $ActionBox.textbox_closed
+	var main_state = get_tree().get_root().get_node("Global").get_main()
+	print(get_tree())
 
 func selected_display():
 	for disp in members:

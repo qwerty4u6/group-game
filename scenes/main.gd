@@ -1,5 +1,6 @@
 extends Node
 
+@onready var global = get_tree().get_root().get_node("Global")
 @onready var current_characters = load("res://resources/current_characters.tres")
 @onready var anim_player = get_node("CanvasLayer/AnimationPlayer")
 
@@ -13,12 +14,13 @@ signal done_fading_in
 signal done_fading_out
 
 func _ready():
+	print(global.get_main())
 	get_node("CanvasLayer/TextBox").hide()
 	get_node("CanvasLayer/ColorRect").show()
 	anim_player.play("fade_in")
 	await done_fading_in
 	$Player.can_walk = true
-	
+	return
 	start_battle(team, [
 		"res://resources/enemy characters/friendly chef.tres"
 	], "The sushi chef attacks!")
@@ -29,6 +31,7 @@ func start_battle(players, enemies, appear_text):
 	current_characters.team = players
 	current_characters.enemies = enemies
 	current_characters.appear_text = appear_text
+	global.store_main(get_children())
 	get_tree().change_scene_to_file("res://scenes/battle.tscn")
 
 func _on_animation_player_animation_finished(anim_name):
