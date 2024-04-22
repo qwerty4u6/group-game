@@ -11,6 +11,7 @@ const team_member_positions = [
 
 var members = []
 
+@onready var global = get_tree().get_root().get_node("Global")
 @onready var data_container = preload("res://scenes/character_data_container.tscn")
 @onready var char_stat_display_scene = preload("res://scenes/char_stat_display.tscn")
 @onready var battle_character_scene = preload("res://scenes/battle_character.tscn")
@@ -187,8 +188,7 @@ func lose():
 func win():
 	$ActionBox.show_text("You win!")
 	await $ActionBox.textbox_closed
-	var main_state = get_tree().get_root().get_node("Global").get_main()
-	print(get_tree())
+	get_tree().change_scene_to_packed(global.get_main())
 
 func selected_display():
 	for disp in members:

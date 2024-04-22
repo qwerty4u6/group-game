@@ -31,7 +31,7 @@ func start_battle(players, enemies, appear_text):
 	current_characters.team = players
 	current_characters.enemies = enemies
 	current_characters.appear_text = appear_text
-	global.store_main(get_children())
+	global.store_main(self)
 	get_tree().change_scene_to_file("res://scenes/battle.tscn")
 
 func _on_animation_player_animation_finished(anim_name):
