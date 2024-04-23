@@ -8,15 +8,9 @@ var to_be_disabled = false
 
 func _ready():
 	$Ninja2Animation.play("idle")
-
-func check_to_disable():
-	if to_be_disabled:
-		disable()
-
-func disable():
-	hide()
-	$CollisionShape2D.set_disabled(true)
-	print($CollisionShape2D.disabled)
+	if !visible:
+		$CollisionShape2D.queue_free()
+		$Interactable/CollisionShape2D.queue_free()
 
 func _on_interactable_body_entered(body):
 	if body == player:

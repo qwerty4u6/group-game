@@ -33,7 +33,8 @@ func start_battle(players, enemies, appear_text):
 	current_characters.appear_text = appear_text
 	
 	for npc in $NPC.get_children():
-		npc.check_to_disable()
+		if npc.to_be_disabled:
+			npc.hide()
 	
 	global.store_main(self)
 	get_tree().change_scene_to_file("res://scenes/battle.tscn")
