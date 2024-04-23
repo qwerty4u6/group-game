@@ -23,10 +23,6 @@ func _input(event):
 			action_box.show()
 			emit_signal("textbox_closed")
 			text_box_label.visible_characters = 0
-	elif Input.is_action_just_pressed("move_up"):
-		print(battle.selected_display())
-	elif Input.is_action_just_pressed("move_down"):
-		get_tree().change_scene_to_file("res://scenes/battle.tscn")
 
 func to_textbox():
 	text_box.show()

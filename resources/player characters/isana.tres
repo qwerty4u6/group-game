@@ -30,7 +30,7 @@ skills = [{
 "target": "enemy",
 "unlocked_at": 1
 }, {
-"applies": ["damage", 2, 1],
+"applies": ["damage", 25, 1],
 "mana_cost": 3,
 "message": "%s slashed his sword at %s!",
 "name": "Slash",

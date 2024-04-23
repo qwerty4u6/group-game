@@ -541,7 +541,9 @@ scale = Vector2(4, 4)
 tile_set = SubResource("TileSet_tparm")
 format = 2
 
-[node name="Tutorial" parent="." instance=ExtResource("8_1567k")]
+[node name="NPC" type="Node" parent="."]
+
+[node name="Tutorial" parent="NPC" instance=ExtResource("8_1567k")]
 position = Vector2(-240, -217)
 
 [node name="Player" parent="." instance=ExtResource("4_i4ckd")]

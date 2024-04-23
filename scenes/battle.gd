@@ -152,15 +152,15 @@ func enemy_turn(enemy):
 
 func next_turn():
 	current_turn += 1
+	
+	var enem_amt = 0
+	for character in characters:
+		if enemies.has(character):
+			enem_amt += 1
+	if enem_amt == 0:
+		win()
+		return
 	if current_turn >= team.size():
-		var enem_amt = 0
-		for character in characters:
-			if enemies.has(character):
-				enem_amt += 1
-		if enem_amt == 0:
-			win()
-			return
-		
 		for enemy in $Enemies.get_children():
 			if enemy.hp == 0:
 				continue
