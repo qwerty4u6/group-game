@@ -1,21 +1,20 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1713559380
+::res://::1713991237
 README.md::TextFile::-1::1713214763::0::1::::<><>::
-::res://assets/::1713214763
-::res://assets/fonts/::1713214763
+::res://assets/::1713991151
+::res://assets/fonts/::1713991151
 manaspace.ttf::FontFile::4968491878067343983::1713214763::1713214763::1::::<><>::
 yoster island.ttf::FontFile::5499388701580082665::1713214763::1713214763::1::::<><>::
-::res://assets/sprites/::1713300892
+::res://assets/sprites/::1713991237
 battle bg 1.png::CompressedTexture2D::792576191385173807::1713214763::1713214763::1::::<><>::
 divider.png::CompressedTexture2D::5391632403237735189::1713214763::1713214763::1::::<><>::
 evil ninja idle.png::CompressedTexture2D::127376725360866379::1713214763::1713214763::1::::<><>::
 fish dealer idle.png::CompressedTexture2D::5937798334423281269::1713214763::1713214763::1::::<><>::
 fisherman idle.png::CompressedTexture2D::7433012604404725690::1713214763::1713214763::1::::<><>::
-house exterior tiles.png::CompressedTexture2D::133788638376776001::1713215107::1713215144::1::::<><>::
-items.png::CompressedTexture2D::5430739904774715626::1713214763::1713214763::1::::<><>::
+house exterior tiles.png::CompressedTexture2D::3271417147689879684::1713991237::1713991266::1::::<><>::
 mana icon.png::CompressedTexture2D::994008929195926911::1713214763::1713214789::1::::<><>::
 market boss idle.png::CompressedTexture2D::7581314748717393947::1713214763::1713214763::1::::<><>::
-market tiles.png::CompressedTexture2D::6199555818139586496::1713300663::1713300892::1::::<><>::
+market tiles.png::CompressedTexture2D::8534213676904680355::1713991237::1713991266::1::::<><>::
 ninja2 idle.png::CompressedTexture2D::3920566408791733188::1713214763::1713214763::1::::<><>::
 ninja3 idle.png::CompressedTexture2D::7450112935994496616::1713214763::1713214763::1::::<><>::
 ninja idle.png::CompressedTexture2D::8322442739118336006::1713214763::1713214763::1::::<><>::
@@ -27,12 +26,12 @@ sushi chef idle.png::CompressedTexture2D::3916377825577800125::1713214763::17132
 sushi chief idle.png::CompressedTexture2D::5653562711287767716::1713214763::1713214763::1::::<><>::
 tiles.png::CompressedTexture2D::7882151072281269352::1713214763::1713214763::1::::<><>::
 washitsu interior wip.png::CompressedTexture2D::9028832877229020815::1713214763::1713214763::1::::<><>::
-::res://resources/::1713475833
-base_enemy.gd::GDScript::-1::1713475833::0::1::::<>Resource<>::
+::res://resources/::1713991149
+base_enemy.gd::GDScript::-1::1713559597::0::1::::<>Resource<>::
 base_player.gd::GDScript::-1::1713214763::0::1::::<>Resource<>::
 current_characters.gd::GDScript::-1::1713214763::0::1::::<>Resource<>::
 current_characters.tres::Resource::8043987621595190737::1713302233::0::1::::<><>::res://resources/current_characters.gd
-::res://resources/enemy characters/::1713472777
+::res://resources/enemy characters/::1713991149
 fish dealer.tres::Resource::1454229888259774689::1713214763::0::1::::<><>::res://resources/base_enemy.gd<>uid://bdy44wh6xar84::::res://assets/sprites/placeholder 2.png
 fisherman.tres::Resource::5162201186044949049::1713214763::0::1::::<><>::res://resources/base_enemy.gd<>uid://bdy44wh6xar84::::res://assets/sprites/placeholder 2.png
 friendly chef.tres::Resource::8220962881125297947::1713472777::0::1::::<><>::res://resources/base_enemy.gd<>uid://vf0notos07xy::::res://assets/sprites/placeholder 3.png
@@ -40,32 +39,34 @@ market boss.tres::Resource::6844762293620940273::1713214763::0::1::::<><>::res:/
 ninja.tres::Resource::4993507212404339966::1713214763::0::1::::<><>::res://resources/base_enemy.gd<>uid://vf0notos07xy::::res://assets/sprites/placeholder 3.png
 sushi chef.tres::Resource::6738587091315541756::1713214763::0::1::::<><>::res://resources/base_enemy.gd<>uid://vf0notos07xy::::res://assets/sprites/placeholder 3.png
 sushi chief.tres::Resource::7927396886917557246::1713214763::0::1::::<><>::res://resources/base_enemy.gd<>uid://vf0notos07xy::::res://assets/sprites/placeholder 3.png
-::res://resources/player characters/::1713472777
+::res://resources/player characters/::1713991237
 isana.tres::Resource::7112925417392544708::1713472777::0::1::::<><>::res://resources/base_player.gd<>uid://dadylq3c81588::::res://assets/sprites/placeholder 1.png
 kousuke.tres::Resource::1413718345680464065::1713300663::0::1::::<><>::res://resources/base_player.gd<>uid://bdy44wh6xar84::::res://assets/sprites/placeholder 2.png
 yuuna.tres::Resource::6228763223773694137::1713300663::0::1::::<><>::res://resources/base_player.gd<>uid://vf0notos07xy::::res://assets/sprites/placeholder 3.png
-::res://resources/ui/::1713215107
+::res://resources/ui/::1713991149
 border_panel.tres::StyleBoxFlat::8325891626537149269::1713214763::0::1::::<><>::
 clear_panel.tres::StyleBoxFlat::5754289635839627843::1713214763::0::1::::<><>::
 darkened_panel.tres::StyleBoxFlat::-1::1713215107::0::1::::<><>::
 standard_panel.tres::StyleBoxFlat::7579885464379015807::1713214763::0::1::::<><>::
-::res://scenes/::1713475834
-action_box.gd::GDScript::-1::1713472777::0::1::::<>Panel<>::
-action_box.tscn::PackedScene::498436038919702439::1713472777::0::1::::<><>::uid://df80uuyvx30ud::::res://resources/ui/standard_panel.tres<>uid://cc11lnvwh7ek2::::res://assets/fonts/manaspace.ttf<>res://scenes/action_box.gd<>uid://dqveho1iwy0vh::::res://resources/ui/border_panel.tres<>uid://cn8okr5ek2bjv::::res://resources/ui/clear_panel.tres<>uid://dadylq3c81588::::res://assets/sprites/placeholder 1.png<>uid://vf0notos07xy::::res://assets/sprites/placeholder 3.png<>uid://bdy44wh6xar84::::res://assets/sprites/placeholder 2.png<>uid://ymqa76nr3jb::::res://scenes/skill_button.tscn<>uid://ci20nsbghq2yj::::res://assets/sprites/divider.png
-battle.gd::GDScript::-1::1713472777::0::1::::<>Control<>::
-battle.tscn::PackedScene::8297272530834451249::1713388622::0::1::::<><>::res://scenes/battle.gd<>uid://lj6u44u54at8::::res://assets/sprites/battle bg 1.png<>uid://hdpf0cdpojrb::::res://scenes/action_box.tscn<>res://scenes/Mouse.gd
+::res://scenes/::1713991237
+action_box.gd::GDScript::-1::1713991237::0::1::::<>Panel<>::
+action_box.tscn::PackedScene::498436038919702439::1713559678::0::1::::<><>::uid://df80uuyvx30ud::::res://resources/ui/standard_panel.tres<>uid://cc11lnvwh7ek2::::res://assets/fonts/manaspace.ttf<>res://scenes/action_box.gd<>uid://dqveho1iwy0vh::::res://resources/ui/border_panel.tres<>uid://cn8okr5ek2bjv::::res://resources/ui/clear_panel.tres<>uid://dadylq3c81588::::res://assets/sprites/placeholder 1.png<>uid://vf0notos07xy::::res://assets/sprites/placeholder 3.png<>uid://bdy44wh6xar84::::res://assets/sprites/placeholder 2.png<>uid://ymqa76nr3jb::::res://scenes/skill_button.tscn<>uid://ci20nsbghq2yj::::res://assets/sprites/divider.png
+battle.gd::GDScript::-1::1713991237::0::1::::<>Control<>::
+battle.tscn::PackedScene::8297272530834451249::1713559678::0::1::::<><>::res://scenes/battle.gd<>uid://lj6u44u54at8::::res://assets/sprites/battle bg 1.png<>uid://hdpf0cdpojrb::::res://scenes/action_box.tscn<>res://scenes/Mouse.gd
 battle_character.gd::GDScript::-1::1713214763::0::1::::<>Area2D<>::
-battle_character.tscn::PackedScene::5689677313271084533::1713388623::0::1::::<><>::res://scenes/battle_character.gd
+battle_character.tscn::PackedScene::5689677313271084533::1713559679::0::1::::<><>::res://scenes/battle_character.gd
 Camera2D.gd::GDScript::-1::1713214763::0::1::::<>Camera2D<>::
 character_data_container.gd::GDScript::-1::1713300663::0::1::::<>Node<>::
-character_data_container.tscn::PackedScene::7983769593405310691::1713388623::0::1::::<><>::res://scenes/character_data_container.gd
+character_data_container.tscn::PackedScene::7983769593405310691::1713559679::0::1::::<><>::res://scenes/character_data_container.gd
 char_stat_display.gd::GDScript::-1::1713472777::0::1::::<>Panel<>::
-char_stat_display.tscn::PackedScene::5488346115320497758::1713472777::0::1::::<><>::res://scenes/char_stat_display.gd<>uid://df80uuyvx30ud::::res://resources/ui/standard_panel.tres<>uid://cc11lnvwh7ek2::::res://assets/fonts/manaspace.ttf<>uid://dadylq3c81588::::res://assets/sprites/placeholder 1.png<>uid://djdh88btgr4u1::::res://resources/ui/darkened_panel.tres
+char_stat_display.tscn::PackedScene::5488346115320497758::1713991237::0::1::::<><>::res://scenes/char_stat_display.gd<>uid://df80uuyvx30ud::::res://resources/ui/standard_panel.tres<>uid://cc11lnvwh7ek2::::res://assets/fonts/manaspace.ttf<>uid://dadylq3c81588::::res://assets/sprites/placeholder 1.png<>res://resources/ui/darkened_panel.tres
 evil_ninja_animation.tscn::PackedScene::7776235636465055756::1713214763::0::1::::<><>::uid://b2x41ysetitn::::res://assets/sprites/evil ninja idle.png<>uid://ss1gxhx2pbqx::::res://assets/sprites/ninja running.png
 fisherman_animation.tscn::PackedScene::5816662912883939808::1713214763::0::1::::<><>::uid://dd5uvqfdvfipe::::res://assets/sprites/fisherman idle.png
 fish_dealer_animation.tscn::PackedScene::2374122432239271875::1713214763::0::1::::<><>::uid://cqukw2y0jdcmn::::res://assets/sprites/fish dealer idle.png
-main.gd::GDScript::-1::1713387035::0::1::::<>Node<>::
-main.tscn::PackedScene::3782853959426604854::1713472777::0::1::::<><>::res://scenes/main.gd<>uid://dkkf42kp0nsu7::::res://assets/sprites/tiles.png<>uid://b52qkdqle82x::::res://assets/sprites/house exterior tiles.png<>uid://c6byfgo2n38cu::::res://scenes/player.tscn<>res://scenes/Camera2D.gd<>uid://culd1qaprkg8g::::res://assets/sprites/market tiles.png<>uid://dgkjynt4eft8y::::res://scenes/overworld_text_box.tscn<>uid://c30om8we4bfto::::res://scenes/tutorial_ninja.tscn
+global.gd::GDScript::-1::1713991237::0::1::::<>Node<>::
+global.tscn::PackedScene::-1::1713991237::0::1::::<><>::
+main.gd::GDScript::-1::1713991237::0::1::::<>Node<>::
+main.tscn::PackedScene::3782853959426604854::1713559678::0::1::::<><>::res://scenes/main.gd<>uid://dkkf42kp0nsu7::::res://assets/sprites/tiles.png<>uid://b52qkdqle82x::::res://assets/sprites/house exterior tiles.png<>uid://c6byfgo2n38cu::::res://scenes/player.tscn<>res://scenes/Camera2D.gd<>uid://culd1qaprkg8g::::res://assets/sprites/market tiles.png<>uid://dgkjynt4eft8y::::res://scenes/overworld_text_box.tscn<>res://scenes/tutorial_ninja.tscn
 market_boss_animation.tscn::PackedScene::576350950285214944::1713214763::0::1::::<><>::uid://dgape8c5ovq5x::::res://assets/sprites/market boss idle.png
 Mouse.gd::GDScript::-1::1713214763::0::1::::<>Area2D<>::
 ninja_1_animation.tscn::PackedScene::323184059582309753::1713214763::0::1::::<><>::uid://dqtpoe5bkwovu::::res://assets/sprites/ninja idle.png<>uid://ss1gxhx2pbqx::::res://assets/sprites/ninja running.png
@@ -73,8 +74,8 @@ ninja_2_animation.tscn::PackedScene::2852954246568711601::1713214763::0::1::::<>
 ninja_3_animation.tscn::PackedScene::2608586261921488677::1713214763::0::1::::<><>::uid://dee5jh7hctxoy::::res://assets/sprites/ninja3 idle.png<>uid://ss1gxhx2pbqx::::res://assets/sprites/ninja running.png
 overworld_text_box.tscn::PackedScene::7601628915914738958::1713300663::0::1::::<><>::res://scenes/TextBox.gd<>uid://cc11lnvwh7ek2::::res://assets/fonts/manaspace.ttf
 player.gd::GDScript::-1::1713214763::0::1::::<>CharacterBody2D<>::
-player.gdshader::Shader::-1::1713475834::0::1::::<><>::
-player.tscn::PackedScene::6952226372727815660::1713388623::0::1::::<><>::res://scenes/player.gd<>uid://dqtpoe5bkwovu::::res://assets/sprites/ninja idle.png<>uid://ss1gxhx2pbqx::::res://assets/sprites/ninja running.png
+player.gdshader::Shader::-1::1713562380::0::1::::<><>::
+player.tscn::PackedScene::6952226372727815660::1713559679::0::1::::<><>::res://scenes/player.gd<>uid://dqtpoe5bkwovu::::res://assets/sprites/ninja idle.png<>uid://ss1gxhx2pbqx::::res://assets/sprites/ninja running.png
 skill_button.gd::GDScript::-1::1713472777::0::1::::<>Area2D<>::
 skill_button.tscn::PackedScene::50302293573423195::1713472777::0::1::::<><>::uid://cc11lnvwh7ek2::::res://assets/fonts/manaspace.ttf<>res://scenes/skill_button.gd<>uid://ofrggg61n4t4::::res://assets/sprites/mana icon.png<>uid://dqveho1iwy0vh::::res://resources/ui/border_panel.tres<>uid://djdh88btgr4u1::::res://resources/ui/darkened_panel.tres
 SushiChief.gd::GDScript::-1::1713214763::0::1::::<>StaticBody2D<>::
@@ -82,5 +83,5 @@ sushi_chef_animation.tscn::PackedScene::3390883415014778554::1713214763::0::1:::
 sushi_chief_animation.tscn::PackedScene::7887346675497833426::1713214763::0::1::::<><>::uid://cmsvl70p6t2tk::::res://assets/sprites/sushi chief idle.png
 sushi_chief_overworld.tscn::PackedScene::9042335925358054146::1713214763::0::1::::<><>::res://scenes/SushiChief.gd<>uid://dkmxphgg6yxta::::res://scenes/sushi_chief_animation.tscn
 TextBox.gd::GDScript::-1::1713214763::0::1::::<>Panel<>::
-tutorial.gd::GDScript::-1::1713387035::0::1::::<>StaticBody2D<>::
+tutorial.gd::GDScript::-1::1713991237::0::1::::<>StaticBody2D<>::
 tutorial_ninja.tscn::PackedScene::-1::1713300663::0::1::::<><>::
