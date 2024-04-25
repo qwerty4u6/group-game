@@ -1,0 +1,39 @@
+[gd_scene load_steps=8 format=3 uid="uid://dxekspirukdxy"]
+
+[ext_resource type="Texture2D" uid="uid://lj6u44u54at8" path="res://assets/sprites/battle bg 1.png" id="1_b5pyw"]
+[ext_resource type="Texture2D" uid="uid://bfrxdjrosonlv" path="res://assets/sprites/placeholder tile.png" id="2_cg2jm"]
+[ext_resource type="Script" path="res://scenes/PlaceholderTile.gd" id="3_lra1o"]
+[ext_resource type="Texture2D" uid="uid://dadylq3c81588" path="res://assets/sprites/placeholder 1.png" id="4_wdon5"]
+[ext_resource type="Texture2D" uid="uid://bdy44wh6xar84" path="res://assets/sprites/placeholder 2.png" id="5_1tydc"]
+[ext_resource type="Texture2D" uid="uid://vf0notos07xy" path="res://assets/sprites/placeholder 3.png" id="6_ptovp"]
+[ext_resource type="Script" path="res://scenes/TextureButton.gd" id="7_ue26f"]
+
+[node name="Title" type="Node"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_b5pyw")
+
+[node name="PlaceholderTile" type="Sprite2D" parent="."]
+position = Vector2(600, 200)
+scale = Vector2(2, 2)
+texture = ExtResource("2_cg2jm")
+script = ExtResource("3_lra1o")
+
+[node name="TextureButton" type="TextureButton" parent="."]
+offset_left = 472.0
+offset_top = 400.0
+offset_right = 728.0
+offset_bottom = 528.0
+scale = Vector2(1.00819, 0.992245)
+texture_normal = ExtResource("4_wdon5")
+texture_pressed = ExtResource("5_1tydc")
+texture_hover = ExtResource("6_ptovp")
+stretch_mode = 0
+script = ExtResource("7_ue26f")
+
+[connection signal="pressed" from="TextureButton" to="TextureButton" method="_on_pressed"]
