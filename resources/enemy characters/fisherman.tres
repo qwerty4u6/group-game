@@ -24,7 +24,7 @@ skills = [{
 "unlocked_at": 1
 }, {
 "applies": ["damage", 2, 1],
-"mana_cost": 4,
+"mana_cost": 2,
 "message": "%s reeled their fishing rod at %s!",
 "name": "Reel Rod",
 "target": "team",

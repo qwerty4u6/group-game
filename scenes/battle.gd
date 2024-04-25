@@ -48,13 +48,21 @@ func _ready():
 	for member in resources.enemies:
 		enemy_resources.push_back(load(member))
 	
+	var new_team_required = global.get_team() == null
+	
+	var j = 0
 	for member in team_resources:
-		var new = data_container.instantiate()
-		new.type = "team"
-		new.init(member)
+		var new
+		if new_team_required:
+			new = data_container.instantiate()
+			new.type = "team"
+			new.init(member)
+		else:
+			new = global.get_team()[j].instantiate()
 		$Team.add_child(new)
 		characters.push_back(new)
 		team_sprites.push_back(new.sprite)
+		j += 1
 	team = $Team.get_children()
 	
 	for member in enemy_resources:
@@ -188,6 +196,7 @@ func lose():
 func win():
 	$ActionBox.show_text("You win!")
 	await $ActionBox.textbox_closed
+	global.store_team($Team.get_children())
 	get_tree().change_scene_to_packed(global.get_main())
 
 func selected_display():

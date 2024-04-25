@@ -22,14 +22,14 @@ func interact():
 	
 	text_box.show_text("Hey! You know why you were sent here..")
 	await text_box.textbox_closed
-	#await get_tree().create_timer(0.1).timeout
-	#text_box.show_text("You were trying to stop your families fishing business!")
-	#await text_box.textbox_closed
-	#await get_tree().create_timer(0.1).timeout
-	#text_box.show_text("Just because you want to stop overfishing, doesn't mean I'll let you cause trouble in the fish market as well..")
-	#await text_box.textbox_closed
+	await get_tree().create_timer(0.1).timeout
+	text_box.show_text("You were trying to stop your families fishing business!")
+	await text_box.textbox_closed
+	await get_tree().create_timer(0.1).timeout
+	text_box.show_text("Just because you want to stop overfishing, doesn't mean I'll let you cause trouble in the fish market as well..")
+	await text_box.textbox_closed
 	
 	to_be_disabled = true
 	main.start_battle(main.team, [
 		"res://resources/enemy characters/friendly chef.tres"
-	], "The sushi chef attacks!")
+	], "The fisherman attacks!")

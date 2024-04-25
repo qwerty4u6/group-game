@@ -5,28 +5,28 @@
 
 [resource]
 script = ExtResource("1_hyvm6")
-name = "Sushi Chef"
+name = "Fisherman"
 texture = ExtResource("2_febhc")
-sprite = "res://scenes/sushi_chef_animation.tscn"
+sprite = "res://scenes/fisherman_animation.tscn"
 flip_h = false
 level = 5
 max_hp = 25
 hp = 25
 max_mana = 5
 mana = 5
-damage = 3
+damage = 2
 skills = [{
 "applies": ["damage", 0, 1],
 "mana_cost": 0,
-"message": "%s threw sushi at %s!",
-"name": "sushi throw",
+"message": "%s casted their fishing rod at %s!",
+"name": "Cast Rod",
 "target": "team",
 "unlocked_at": 1
 }, {
 "applies": ["damage", 2, 1],
-"mana_cost": 4,
-"message": "%s threw flaming sushi at %s!",
-"name": "flaming sushi",
+"mana_cost": 2,
+"message": "%s reeled their fishing rod at %s!",
+"name": "Reel Rod",
 "target": "team",
 "unlocked_at": 1
 }]

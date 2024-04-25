@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://c30om8we4bfto"]
 
 [ext_resource type="Script" path="res://scenes/tutorial.gd" id="1_5nhry"]
-[ext_resource type="PackedScene" uid="uid://boktmbys67xi5" path="res://scenes/sushi_chef_animation.tscn" id="2_a28e7"]
+[ext_resource type="PackedScene" uid="uid://co4vuaero1f1i" path="res://scenes/fisherman_animation.tscn" id="2_u5f5m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_upftp"]
 size = Vector2(64, 96)
@@ -12,7 +12,7 @@ size = Vector2(72, 96)
 [node name="Tutorial" type="StaticBody2D"]
 script = ExtResource("1_5nhry")
 
-[node name="Ninja2Animation" parent="." instance=ExtResource("2_a28e7")]
+[node name="Ninja2Animation" parent="." instance=ExtResource("2_u5f5m")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_upftp")

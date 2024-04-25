@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cx2tpq6i7jykw"
-path="res://.godot/imported/house exterior tiles.png-e79e1d88f92befa00fab4a538fa4b38f.ctex"
+uid="uid://c5cvfftn6q2pf"
+path="res://.godot/imported/final boss idle.png-9b724dcaaa3c4ce57e3ceb0d3586665f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/house exterior tiles.png"
-dest_files=["res://.godot/imported/house exterior tiles.png-e79e1d88f92befa00fab4a538fa4b38f.ctex"]
+source_file="res://assets/sprites/final boss idle.png"
+dest_files=["res://.godot/imported/final boss idle.png-9b724dcaaa3c4ce57e3ceb0d3586665f.ctex"]
 
 [params]
 
