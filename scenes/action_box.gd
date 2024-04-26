@@ -9,8 +9,8 @@ extends Panel
 @onready var skill_buttons = action_box.get_node("MarginContainer/MainContainer/SkillsContainer").get_children()
 
 var target = null
-
 var button_hovered = null
+var skipping = false
 
 signal text_done_displaying
 signal textbox_closed
@@ -23,6 +23,8 @@ func _input(event):
 			action_box.show()
 			emit_signal("textbox_closed")
 			text_box_label.visible_characters = 0
+	elif Input.is_action_just_pressed("skip_textbox"):
+		skipping = true
 
 func to_textbox():
 	text_box.show()
@@ -73,6 +75,7 @@ func to_empty_box():
 
 func show_text(text):
 	to_textbox()
+	skipping = false
 	text_box.get_node("NextLabel").hide()
 	
 	text_box_label.get_node("Timer").set_paused(false)
@@ -86,6 +89,10 @@ func show_text(text):
 	$AnimationPlayer.play("next arrow")
 
 func _on_timer_timeout():
+	if skipping:
+		skipping = false
+		text_box_label.visible_characters = 999
+		emit_signal("text_done_displaying")
 	text_box_label.visible_characters += 1
 	if text_box_label.visible_characters == text_box_label.text.length() + 1:
 		emit_signal("text_done_displaying")
