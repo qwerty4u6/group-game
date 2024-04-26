@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bt5pb1e8nqbra"]
+[gd_scene load_steps=19 format=3 uid="uid://bt5pb1e8nqbra"]
 
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_iythu"]
 [ext_resource type="Texture2D" uid="uid://dkkf42kp0nsu7" path="res://assets/sprites/tiles.png" id="2_m6nrn"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://scenes/Camera2D.gd" id="4_u1n5e"]
 [ext_resource type="PackedScene" uid="uid://dgkjynt4eft8y" path="res://scenes/overworld_text_box.tscn" id="6_cyeg4"]
 [ext_resource type="PackedScene" uid="uid://c30om8we4bfto" path="res://scenes/tutorial_ninja.tscn" id="8_1567k"]
+[ext_resource type="Script" path="res://scenes/RandomEnemyEncounter.gd" id="8_rdrj8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_otqh7"]
 texture = ExtResource("3_ntoqm")
@@ -1088,6 +1089,9 @@ _data = {
 "fade_out": SubResource("Animation_26a0g")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_obthc"]
+size = Vector2(2784, 224)
+
 [node name="Main" type="Node"]
 script = ExtResource("1_iythu")
 
@@ -1153,5 +1157,13 @@ metadata/_edit_use_anchors_ = true
 libraries = {
 "": SubResource("AnimationLibrary_s15m1")
 }
+
+[node name="RandomEnemyEncounter" type="Area2D" parent="." groups=["random_enemy_encounter"]]
+position = Vector2(246, -1783)
+script = ExtResource("8_rdrj8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RandomEnemyEncounter"]
+position = Vector2(-1382, 102)
+shape = SubResource("RectangleShape2D_obthc")
 
 [connection signal="animation_finished" from="CanvasLayer/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
