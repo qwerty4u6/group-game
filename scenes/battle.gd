@@ -111,6 +111,10 @@ func _ready():
 		sprite.play("idle")
 		sprite.flip_h = enemy_sprites[i][1]
 	
+	for member in team_stat_displays:
+		if member.res.hp <= 0:
+			member.set_hp(1)
+	
 	anim_player.play("fade_in")
 	await done_fading_in
 	$ActionBox.show_text(resources.appear_text)
@@ -168,9 +172,14 @@ func next_turn():
 	if enem_amt == 0:
 		win()
 		return
-	if current_turn >= team.size():
+	
+	var team_size = 0
+	for member in team:
+		if member.hp > 0:
+			team_size += 1
+	if current_turn >= team_size:
 		for enemy in $Enemies.get_children():
-			if enemy.hp == 0:
+			if enemy.disp.dead:
 				continue
 			$ActionBox.show_text(enemy_turn(enemy))
 			await $ActionBox.textbox_closed
@@ -192,6 +201,7 @@ func next_turn():
 func lose():
 	$ActionBox.show_text("Your party is too weak to continue...")
 	await $ActionBox.textbox_closed
+	$ActionBox.queue_free()
 
 func win():
 	$ActionBox.show_text("You win!")
