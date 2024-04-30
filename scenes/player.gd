@@ -28,12 +28,7 @@ func _process(delta):
 		
 		dist += 1
 		if stored_position != position:
-			var areas = get_parent().get_node("RandomEnemyEncounters").get_children()
-			for area in areas:
-				var bodies = area.get_overlapping_bodies()
-				for body in bodies:
-					if body.is_in_group("player"):
-						area.calc(dist)
+			battle_check()
 	
 	if velocity.x < 0:
 		anim.flip_h = true
@@ -43,3 +38,12 @@ func _process(delta):
 		anim.play("running")
 	else:
 		anim.play("idle")
+
+func battle_check():
+	var areas = get_parent().get_node("RandomEnemyEncounters").get_children()
+	for area in areas:
+		var bodies = area.get_overlapping_bodies()
+		for body in bodies:
+			if body.is_in_group("player"):
+				area.calc(dist)
+				return

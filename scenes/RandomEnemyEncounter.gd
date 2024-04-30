@@ -12,3 +12,4 @@ func calc(dist):
 		player.interacting_with = null
 		player.can_walk = false
 		main.start_battle(main.team, enemies, message)
+	return name
