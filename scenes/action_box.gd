@@ -7,6 +7,8 @@ extends Panel
 @onready var empty_box = get_node("MarginContainer/EmptyBox")
 @onready var text_box_label = text_box.get_node("MarginContainer/Label")
 @onready var skill_buttons = action_box.get_node("MarginContainer/MainContainer/SkillsContainer").get_children()
+@onready var skip_button = action_box.get_node("MarginContainer/MainContainer/MiscContainer/Skip")
+@onready var flee_button = action_box.get_node("MarginContainer/MainContainer/MiscContainer/Flee")
 
 var target = null
 var button_hovered = null
@@ -34,6 +36,9 @@ func to_textbox():
 	
 	for button in skill_buttons:
 		button.clickable = false
+	skip_button.clickable = false
+	flee_button.clickable = false
+	
 
 func to_action_box(character = null):
 	text_box.hide()
@@ -43,6 +48,8 @@ func to_action_box(character = null):
 	
 	for button in skill_buttons:
 		button.clickable = true
+	skip_button.clickable = true
+	flee_button.clickable = true
 	
 	var skills = character.skills
 	for i in 4:
@@ -63,6 +70,8 @@ func to_back_box():
 	
 	for button in skill_buttons:
 		button.clickable = false
+	skip_button.clickable = false
+	flee_button.clickable = false
 
 func to_empty_box():
 	text_box.hide()
@@ -72,6 +81,8 @@ func to_empty_box():
 	
 	for button in skill_buttons:
 		button.clickable = false
+	skip_button.clickable = false
+	flee_button.clickable = false
 
 func show_text(text):
 	to_textbox()
@@ -121,6 +132,8 @@ func prepare_skill(i):
 	battle.current_character.disp.take_mana(skill.mana_cost)
 	if skill.applies[0] == "damage":
 		disp.damage((character.damage + skill.applies[1]) * skill.applies[2])
+	elif skill.applies[0] == "heal":
+		disp.damage(-skill.applies[1])
 	show_text(skill.message % [character.name_text, target.res.name_text])
 	await textbox_closed
 	battle.next_turn()

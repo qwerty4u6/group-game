@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://hdpf0cdpojrb"]
+[gd_scene load_steps=16 format=3 uid="uid://hdpf0cdpojrb"]
 
 [ext_resource type="StyleBox" uid="uid://df80uuyvx30ud" path="res://resources/ui/standard_panel.tres" id="1_hr8em"]
 [ext_resource type="FontFile" uid="uid://cc11lnvwh7ek2" path="res://assets/fonts/manaspace.ttf" id="2_8ropt"]
@@ -10,6 +10,8 @@
 [ext_resource type="Texture2D" uid="uid://bdy44wh6xar84" path="res://assets/sprites/placeholder 2.png" id="6_1cy2g"]
 [ext_resource type="PackedScene" uid="uid://ymqa76nr3jb" path="res://scenes/skill_button.tscn" id="6_sjoho"]
 [ext_resource type="Texture2D" uid="uid://ci20nsbghq2yj" path="res://assets/sprites/divider.png" id="8_kootn"]
+[ext_resource type="PackedScene" uid="uid://cdeqsvc1hb6m4" path="res://scenes/skip_button.tscn" id="10_ly2dc"]
+[ext_resource type="PackedScene" uid="uid://cs5dyphay65oq" path="res://scenes/flee_button.tscn" id="11_qqocw"]
 
 [sub_resource type="Animation" id="Animation_10mip"]
 length = 0.001
@@ -163,28 +165,14 @@ offset_right = 672.0
 offset_bottom = 154.0
 theme_override_styles/panel = ExtResource("4_768yw")
 
-[node name="Defend" type="TextureButton" parent="MarginContainer/ActionBox/MarginContainer/MainContainer/MiscContainer"]
-layout_mode = 0
-offset_top = 80.0
-offset_right = 129.0
-offset_bottom = 154.0
-texture_normal = ExtResource("4_jxhro")
-texture_pressed = ExtResource("5_tm4qg")
-texture_hover = ExtResource("6_1cy2g")
-stretch_mode = 0
+[node name="Skip" parent="MarginContainer/ActionBox/MarginContainer/MainContainer/MiscContainer" instance=ExtResource("10_ly2dc")]
+position = Vector2(10, 90)
 
-[node name="Run" type="TextureButton" parent="MarginContainer/ActionBox/MarginContainer/MainContainer/MiscContainer"]
-layout_mode = 0
-offset_left = 135.0
-offset_top = 80.0
-offset_right = 264.0
-offset_bottom = 154.0
-texture_normal = ExtResource("4_jxhro")
-texture_pressed = ExtResource("5_tm4qg")
-texture_hover = ExtResource("6_1cy2g")
-stretch_mode = 0
+[node name="Flee" parent="MarginContainer/ActionBox/MarginContainer/MainContainer/MiscContainer" instance=ExtResource("11_qqocw")]
+position = Vector2(145, 90)
 
 [node name="TextureRect" type="TextureRect" parent="MarginContainer/ActionBox/MarginContainer/MainContainer/MiscContainer"]
+visible = false
 layout_mode = 0
 offset_right = 74.0
 offset_bottom = 74.0
@@ -195,7 +183,6 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 74.0
 offset_top = -1.0
 offset_bottom = -81.0
 grow_horizontal = 2
@@ -216,6 +203,7 @@ offset_bottom = 154.0
 theme_override_styles/panel = ExtResource("4_768yw")
 
 [node name="Item1" type="TextureButton" parent="MarginContainer/ActionBox/MarginContainer/MainContainer/ItemsContainer"]
+visible = false
 layout_mode = 0
 offset_right = 192.0
 offset_bottom = 34.0
@@ -225,6 +213,7 @@ texture_hover = ExtResource("6_1cy2g")
 stretch_mode = 0
 
 [node name="Item2" type="TextureButton" parent="MarginContainer/ActionBox/MarginContainer/MainContainer/ItemsContainer"]
+visible = false
 layout_mode = 0
 offset_left = 198.0
 offset_right = 390.0
@@ -235,6 +224,7 @@ texture_hover = ExtResource("6_1cy2g")
 stretch_mode = 0
 
 [node name="Item3" type="TextureButton" parent="MarginContainer/ActionBox/MarginContainer/MainContainer/ItemsContainer"]
+visible = false
 layout_mode = 0
 offset_top = 40.0
 offset_right = 192.0
@@ -245,6 +235,7 @@ texture_hover = ExtResource("6_1cy2g")
 stretch_mode = 0
 
 [node name="Item4" type="TextureButton" parent="MarginContainer/ActionBox/MarginContainer/MainContainer/ItemsContainer"]
+visible = false
 layout_mode = 0
 offset_left = 198.0
 offset_top = 40.0
@@ -256,6 +247,7 @@ texture_hover = ExtResource("6_1cy2g")
 stretch_mode = 0
 
 [node name="Item5" type="TextureButton" parent="MarginContainer/ActionBox/MarginContainer/MainContainer/ItemsContainer"]
+visible = false
 layout_mode = 0
 offset_top = 80.0
 offset_right = 192.0
@@ -266,6 +258,7 @@ texture_hover = ExtResource("6_1cy2g")
 stretch_mode = 0
 
 [node name="Item6" type="TextureButton" parent="MarginContainer/ActionBox/MarginContainer/MainContainer/ItemsContainer"]
+visible = false
 layout_mode = 0
 offset_left = 198.0
 offset_top = 80.0
@@ -277,6 +270,7 @@ texture_hover = ExtResource("6_1cy2g")
 stretch_mode = 0
 
 [node name="Item7" type="TextureButton" parent="MarginContainer/ActionBox/MarginContainer/MainContainer/ItemsContainer"]
+visible = false
 layout_mode = 0
 offset_top = 120.0
 offset_right = 192.0
@@ -287,6 +281,7 @@ texture_hover = ExtResource("6_1cy2g")
 stretch_mode = 0
 
 [node name="Item8" type="TextureButton" parent="MarginContainer/ActionBox/MarginContainer/MainContainer/ItemsContainer"]
+visible = false
 layout_mode = 0
 offset_left = 198.0
 offset_top = 120.0
@@ -296,6 +291,25 @@ texture_normal = ExtResource("4_jxhro")
 texture_pressed = ExtResource("5_tm4qg")
 texture_hover = ExtResource("6_1cy2g")
 stretch_mode = 0
+
+[node name="NameLabel2" type="Label" parent="MarginContainer/ActionBox/MarginContainer/MainContainer/ItemsContainer"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 53.0
+offset_top = 38.0
+offset_right = -21.0
+offset_bottom = -42.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("2_8ropt")
+theme_override_font_sizes/font_size = 20
+text = "(wip)"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Divider" type="TextureRect" parent="MarginContainer/ActionBox/MarginContainer/MainContainer"]
 layout_mode = 0

@@ -204,10 +204,23 @@ func lose():
 	$ActionBox.queue_free()
 
 func win():
-	$ActionBox.show_text("You win!")
+	$ActionBox.show_text("Your party won!")
 	await $ActionBox.textbox_closed
 	global.store_team($Team.get_children())
 	get_tree().change_scene_to_packed(global.get_main())
+
+func flee_attempt():
+	pass
+
+func good_flee():
+	$ActionBox.show_text("Your party ran from the battle...")
+	await $ActionBox.textbox_closed
+	global.store_team($Team.get_children())
+	get_tree().change_scene_to_packed(global.get_main())
+	
+func bad_flee():
+	$ActionBox.show_text("Your party tried to run, but failed...")
+	await $ActionBox.textbox_closed
 
 func selected_display():
 	for disp in members:

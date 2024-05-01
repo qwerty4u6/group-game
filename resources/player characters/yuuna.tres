@@ -13,8 +13,8 @@ level = 1
 xp_until_next = 5.0
 max_hp = 11
 hp = 11
-max_mana = 30
-mana = 30
+max_mana = 7
+mana = 7
 damage = 3
 base_hp = 14
 base_mana = 30
@@ -23,10 +23,24 @@ level_curve = {
 "b": 5
 }
 skills = [{
-"applies": ["damage", -1, 2],
+"applies": ["damage", 1, 1],
 "mana_cost": 0,
-"message": "%s threw Throwing Stars at %s!",
-"name": "Throwing Stars",
+"message": "%s casted fire spark against %s!",
+"name": "Fire Spark",
+"target": "enemy",
+"unlocked_at": 1
+}, {
+"applies": ["heal", 4, 1],
+"mana_cost": 2,
+"message": "%s rejuvinated %s!",
+"name": "Rejuvinate",
+"target": "team",
+"unlocked_at": 1
+}, {
+"applies": ["damage", 3, 1],
+"mana_cost": 4,
+"message": "%s casted a magic missile against %s!",
+"name": "Magic Missle",
 "target": "enemy",
 "unlocked_at": 1
 }]
