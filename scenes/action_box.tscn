@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://hdpf0cdpojrb"]
+[gd_scene load_steps=17 format=3 uid="uid://hdpf0cdpojrb"]
 
 [ext_resource type="StyleBox" uid="uid://df80uuyvx30ud" path="res://resources/ui/standard_panel.tres" id="1_hr8em"]
 [ext_resource type="FontFile" uid="uid://cc11lnvwh7ek2" path="res://assets/fonts/manaspace.ttf" id="2_8ropt"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://ci20nsbghq2yj" path="res://assets/sprites/divider.png" id="8_kootn"]
 [ext_resource type="PackedScene" uid="uid://cdeqsvc1hb6m4" path="res://scenes/skip_button.tscn" id="10_ly2dc"]
 [ext_resource type="PackedScene" uid="uid://cs5dyphay65oq" path="res://scenes/flee_button.tscn" id="11_qqocw"]
+[ext_resource type="PackedScene" uid="uid://cteainjofxbov" path="res://scenes/back_button.tscn" id="13_7bmlh"]
 
 [sub_resource type="Animation" id="Animation_10mip"]
 length = 0.001
@@ -346,16 +347,8 @@ theme_override_constants/margin_bottom = 30
 layout_mode = 2
 theme_override_styles/panel = ExtResource("4_768yw")
 
-[node name="Back" type="TextureButton" parent="MarginContainer/BackBox/MarginContainer/MainContainer"]
-layout_mode = 2
-offset_left = 466.0
-offset_top = 19.0
-offset_right = 614.0
-offset_bottom = 93.0
-texture_normal = ExtResource("4_jxhro")
-texture_pressed = ExtResource("5_tm4qg")
-texture_hover = ExtResource("6_1cy2g")
-stretch_mode = 0
+[node name="Back2" parent="MarginContainer/BackBox/MarginContainer/MainContainer" instance=ExtResource("13_7bmlh")]
+position = Vector2(476, 29)
 
 [node name="EmptyBox" type="Panel" parent="MarginContainer"]
 visible = false
@@ -363,4 +356,3 @@ layout_mode = 2
 theme_override_styles/panel = ExtResource("3_0e03r")
 
 [connection signal="timeout" from="MarginContainer/TextBox/MarginContainer/Label/Timer" to="." method="_on_timer_timeout"]
-[connection signal="pressed" from="MarginContainer/BackBox/MarginContainer/MainContainer/Back" to="." method="_on_back_pressed"]

@@ -1198,6 +1198,13 @@ position = Vector2(112, -625)
 [node name="Player" parent="." instance=ExtResource("4_i4ckd")]
 position = Vector2(0, -1)
 
+[node name="TileMap4" type="TileMap" parent="."]
+position = Vector2(0, -1)
+rotation = -0.000222429
+scale = Vector2(4, 4)
+tile_set = SubResource("TileSet_tparm")
+format = 2
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="TextBox" parent="CanvasLayer" instance=ExtResource("6_cyeg4")]
@@ -1227,7 +1234,7 @@ position = Vector2(246, -1783)
 script = ExtResource("8_rdrj8")
 enemies = ["res://resources/enemy characters/friendly chef.tres", "res://resources/enemy characters/friendly chef.tres", "res://resources/enemy characters/friendly chef.tres"]
 message = "these"
-freq = 150.0
+freq = 40.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RandomEnemyEncounters/RandomEnemyEncounter"]
 position = Vector2(-268, -269.5)
@@ -1239,7 +1246,7 @@ position = Vector2(246, -1783)
 script = ExtResource("8_rdrj8")
 enemies = ["res://resources/enemy characters/friendly chef.tres", "res://resources/enemy characters/friendly chef.tres", "res://resources/enemy characters/friendly chef.tres"]
 message = "these"
-freq = 150.0
+freq = 40.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RandomEnemyEncounters/RandomEnemyEncounter7"]
 position = Vector2(929.5, -2717.5)
@@ -1251,7 +1258,7 @@ position = Vector2(246, -1783)
 script = ExtResource("8_rdrj8")
 enemies = ["res://resources/enemy characters/friendly chef.tres", "res://resources/enemy characters/friendly chef.tres", "res://resources/enemy characters/friendly chef.tres"]
 message = "these"
-freq = 150.0
+freq = 40.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RandomEnemyEncounters/RandomEnemyEncounter4"]
 position = Vector2(1104.5, -1643.5)
@@ -1263,7 +1270,7 @@ position = Vector2(246, -1783)
 script = ExtResource("8_rdrj8")
 enemies = ["res://resources/enemy characters/friendly chef.tres", "res://resources/enemy characters/friendly chef.tres", "res://resources/enemy characters/friendly chef.tres"]
 message = "these"
-freq = 150.0
+freq = 40.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RandomEnemyEncounters/RandomEnemyEncounter5"]
 position = Vector2(1067.5, -39.5)
@@ -1275,7 +1282,7 @@ position = Vector2(246, -1783)
 script = ExtResource("8_rdrj8")
 enemies = ["res://resources/enemy characters/friendly chef.tres", "res://resources/enemy characters/friendly chef.tres", "res://resources/enemy characters/friendly chef.tres"]
 message = "these"
-freq = 150.0
+freq = 40.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RandomEnemyEncounters/RandomEnemyEncounter6"]
 position = Vector2(1073.75, 855.25)
@@ -1287,7 +1294,7 @@ position = Vector2(246, -1783)
 script = ExtResource("8_rdrj8")
 enemies = ["res://resources/enemy characters/friendly chef.tres", "res://resources/enemy characters/friendly chef.tres", "res://resources/enemy characters/friendly chef.tres"]
 message = "these"
-freq = 150.0
+freq = 40.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RandomEnemyEncounters/RandomEnemyEncounter2"]
 position = Vector2(-1927.5, -1029.5)
@@ -1299,7 +1306,7 @@ position = Vector2(246, -1783)
 script = ExtResource("8_rdrj8")
 enemies = ["res://resources/enemy characters/friendly chef.tres", "res://resources/enemy characters/friendly chef.tres", "res://resources/enemy characters/friendly chef.tres"]
 message = "these"
-freq = 150.0
+freq = 40.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RandomEnemyEncounters/RandomEnemyEncounter3"]
 position = Vector2(-1927.75, 338.75)

@@ -199,7 +199,7 @@ func next_turn():
 	$ActionBox.to_action_box(current_character)
 
 func lose():
-	$ActionBox.show_text("Your party is too weak to continue...")
+	$ActionBox.show_text("Your party is too weak to continue..")
 	await $ActionBox.textbox_closed
 	$ActionBox.queue_free()
 
@@ -209,18 +209,16 @@ func win():
 	global.store_team($Team.get_children())
 	get_tree().change_scene_to_packed(global.get_main())
 
-func flee_attempt():
-	pass
-
 func good_flee():
-	$ActionBox.show_text("Your party ran from the battle...")
+	$ActionBox.show_text("Your party ran from the battle..")
 	await $ActionBox.textbox_closed
 	global.store_team($Team.get_children())
 	get_tree().change_scene_to_packed(global.get_main())
 	
 func bad_flee():
-	$ActionBox.show_text("Your party tried to run, but failed...")
+	$ActionBox.show_text("Flee attempt failed..")
 	await $ActionBox.textbox_closed
+	next_turn()
 
 func selected_display():
 	for disp in members:

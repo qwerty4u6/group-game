@@ -18,7 +18,7 @@ func init(i, init_skill = {"name": "none", "mana_cost": 99}, mana = 0):
 		lighten()
 
 func _input(event):
-	if clickable && Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
+	if clickable && Input.is_action_just_pressed("click"):
 		var overlapping = get_overlapping_areas()
 		for area in overlapping:
 			if area.is_in_group("mouse_area"):

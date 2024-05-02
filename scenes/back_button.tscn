@@ -1,20 +1,20 @@
-[gd_scene load_steps=6 format=3 uid="uid://cs5dyphay65oq"]
+[gd_scene load_steps=6 format=3 uid="uid://cteainjofxbov"]
 
-[ext_resource type="Script" path="res://scenes/flee_button.gd" id="1_sof4r"]
-[ext_resource type="FontFile" uid="uid://cc11lnvwh7ek2" path="res://assets/fonts/manaspace.ttf" id="2_o66a7"]
-[ext_resource type="StyleBox" uid="uid://dqveho1iwy0vh" path="res://resources/ui/border_panel.tres" id="4_n3tb4"]
-[ext_resource type="StyleBox" uid="uid://djdh88btgr4u1" path="res://resources/ui/darkened_panel.tres" id="5_7byln"]
+[ext_resource type="Script" path="res://scenes/back_button.gd" id="1_kdxvb"]
+[ext_resource type="FontFile" uid="uid://cc11lnvwh7ek2" path="res://assets/fonts/manaspace.ttf" id="2_bqrb5"]
+[ext_resource type="StyleBox" uid="uid://dqveho1iwy0vh" path="res://resources/ui/border_panel.tres" id="3_6s4jv"]
+[ext_resource type="StyleBox" uid="uid://djdh88btgr4u1" path="res://resources/ui/darkened_panel.tres" id="4_tpumo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2t14k"]
-size = Vector2(129, 74)
+size = Vector2(148, 74)
 
-[node name="Flee" type="Area2D"]
+[node name="Back" type="Area2D"]
 position = Vector2(10, 10)
-script = ExtResource("1_sof4r")
+script = ExtResource("1_kdxvb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
-position = Vector2(54.5, 27)
+position = Vector2(64, 27)
 shape = SubResource("RectangleShape2D_2t14k")
 
 [node name="NameLabel" type="Label" parent="."]
@@ -23,13 +23,13 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -10.0
 offset_top = -7.0
-offset_right = 119.0
+offset_right = 138.0
 offset_bottom = 67.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 6
-theme_override_fonts/font = ExtResource("2_o66a7")
+theme_override_fonts/font = ExtResource("2_bqrb5")
 theme_override_font_sizes/font_size = 20
 text = "Back"
 horizontal_alignment = 1
@@ -38,9 +38,9 @@ vertical_alignment = 1
 [node name="Panel" type="Panel" parent="."]
 offset_left = -10.0
 offset_top = -10.0
-offset_right = 119.0
+offset_right = 138.0
 offset_bottom = 64.0
-theme_override_styles/panel = ExtResource("4_n3tb4")
+theme_override_styles/panel = ExtResource("3_6s4jv")
 
 [node name="Darken" type="Panel" parent="."]
 visible = false
@@ -48,7 +48,7 @@ offset_left = -10.0
 offset_top = -10.0
 offset_right = 182.0
 offset_bottom = 64.0
-theme_override_styles/panel = ExtResource("5_7byln")
+theme_override_styles/panel = ExtResource("4_tpumo")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="area_exited" from="." to="." method="_on_area_exited"]

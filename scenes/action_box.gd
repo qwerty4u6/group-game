@@ -9,10 +9,12 @@ extends Panel
 @onready var skill_buttons = action_box.get_node("MarginContainer/MainContainer/SkillsContainer").get_children()
 @onready var skip_button = action_box.get_node("MarginContainer/MainContainer/MiscContainer/Skip")
 @onready var flee_button = action_box.get_node("MarginContainer/MainContainer/MiscContainer/Flee")
+@onready var back_button = back_box.get_node("MarginContainer/MainContainer/Back2")
 
 var target = null
 var button_hovered = null
 var skipping = false
+var frames_after_back = 0
 
 signal text_done_displaying
 signal textbox_closed
@@ -28,6 +30,9 @@ func _input(event):
 	elif Input.is_action_just_pressed("skip_textbox"):
 		skipping = true
 
+func _process(delta):
+	frames_after_back += 1
+
 func to_textbox():
 	text_box.show()
 	action_box.hide()
@@ -38,6 +43,7 @@ func to_textbox():
 		button.clickable = false
 	skip_button.clickable = false
 	flee_button.clickable = false
+	back_button.clickable = false
 	
 
 func to_action_box(character = null):
@@ -50,6 +56,7 @@ func to_action_box(character = null):
 		button.clickable = true
 	skip_button.clickable = true
 	flee_button.clickable = true
+	back_button.clickable = false
 	
 	var skills = character.skills
 	for i in 4:
@@ -72,6 +79,7 @@ func to_back_box():
 		button.clickable = false
 	skip_button.clickable = false
 	flee_button.clickable = false
+	back_button.clickable = true
 
 func to_empty_box():
 	text_box.hide()
@@ -83,6 +91,7 @@ func to_empty_box():
 		button.clickable = false
 	skip_button.clickable = false
 	flee_button.clickable = false
+	back_button.clickable = false
 
 func show_text(text):
 	to_textbox()

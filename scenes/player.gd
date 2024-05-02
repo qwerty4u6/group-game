@@ -5,6 +5,7 @@ extends CharacterBody2D
 var interacting_with = null
 var can_walk = false
 var dist = 0
+var battle_cooldown = -4.0
 
 func _input(event):
 	if Input.is_action_just_pressed("ui_accept") or Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
@@ -28,7 +29,8 @@ func _process(delta):
 		
 		dist += 1
 		if stored_position != position:
-			battle_check()
+			battle_cooldown += delta
+			battle_check(delta)
 	
 	if velocity.x < 0:
 		anim.flip_h = true
@@ -39,11 +41,13 @@ func _process(delta):
 	else:
 		anim.play("idle")
 
-func battle_check():
+func battle_check(delta):
+	if battle_cooldown <= 0.0:
+		return
 	var areas = get_parent().get_node("RandomEnemyEncounters").get_children()
 	for area in areas:
 		var bodies = area.get_overlapping_bodies()
 		for body in bodies:
 			if body.is_in_group("player"):
-				area.calc(dist)
+				area.calc(dist, delta)
 				return
