@@ -25,12 +25,12 @@ func _ready():
 		"res://resources/enemy characters/friendly chef.tres"
 	], "The sushi chef attacks!")
 
-func start_battle(players, enemies, appear_text = "placeholder"):
+func start_battle(players, enemies, fleeable):
 	anim_player.play("fade_out")
 	await done_fading_out
 	current_characters.team = players
 	current_characters.enemies = enemies
-	current_characters.appear_text = appear_text
+	current_characters.fleeable = fleeable
 	
 	for npc in $NPC.get_children():
 		if npc.to_be_disabled:

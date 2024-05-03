@@ -43,6 +43,8 @@ func _ready():
 	get_node("CanvasLayer/ColorRect").show()
 	$ActionBox.to_empty_box()
 	
+	$ActionBox.flee_button.skippable = resources.fleeable
+	
 	for member in resources.team:
 		team_resources.push_back(load(member))
 	var i5 = 0

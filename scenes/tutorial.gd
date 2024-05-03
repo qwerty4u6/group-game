@@ -32,4 +32,4 @@ func interact():
 	to_be_disabled = true
 	main.start_battle(main.team, ["The fisherman attacks!", 
 		"res://resources/enemy characters/friendly chef.tres"
-	])
+	], false)
