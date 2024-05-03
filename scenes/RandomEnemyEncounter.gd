@@ -13,4 +13,4 @@ func calc(dist, delta):
 		var player = main.get_node("Player")
 		player.interacting_with = null
 		player.can_walk = false
-		main.start_battle(main.team, enemies, message)
+		main.start_battle(main.team, enemies, true)
