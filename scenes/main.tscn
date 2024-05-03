@@ -1,10 +1,11 @@
-[gd_scene load_steps=27 format=3 uid="uid://bt5pb1e8nqbra"]
+[gd_scene load_steps=29 format=3 uid="uid://bt5pb1e8nqbra"]
 
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_iythu"]
 [ext_resource type="Texture2D" uid="uid://dkkf42kp0nsu7" path="res://assets/sprites/tiles.png" id="2_m6nrn"]
 [ext_resource type="Texture2D" uid="uid://cx2tpq6i7jykw" path="res://assets/sprites/house exterior tiles.png" id="3_ntoqm"]
 [ext_resource type="PackedScene" uid="uid://c6byfgo2n38cu" path="res://scenes/player.tscn" id="4_i4ckd"]
 [ext_resource type="Script" path="res://scenes/Camera2D.gd" id="4_u1n5e"]
+[ext_resource type="Texture2D" uid="uid://3n2n2r62bpvb" path="res://assets/sprites/bridge tiles.png" id="5_i53sn"]
 [ext_resource type="PackedScene" uid="uid://dgkjynt4eft8y" path="res://scenes/overworld_text_box.tscn" id="6_cyeg4"]
 [ext_resource type="PackedScene" uid="uid://c30om8we4bfto" path="res://scenes/tutorial_ninja.tscn" id="8_1567k"]
 [ext_resource type="Script" path="res://scenes/RandomEnemyEncounter.gd" id="8_rdrj8"]
@@ -1070,6 +1071,37 @@ texture_region_size = Vector2i(8, 8)
 2:2/0/physics_layer_0/angular_velocity = 0.0
 2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, -3, -4, -3.00781, 4, -4, 4)
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bw0gn"]
+texture = ExtResource("5_i53sn")
+texture_region_size = Vector2i(8, 8)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+1:0/0 = 0
+1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:0/0/physics_layer_0/angular_velocity = 0.0
+2:0/0 = 0
+2:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:0/0/physics_layer_0/angular_velocity = 0.0
+0:1/0 = 0
+0:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:1/0/physics_layer_0/angular_velocity = 0.0
+1:1/0 = 0
+1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:1/0/physics_layer_0/angular_velocity = 0.0
+2:1/0 = 0
+2:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:1/0/physics_layer_0/angular_velocity = 0.0
+0:2/0 = 0
+0:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:2/0/physics_layer_0/angular_velocity = 0.0
+1:2/0 = 0
+1:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:2/0/physics_layer_0/angular_velocity = 0.0
+2:2/0 = 0
+2:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:2/0/physics_layer_0/angular_velocity = 0.0
+
 [sub_resource type="TileSet" id="TileSet_tparm"]
 tile_size = Vector2i(8, 8)
 physics_layer_0/collision_layer = 1
@@ -1077,6 +1109,7 @@ sources/1 = SubResource("TileSetAtlasSource_sr4fd")
 sources/0 = SubResource("TileSetAtlasSource_otqh7")
 sources/2 = SubResource("TileSetAtlasSource_864v3")
 sources/3 = SubResource("TileSetAtlasSource_y01gm")
+sources/4 = SubResource("TileSetAtlasSource_bw0gn")
 
 [sub_resource type="Animation" id="Animation_np7xg"]
 length = 0.001
