@@ -31,7 +31,7 @@ skills = [{
 "unlocked_at": 1
 }, {
 "applies": ["heal", 4, 1],
-"mana_cost": 2,
+"mana_cost": 3,
 "message": "%s rejuvinated %s!",
 "name": "Rejuvinate",
 "target": "team",

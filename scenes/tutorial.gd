@@ -30,6 +30,6 @@ func interact():
 	await text_box.textbox_closed
 	
 	to_be_disabled = true
-	main.start_battle(main.team, [
+	main.start_battle(main.team, ["The fisherman attacks!", 
 		"res://resources/enemy characters/friendly chef.tres"
-	], "The fisherman attacks!")
+	])

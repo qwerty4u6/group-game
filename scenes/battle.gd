@@ -45,8 +45,11 @@ func _ready():
 	
 	for member in resources.team:
 		team_resources.push_back(load(member))
+	var i5 = 0
 	for member in resources.enemies:
-		enemy_resources.push_back(load(member))
+		if i5 != 0:
+			enemy_resources.push_back(load(member))
+		i5 += 1
 	
 	var new_team_required = global.get_team() == null
 	
@@ -117,7 +120,7 @@ func _ready():
 	
 	anim_player.play("fade_in")
 	await done_fading_in
-	$ActionBox.show_text(resources.appear_text)
+	$ActionBox.show_text(resources.enemies[0])
 	await $ActionBox.textbox_closed
 	next_turn()
 

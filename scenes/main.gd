@@ -25,7 +25,7 @@ func _ready():
 		"res://resources/enemy characters/friendly chef.tres"
 	], "The sushi chef attacks!")
 
-func start_battle(players, enemies, appear_text):
+func start_battle(players, enemies, appear_text = "placeholder"):
 	anim_player.play("fade_out")
 	await done_fading_out
 	current_characters.team = players
