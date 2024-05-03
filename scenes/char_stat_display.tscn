@@ -4,7 +4,7 @@
 [ext_resource type="StyleBox" uid="uid://df80uuyvx30ud" path="res://resources/ui/standard_panel.tres" id="1_12g0m"]
 [ext_resource type="FontFile" uid="uid://cc11lnvwh7ek2" path="res://assets/fonts/manaspace.ttf" id="2_hwgik"]
 [ext_resource type="Texture2D" uid="uid://dadylq3c81588" path="res://assets/sprites/placeholder 1.png" id="3_ponwi"]
-[ext_resource type="StyleBox" uid="uid://djdh88btgr4u1" path="res://resources/ui/darkened_panel.tres" id="5_yog81"]
+[ext_resource type="StyleBox" path="res://resources/ui/darkened_panel.tres" id="5_yog81"]
 
 [sub_resource type="Animation" id="Animation_8bx4t"]
 length = 0.001
