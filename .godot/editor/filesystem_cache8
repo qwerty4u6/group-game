@@ -1,5 +1,5 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1715719803
+::res://::1715805539
 README.md::TextFile::-1::1713214763::0::1::::<><>::
 ::res://assets/::1715719528
 ::res://assets/fonts/::1715719529
@@ -31,8 +31,8 @@ sushi restaurant interior.png::CompressedTexture2D::7096766426450102961::1714769
 tiles.png::CompressedTexture2D::7882151072281269352::1713214763::1713214763::1::::<><>::
 wall tiles.png::CompressedTexture2D::7226697156542836555::1714595877::1714595885::1::::<><>::
 washitsu interior wip.png::CompressedTexture2D::9028832877229020815::1713214763::1713214763::1::::<><>::
-::res://resources/::1715719526
-base_enemy.gd::GDScript::-1::1715635314::0::1::::<>Resource<>::
+::res://resources/::1715722256
+base_enemy.gd::GDScript::-1::1715722256::0::1::::<>Resource<>::
 base_player.gd::GDScript::-1::1713214763::0::1::::<>Resource<>::
 current_characters.gd::GDScript::-1::1714771049::0::1::::<>Resource<>::
 current_characters.tres::Resource::8043987621595190737::1713302233::0::1::::<><>::res://resources/current_characters.gd
@@ -53,7 +53,7 @@ border_panel.tres::StyleBoxFlat::8325891626537149269::1713214763::0::1::::<><>::
 clear_panel.tres::StyleBoxFlat::5754289635839627843::1713214763::0::1::::<><>::
 darkened_panel.tres::StyleBoxFlat::-1::1713215107::0::1::::<><>::
 standard_panel.tres::StyleBoxFlat::7579885464379015807::1713214763::0::1::::<><>::
-::res://scenes/::1715719794
+::res://scenes/::1715722274
 action_box.gd::GDScript::-1::1714763646::0::1::::<>Panel<>::
 action_box.tscn::PackedScene::498436038919702439::1715635315::0::1::::<><>::uid://df80uuyvx30ud::::res://resources/ui/standard_panel.tres<>uid://cc11lnvwh7ek2::::res://assets/fonts/manaspace.ttf<>res://scenes/action_box.gd<>uid://dqveho1iwy0vh::::res://resources/ui/border_panel.tres<>uid://cn8okr5ek2bjv::::res://resources/ui/clear_panel.tres<>uid://dadylq3c81588::::res://assets/sprites/placeholder 1.png<>uid://vf0notos07xy::::res://assets/sprites/placeholder 3.png<>uid://bdy44wh6xar84::::res://assets/sprites/placeholder 2.png<>uid://ymqa76nr3jb::::res://scenes/skill_button.tscn<>uid://ci20nsbghq2yj::::res://assets/sprites/divider.png<>uid://cdeqsvc1hb6m4::::res://scenes/skip_button.tscn<>uid://cs5dyphay65oq::::res://scenes/flee_button.tscn<>uid://cteainjofxbov::::res://scenes/back_button.tscn
 back_button.gd::GDScript::-1::1714763646::0::1::::<>Area2D<>::
@@ -75,7 +75,7 @@ flee_button.tscn::PackedScene::6098397694221803932::1714771049::0::1::::<><>::re
 global.gd::GDScript::-1::1714077463::0::1::::<>Node<>::
 global.tscn::PackedScene::-1::1713991237::0::1::::<><>::
 main.gd::GDScript::-1::1714771049::0::1::::<>Node<>::
-main.tscn::PackedScene::3782853959426604854::1715635328::0::1::::<><>::res://scenes/main.gd<>uid://dkkf42kp0nsu7::::res://assets/sprites/tiles.png<>uid://cx2tpq6i7jykw::::res://assets/sprites/house exterior tiles.png<>uid://c6byfgo2n38cu::::res://scenes/player.tscn<>res://scenes/Camera2D.gd<>uid://3n2n2r62bpvb::::res://assets/sprites/bridge tiles.png<>uid://dgkjynt4eft8y::::res://scenes/overworld_text_box.tscn<>uid://c30om8we4bfto::::res://scenes/tutorial_ninja.tscn<>res://scenes/RandomEnemyEncounter.gd
+main.tscn::PackedScene::3782853959426604854::1715722259::0::1::::<><>::res://scenes/main.gd<>uid://dkkf42kp0nsu7::::res://assets/sprites/tiles.png<>uid://cx2tpq6i7jykw::::res://assets/sprites/house exterior tiles.png<>uid://c6byfgo2n38cu::::res://scenes/player.tscn<>res://scenes/Camera2D.gd<>uid://3n2n2r62bpvb::::res://assets/sprites/bridge tiles.png<>uid://dgkjynt4eft8y::::res://scenes/overworld_text_box.tscn<>uid://c30om8we4bfto::::res://scenes/tutorial_ninja.tscn<>res://scenes/RandomEnemyEncounter.gd
 market_boss_animation.tscn::PackedScene::576350950285214944::1713214763::0::1::::<><>::uid://dgape8c5ovq5x::::res://assets/sprites/market boss idle.png
 Mouse.gd::GDScript::-1::1713214763::0::1::::<>Area2D<>::
 ninja_1_animation.tscn::PackedScene::323184059582309753::1713214763::0::1::::<><>::uid://dqtpoe5bkwovu::::res://assets/sprites/ninja idle.png<>uid://ss1gxhx2pbqx::::res://assets/sprites/ninja running.png
@@ -84,7 +84,7 @@ ninja_3_animation.tscn::PackedScene::2608586261921488677::1713214763::0::1::::<>
 overworld_text_box.tscn::PackedScene::7601628915914738958::1713300663::0::1::::<><>::res://scenes/TextBox.gd<>uid://cc11lnvwh7ek2::::res://assets/fonts/manaspace.ttf
 PlaceholderTile.gd::GDScript::-1::1714423669::0::1::::<>Sprite2D<>::
 player.gd::GDScript::-1::1714763646::0::1::::<>CharacterBody2D<>::
-player.gdshader::Shader::-1::1715719794::0::1::::<><>::
+player.gdshader::Shader::-1::1715722274::0::1::::<><>::
 player.tscn::PackedScene::6952226372727815660::1715635315::0::1::::<><>::res://scenes/player.gd<>uid://dqtpoe5bkwovu::::res://assets/sprites/ninja idle.png<>uid://ss1gxhx2pbqx::::res://assets/sprites/ninja running.png
 RandomEnemyEncounter.gd::GDScript::-1::1714771049::0::1::::<>Area2D<>::
 skill_button.gd::GDScript::-1::1714763646::0::1::::<>Area2D<>::
