@@ -9,8 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://dgkjynt4eft8y" path="res://scenes/overworld_text_box.tscn" id="6_cyeg4"]
 [ext_resource type="PackedScene" uid="uid://c30om8we4bfto" path="res://scenes/tutorial_ninja.tscn" id="8_1567k"]
 [ext_resource type="Script" path="res://scenes/RandomEnemyEncounter.gd" id="8_rdrj8"]
-[ext_resource type="PackedScene" uid="uid://bedjy1lwod22t" path="res://scenes/medpack.tscn" id="8_vqynk"]
-[ext_resource type="PackedScene" uid="uid://cimsib22gwwxq" path="res://scenes/final_boss.tscn" id="10_27hdq"]
+[ext_resource type="PackedScene" path="res://scenes/medpack.tscn" id="8_vqynk"]
+[ext_resource type="PackedScene" path="res://scenes/final_boss.tscn" id="10_27hdq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_otqh7"]
 texture = ExtResource("3_ntoqm")
@@ -1111,7 +1111,7 @@ texture_region_size = Vector2i(8, 8)
 0:2/0 = 0
 0:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:2/0/physics_layer_0/angular_velocity = 0.0
-0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(3.0625, -4, 4, -4, 4, 4, 3.0625, 4)
 1:2/0 = 0
 1:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 1:2/0/physics_layer_0/angular_velocity = 0.0
@@ -1283,7 +1283,7 @@ position = Vector2(3536, -5940)
 position = Vector2(112, -624)
 
 [node name="Medpack" parent="NPC" instance=ExtResource("8_vqynk")]
-position = Vector2(-380, -1203)
+position = Vector2(-400, -1232)
 
 [node name="Medpack2" parent="NPC" instance=ExtResource("8_vqynk")]
 position = Vector2(-48, -3440)
@@ -1322,12 +1322,11 @@ libraries = {
 }
 
 [node name="RandomEnemyEncounters" type="Node2D" parent="."]
-visible = false
 
 [node name="RandomEnemyEncounter" type="Area2D" parent="RandomEnemyEncounters" groups=["random_enemy_encounter"]]
 position = Vector2(246, -1783)
 script = ExtResource("8_rdrj8")
-enemies = ["A group of fisherman appeared!", "res://resources/enemy characters/fisherman.tres", "res://resources/enemy characters/fisherman.tres", "res://resources/enemy characters/fisherman.tres"]
+enemies = ["A pair of fisherman appeared!", "res://resources/enemy characters/fisherman.tres", "res://resources/enemy characters/fisherman.tres"]
 message = "these"
 freq = 40.0
 
@@ -1338,7 +1337,7 @@ shape = SubResource("RectangleShape2D_obthc")
 [node name="RandomEnemyEncounter7" type="Area2D" parent="RandomEnemyEncounters" groups=["random_enemy_encounter"]]
 position = Vector2(246, -1783)
 script = ExtResource("8_rdrj8")
-enemies = ["A group of fisherman appeared!", "res://resources/enemy characters/fisherman.tres", "res://resources/enemy characters/fisherman.tres", "res://resources/enemy characters/fisherman.tres"]
+enemies = ["A group of fish dealers appeared!", "res://resources/enemy characters/fish dealer.tres", "res://resources/enemy characters/fish dealer.tres", "res://resources/enemy characters/fish dealer.tres"]
 message = "these"
 freq = 40.0
 
@@ -1349,7 +1348,7 @@ shape = SubResource("RectangleShape2D_j74jt")
 [node name="RandomEnemyEncounter4" type="Area2D" parent="RandomEnemyEncounters" groups=["random_enemy_encounter"]]
 position = Vector2(246, -1783)
 script = ExtResource("8_rdrj8")
-enemies = ["A group of fisherman appeared!", "res://resources/enemy characters/fisherman.tres", "res://resources/enemy characters/fisherman.tres", "res://resources/enemy characters/fisherman.tres"]
+enemies = ["A pair of fisherman appeared!", "res://resources/enemy characters/fisherman.tres", "res://resources/enemy characters/fisherman.tres"]
 message = "these"
 freq = 40.0
 
@@ -1360,7 +1359,7 @@ shape = SubResource("RectangleShape2D_paft0")
 [node name="RandomEnemyEncounter5" type="Area2D" parent="RandomEnemyEncounters" groups=["random_enemy_encounter"]]
 position = Vector2(246, -1783)
 script = ExtResource("8_rdrj8")
-enemies = ["A group of fisherman appeared!", "res://resources/enemy characters/fisherman.tres", "res://resources/enemy characters/fisherman.tres", "res://resources/enemy characters/fisherman.tres"]
+enemies = ["A pair of fisherman appeared!", "res://resources/enemy characters/fisherman.tres", "res://resources/enemy characters/fisherman.tres"]
 message = "these"
 freq = 40.0
 
@@ -1371,7 +1370,7 @@ shape = SubResource("RectangleShape2D_lvtrw")
 [node name="RandomEnemyEncounter6" type="Area2D" parent="RandomEnemyEncounters" groups=["random_enemy_encounter"]]
 position = Vector2(246, -1783)
 script = ExtResource("8_rdrj8")
-enemies = ["A group of fisherman appeared!", "res://resources/enemy characters/fisherman.tres", "res://resources/enemy characters/fisherman.tres", "res://resources/enemy characters/fisherman.tres"]
+enemies = ["A pair of fisherman appeared!", "res://resources/enemy characters/fisherman.tres", "res://resources/enemy characters/fisherman.tres"]
 message = "these"
 freq = 40.0
 
@@ -1382,7 +1381,7 @@ shape = SubResource("RectangleShape2D_i6uca")
 [node name="RandomEnemyEncounter2" type="Area2D" parent="RandomEnemyEncounters" groups=["random_enemy_encounter"]]
 position = Vector2(246, -1783)
 script = ExtResource("8_rdrj8")
-enemies = ["A group of fisherman appeared!", "res://resources/enemy characters/fisherman.tres", "res://resources/enemy characters/fisherman.tres", "res://resources/enemy characters/fisherman.tres"]
+enemies = ["A pair of fisherman appeared!", "res://resources/enemy characters/fisherman.tres", "res://resources/enemy characters/fisherman.tres"]
 message = "these"
 freq = 40.0
 
@@ -1393,7 +1392,7 @@ shape = SubResource("RectangleShape2D_3mpvc")
 [node name="RandomEnemyEncounter3" type="Area2D" parent="RandomEnemyEncounters" groups=["random_enemy_encounter"]]
 position = Vector2(246, -1783)
 script = ExtResource("8_rdrj8")
-enemies = ["A group of fisherman appeared!", "res://resources/enemy characters/fisherman.tres", "res://resources/enemy characters/fisherman.tres", "res://resources/enemy characters/fisherman.tres"]
+enemies = ["A pair of fisherman appeared!", "res://resources/enemy characters/fisherman.tres", "res://resources/enemy characters/fisherman.tres"]
 message = "these"
 freq = 40.0
 

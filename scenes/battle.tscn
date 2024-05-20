@@ -6,7 +6,7 @@
 [ext_resource type="Script" path="res://scenes/Mouse.gd" id="4_e058j"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b1e75"]
-size = Vector2(2, 2)
+size = Vector2(1, 1)
 
 [sub_resource type="Animation" id="Animation_np7xg"]
 length = 0.001
@@ -91,6 +91,7 @@ offset_bottom = 190.0
 script = ExtResource("4_e058j")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MouseArea"]
+position = Vector2(-0.5, -0.5)
 shape = SubResource("RectangleShape2D_b1e75")
 
 [node name="Team" type="Node" parent="."]

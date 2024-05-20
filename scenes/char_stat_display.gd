@@ -50,6 +50,9 @@ func damage(amt):
 	set_hp(res.hp)
 	if res.hp <= 0:
 		kill()
+	elif res.hp > res.max_hp:
+		res.hp = res.max_hp
+		set_hp(res.hp)
 
 func take_mana(amt):
 	res.mana -= amt

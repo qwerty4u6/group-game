@@ -120,7 +120,10 @@ func _ready():
 		if member.res.hp <= 0:
 			member.set_hp(1)
 	
-	print(global.should_heal)
+	if global.should_heal:
+		for disp in team_stat_displays:
+			disp.damage(-999)
+			global.should_heal = false
 	
 	anim_player.play("fade_in")
 	await done_fading_in
