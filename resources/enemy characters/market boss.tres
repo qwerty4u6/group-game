@@ -9,17 +9,32 @@ name = "Fisher Dealer"
 texture = ExtResource("2_x3g84")
 sprite = "res://scenes/market_boss_animation.tscn"
 flip_h = false
-level = 7
-max_hp = 12
-hp = 12
-max_mana = 25
-mana = 25
-damage = 2
+level = 12
+max_hp = 100
+hp = 100
+max_mana = 16
+mana = 16
+damage = 4
 skills = [{
-"applies": ["damage", -1, 2],
-"message": "%d threw Throwing Stars!",
-"name": "jkgdjg",
-"target": "enemy",
+"applies": ["damage", 0, 1],
+"mana_cost": 0,
+"message": "%s threw fish at %s!",
+"name": "Fish Throw",
+"target": "team",
+"unlocked_at": 1
+}, {
+"applies": ["damage", 2, 1],
+"mana_cost": 2,
+"message": "%s threw tons of fish at %s maniacally!",
+"name": "Fish Throw2",
+"target": "team",
+"unlocked_at": 1
+}, {
+"applies": ["damage", 4, 1],
+"mana_cost": 7,
+"message": "%s crushed %s with a gargantuan fish!",
+"name": "Fish Throw3",
+"target": "team",
 "unlocked_at": 1
 }]
 skill_order = [{

@@ -10,16 +10,24 @@ texture = ExtResource("2_55xs2")
 sprite = "res://scenes/fish_dealer_animation.tscn"
 flip_h = false
 level = 7
-max_hp = 12
-hp = 12
-max_mana = 25
-mana = 25
+max_hp = 24
+hp = 24
+max_mana = 8
+mana = 8
 damage = 2
 skills = [{
-"applies": ["damage", -1, 2],
-"message": "%d threw Throwing Stars!",
-"name": "jkgdjg",
-"target": "enemy",
+"applies": ["damage", 0, 1],
+"mana_cost": 0,
+"message": "%s threw fish at %s!",
+"name": "Fish Throw",
+"target": "team",
+"unlocked_at": 1
+}, {
+"applies": ["damage", 1, 1],
+"mana_cost": 3,
+"message": "%s threw tons of fish at %s!",
+"name": "Fish Throw2",
+"target": "team",
 "unlocked_at": 1
 }]
 skill_order = [{

@@ -2,6 +2,7 @@ extends Node
 
 var stored_main
 var stored_team
+var should_heal = false
 
 func store_main(main_state):
 	stored_main = PackedScene.new()

@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://bedjy1lwod22t"]
+
+[ext_resource type="Script" path="res://scenes/medpack.gd" id="1_g7xko"]
+[ext_resource type="Texture2D" uid="uid://dhbi8w07sqr2j" path="res://assets/sprites/medpack.png" id="2_majh4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_upftp"]
+size = Vector2(32, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4jny4"]
+size = Vector2(36, 36)
+
+[node name="Medpack" type="StaticBody2D"]
+script = ExtResource("1_g7xko")
+
+[node name="Medpack" type="Sprite2D" parent="."]
+scale = Vector2(4, 4)
+texture = ExtResource("2_majh4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_upftp")
+
+[node name="Interactable" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable"]
+shape = SubResource("RectangleShape2D_4jny4")
+
+[connection signal="body_entered" from="Interactable" to="." method="_on_interactable_body_entered"]

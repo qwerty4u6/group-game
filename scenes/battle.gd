@@ -120,6 +120,8 @@ func _ready():
 		if member.res.hp <= 0:
 			member.set_hp(1)
 	
+	print(global.should_heal)
+	
 	anim_player.play("fade_in")
 	await done_fading_in
 	$ActionBox.show_text(resources.enemies[0])
