@@ -58,8 +58,10 @@ func take_mana(amt):
 	res.mana -= amt
 	set_mana(res.mana)
 	if res.mana < 0:
+		res.mana = 0
 		set_mana(0)
 	elif res.mana > res.max_mana:
+		res.mana = res.max_mana
 		set_mana(res.max_mana)
 
 func kill():

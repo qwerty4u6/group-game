@@ -9,8 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://dgkjynt4eft8y" path="res://scenes/overworld_text_box.tscn" id="6_cyeg4"]
 [ext_resource type="PackedScene" uid="uid://c30om8we4bfto" path="res://scenes/tutorial_ninja.tscn" id="8_1567k"]
 [ext_resource type="Script" path="res://scenes/RandomEnemyEncounter.gd" id="8_rdrj8"]
-[ext_resource type="PackedScene" path="res://scenes/medpack.tscn" id="8_vqynk"]
-[ext_resource type="PackedScene" path="res://scenes/final_boss.tscn" id="10_27hdq"]
+[ext_resource type="PackedScene" uid="uid://bedjy1lwod22t" path="res://scenes/medpack.tscn" id="8_vqynk"]
+[ext_resource type="PackedScene" uid="uid://cimsib22gwwxq" path="res://scenes/final_boss.tscn" id="10_27hdq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_otqh7"]
 texture = ExtResource("3_ntoqm")

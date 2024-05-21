@@ -14,6 +14,7 @@ extends Panel
 var target = null
 var button_hovered = null
 var skipping = false
+var preparing_skill = false
 var frames_after_back = 0
 
 signal text_done_displaying
@@ -122,6 +123,8 @@ func _on_back_pressed():
 	battle.selecting = false
 
 func prepare_skill(i):
+	if battle.selecting:
+		return
 	var disp = battle.selected_display()
 	var character = battle.current_character
 	if character.skills.size() <= i:
@@ -137,6 +140,8 @@ func prepare_skill(i):
 	battle.selecting = false
 	disp = battle.selected_display()
 	disp.stop_hover()
+	
+	print(skill)
 	
 	battle.current_character.disp.take_mana(skill.mana_cost)
 	if skill.applies[0] == "damage":
