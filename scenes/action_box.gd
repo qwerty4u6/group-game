@@ -48,6 +48,8 @@ func to_textbox():
 	
 
 func to_action_box(character = null):
+	battle.selecting = false
+	
 	text_box.hide()
 	action_box.show()
 	back_box.hide()
@@ -119,8 +121,8 @@ func _on_timer_timeout():
 		emit_signal("text_done_displaying")
 
 func _on_back_pressed():
-	to_action_box()
 	battle.selecting = false
+	to_action_box()
 
 func prepare_skill(i):
 	if battle.selecting:
