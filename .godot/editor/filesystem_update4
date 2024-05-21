@@ -1,6 +1,7 @@
 res://scenes/main.tscn
 res://resources/base_enemy.gd
 res://scenes/player.gdshader
+res://scenes/main.gd
 res://scenes/battle.tscn
 res://scenes/action_box.tscn
 res://scenes/char_stat_display.tscn
