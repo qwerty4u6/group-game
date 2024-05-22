@@ -46,11 +46,19 @@ func set_mana(mana):
 	mana_label.text = str(mana)
 
 func damage(amt):
+	if amt <= 0:
+		amt = 1
 	res.hp -= amt
 	set_hp(res.hp)
 	if res.hp <= 0:
 		kill()
-	elif res.hp > res.max_hp:
+
+func heal(amt):
+	if amt <= 0:
+		return
+	res.hp += amt
+	set_hp(res.hp)
+	if res.hp > res.max_hp:
 		res.hp = res.max_hp
 		set_hp(res.hp)
 

@@ -38,7 +38,7 @@ signal done_fading_in
 signal done_fading_out
 signal textbox_closed
 signal done_with_enemy_turns
-
+	
 func _ready():
 	get_node("CanvasLayer/ColorRect").show()
 	$ActionBox.to_empty_box()
@@ -122,7 +122,7 @@ func _ready():
 	
 	if global.should_heal:
 		for disp in team_stat_displays:
-			disp.damage(-999)
+			disp.heal(-999)
 			global.should_heal = false
 	
 	anim_player.play("fade_in")
@@ -130,6 +130,34 @@ func _ready():
 	$ActionBox.show_text(resources.enemies[0])
 	await $ActionBox.textbox_closed
 	next_turn()
+
+func calc_level_buff(lvl):
+	var buffs = []
+	if fmod((lvl + 4.0) / 6.0, 1) == 0:
+		buffs.push_back(1)
+	else:
+		buffs.push_back(0)
+	if fmod((lvl + 2.0) / 6.0, 1) == 0:
+		buffs.push_back(1)
+	else:
+		buffs.push_back(0)
+	if fmod((lvl + 1.0) / 6.0, 1) == 0:
+		buffs.push_back(1)
+	else:
+		buffs.push_back(0)
+	if fmod(lvl / 3.0, 1) == 0:
+		buffs.push_back(1)
+	else:
+		buffs.push_back(0)
+	if fmod((lvl + 5.0) / 12.0, 1) == 0:
+		buffs.push_back(1)
+	else:
+		buffs.push_back(0)
+	if fmod((lvl - 1.0) / 12.0, 1) == 0:
+		buffs.push_back(1)
+	else:
+		buffs.push_back(0)
+	return buffs
 
 func calc_skill_weights(skills, mana):
 	var possible_skills = []
@@ -166,9 +194,9 @@ func enemy_turn(enemy):
 	
 	enemy.disp.take_mana(skill.mana_cost)
 	if skill.applies[0] == "damage":
-		target.damage((enemy.damage + skill.applies[1]) * skill.applies[2])
+		target.damage((enemy.damage + skill.applies[1] - target.res.defense) * skill.applies[2])
 	elif skill.applies[0] == "heal":
-		target.damage(-skill.applies[1])
+		target.heal(-skill.applies[1])
 	
 	return skill.message % [enemy.name_text, target.res.name_text] #fix this
 
@@ -213,9 +241,40 @@ func lose():
 	await $ActionBox.textbox_closed
 	$ActionBox.queue_free()
 
+func calc_next_level_requirement(lvl):
+	return floor(pow(lvl - 1, 1.5) + 5)
+
 func win():
-	$ActionBox.show_text("Your party won!")
+	var xp = 0
+	for enemy in enemies:
+		xp += enemy.xp_reward
+	$ActionBox.show_text("Your party won and got " + str(xp) + " XP!")
 	await $ActionBox.textbox_closed
+	
+	for member in team:
+		member.xp += xp
+		var req = calc_next_level_requirement(member.level)
+		var leveled_up = false
+		while member.xp >= req:
+			member.level += 1
+			member.xp -= req
+			leveled_up = true
+			
+			var buff = calc_level_buff(member.level)
+			if buff[0] == 1 || buff[1] == 1 || buff[2] == 1:
+				member.max_hp += 1
+				member.hp += 1
+			elif buff[3] == 1:
+				member.max_mana += 1
+				member.mana += 1
+			elif buff[4] == 1:
+				member.damage += 1
+			elif buff[5] == 1:
+				member.defense += 1
+		if leveled_up:
+			$ActionBox.show_text(member.name_text + " leveled up to level " + str(member.level) + "!")
+			await $ActionBox.textbox_closed
+	
 	global.store_team($Team.get_children())
 	get_tree().change_scene_to_packed(global.get_main())
 

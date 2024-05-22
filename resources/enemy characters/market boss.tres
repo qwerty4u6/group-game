@@ -5,16 +5,18 @@
 
 [resource]
 script = ExtResource("1_moim7")
-name = "Fisher Dealer"
+name = "Market Boss"
 texture = ExtResource("2_x3g84")
 sprite = "res://scenes/market_boss_animation.tscn"
 flip_h = false
 level = 12
+xp_reward = 50
 max_hp = 60
 hp = 60
 max_mana = 16
 mana = 16
 damage = 4
+defense = 0
 skills = [{
 "applies": ["damage", 0, 1],
 "mana_cost": 0,

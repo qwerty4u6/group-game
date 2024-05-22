@@ -6,11 +6,13 @@ extends Resource
 @export var flip_h: bool = false
 
 @export var level: int = 1
+@export var xp_reward: int = 1
 @export var max_hp: int = 25
 @export var hp: int = 25
 @export var max_mana: int = 25
 @export var mana: int = 25
 @export var damage: int = 2
+@export var defense: int = 0
 
 @export var skills: Array = []
 @export var skill_order: Array = []

@@ -143,13 +143,11 @@ func prepare_skill(i):
 	disp = battle.selected_display()
 	disp.stop_hover()
 	
-	print(skill)
-	
 	battle.current_character.disp.take_mana(skill.mana_cost)
 	if skill.applies[0] == "damage":
-		disp.damage((character.damage + skill.applies[1]) * skill.applies[2])
+		disp.damage((character.damage + skill.applies[1] - target.res.defense) * skill.applies[2])
 	elif skill.applies[0] == "heal":
-		disp.damage(-skill.applies[1])
+		disp.heal(skill.applies[1])
 	show_text(skill.message % [character.name_text, target.res.name_text])
 	await textbox_closed
 	battle.next_turn()

@@ -9,12 +9,14 @@ name = "Fisherman"
 texture = ExtResource("2_febhc")
 sprite = "res://scenes/fisherman_animation.tscn"
 flip_h = false
-level = 5
+level = 3
+xp_reward = 5
 max_hp = 25
 hp = 25
 max_mana = 5
 mana = 5
 damage = 2
+defense = 0
 skills = [{
 "applies": ["damage", 0, 1],
 "mana_cost": 0,

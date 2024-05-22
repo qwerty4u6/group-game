@@ -5,16 +5,18 @@
 
 [resource]
 script = ExtResource("1_gs7mm")
-name = "FishDealer"
+name = "Fish Dealer"
 texture = ExtResource("2_55xs2")
 sprite = "res://scenes/fish_dealer_animation.tscn"
 flip_h = false
 level = 7
+xp_reward = 3
 max_hp = 20
 hp = 20
 max_mana = 8
 mana = 8
 damage = 2
+defense = 0
 skills = [{
 "applies": ["damage", 0, 1],
 "mana_cost": 0,
