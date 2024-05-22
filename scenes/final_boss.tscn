@@ -15,11 +15,13 @@ script = ExtResource("1_juwsl")
 [node name="Ninja2Animation" parent="." instance=ExtResource("2_4yffx")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 shape = SubResource("RectangleShape2D_upftp")
 
 [node name="Interactable" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable"]
+visible = false
 position = Vector2(0, 4)
 shape = SubResource("RectangleShape2D_4jny4")
 

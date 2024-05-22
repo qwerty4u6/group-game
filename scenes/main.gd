@@ -12,7 +12,7 @@ var team = [
 
 # vv | change this value to false to disable random enemy spawns! | vv
 
-var do_battles = false
+var do_battles = true
 
 signal done_fading_in
 signal done_fading_out

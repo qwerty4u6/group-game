@@ -122,7 +122,7 @@ func _ready():
 	
 	if global.should_heal:
 		for disp in team_stat_displays:
-			disp.heal(-999)
+			disp.heal(999)
 			global.should_heal = false
 	
 	anim_player.play("fade_in")
@@ -274,6 +274,7 @@ func win():
 			elif buff[5] == 1:
 				member.defense += 1
 		if leveled_up:
+			member.disp.get_node("LevelLabel").text = "lvl. " + str(member.level)
 			$ActionBox.show_text(member.name_text + " leveled up to level " + str(member.level) + "!")
 			await $ActionBox.textbox_closed
 	
