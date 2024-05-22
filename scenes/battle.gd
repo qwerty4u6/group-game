@@ -186,11 +186,13 @@ func calc_skill_weights(skills, mana):
 
 func enemy_turn(enemy):
 	var skill = enemy.skills[calc_skill_weights(enemy.skills, enemy.mana).pick_random()]
-	var target = ""
+	var target = {"dead": true}
 	if skill.target == "team":
-		target = team_stat_displays.pick_random()
+		while target.dead:
+			target = team_stat_displays.pick_random()
 	elif skill.target == "enemy":
-		target = enemy_stat_displays.pick_random()
+		while target.dead:
+			target = enemy_stat_displays.pick_random()
 	
 	enemy.disp.take_mana(skill.mana_cost)
 	if skill.applies[0] == "damage":
