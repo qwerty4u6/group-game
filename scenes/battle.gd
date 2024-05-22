@@ -200,7 +200,7 @@ func enemy_turn(enemy):
 	elif skill.applies[0] == "heal":
 		target.heal(-skill.applies[1])
 	
-	return skill.message % [enemy.name_text, target.res.name_text] #fix this
+	return skill.message % [enemy.name_text, target.res.name_text]
 
 func next_turn():
 	current_turn += 1
