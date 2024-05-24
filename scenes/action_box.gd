@@ -148,6 +148,18 @@ func prepare_skill(i):
 		disp.damage((character.damage + skill.applies[1] - target.res.defense) * skill.applies[2])
 	elif skill.applies[0] == "heal":
 		disp.heal(skill.applies[1])
+	elif skill.applies[0] == "splash_damage":
+		var type = disp.res.type
+		if type == "enemy":
+			for enemy in battle.enemy_stat_displays:
+				if enemy.dead:
+					continue
+				enemy.damage((character.damage + skill.applies[1] - enemy.res.defense) * skill.applies[2])
+		elif type == "team":
+			for member in battle.team_stat_displays:
+				if member.dead:
+					continue
+				member.damage((character.damage + skill.applies[1] - member.res.defense) * skill.applies[2])
 	show_text(skill.message % [character.name_text, target.res.name_text])
 	await textbox_closed
 	battle.next_turn()

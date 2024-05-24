@@ -10,11 +10,13 @@ texture = ExtResource("2_d1aky")
 sprite = "res://scenes/sushi_chef_animation.tscn"
 flip_h = false
 level = 4
+xp_reward = 1
 max_hp = 10
 hp = 10
 max_mana = 35
 mana = 35
 damage = 2
+defense = 2
 skills = [{
 "applies": ["damage", -1, 2],
 "message": "%d threw Throwing Stars!",

@@ -44,4 +44,11 @@ skills = [{
 "name": "Mend",
 "target": "team",
 "unlocked_at": 1
+}, {
+"applies": ["damage", 0, 3],
+"mana_cost": 6,
+"message": "%s threw shredding shurikens at %s!",
+"name": "Shred",
+"target": "enemy",
+"unlocked_at": 1
 }]

@@ -38,10 +38,17 @@ skills = [{
 "target": "team",
 "unlocked_at": 1
 }, {
-"applies": ["damage", 3, 1],
+"applies": ["damage", 0, 2],
 "mana_cost": 4,
 "message": "%s casted a magic missile against %s!",
 "name": "Magic Missle",
+"target": "enemy",
+"unlocked_at": 1
+}, {
+"applies": ["splash_damage", 0, 3],
+"mana_cost": 10,
+"message": "%s summoned a blazestorm against %s and their party!",
+"name": "Blazestorm",
 "target": "enemy",
 "unlocked_at": 1
 }]

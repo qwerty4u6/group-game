@@ -38,10 +38,17 @@ skills = [{
 "target": "enemy",
 "unlocked_at": 1
 }, {
-"applies": ["damage", 6, 1],
+"applies": ["damage", 4, 1],
 "mana_cost": 4,
 "message": "%s used his silent thunder palm strike against %s!",
 "name": "Thunder Palm",
+"target": "enemy",
+"unlocked_at": 1
+}, {
+"applies": ["splash_damage", 3, 1],
+"mana_cost": 6,
+"message": "%s silently striked %s and their party!",
+"name": "Silent Strike",
 "target": "enemy",
 "unlocked_at": 1
 }]
